@@ -1,11 +1,12 @@
 # xodr
-Easily accessible C++ object structure of OpenDRIVE automatically generated from the [OpenDRIVE XSD schema](http://opendrive.org/download.html). Currently only OpenDRIVE 1.4 is supported. 
+Easily accessible C++ object structure of [OpenDRIVE](http://opendrive.org/) automatically generated from the [OpenDRIVE XSD schema](http://opendrive.org/download.html). Currently only OpenDRIVE 1.4 is supported. 
 
 ## Building
 ### Dependencies
-Make sure to meet the dependencies in advande. **xodr** depends on 
+Make sure to meet these dependencies in advance: 
 - [CodeSynthesis XSD](http://codesynthesis.com/products/xsd/) in conjunction with 
 - [Xerces-C++](https://xerces.apache.org/xerces-c/)
+
 ### Building on Unix
 With CMake as plattform-independent build tool **xodr** can be configured for various native build environments. An exemplary configuration for Make under Unix:
 ```
