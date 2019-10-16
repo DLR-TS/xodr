@@ -31,8 +31,12 @@
 // in the accompanying FLOSSE file.
 //
 
-#ifndef CXX______OPEN_DRIVE_1_5M_H
-#define CXX______OPEN_DRIVE_1_5M_H
+#ifndef OPEN_DRIVE_1_5M_H
+#define OPEN_DRIVE_1_5M_H
+
+#ifndef XSD_CXX11
+#define XSD_CXX11
+#endif
 
 #ifndef XSD_USE_CHAR
 #define XSD_USE_CHAR
@@ -78,6 +82,21 @@
 #include <xsd/cxx/tree/parsing/float.hxx>
 #include <xsd/cxx/tree/parsing/double.hxx>
 #include <xsd/cxx/tree/parsing/decimal.hxx>
+
+#include <xsd/cxx/xml/dom/serialization-header.hxx>
+#include <xsd/cxx/tree/serialization.hxx>
+#include <xsd/cxx/tree/serialization/byte.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-byte.hxx>
+#include <xsd/cxx/tree/serialization/short.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-short.hxx>
+#include <xsd/cxx/tree/serialization/int.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-int.hxx>
+#include <xsd/cxx/tree/serialization/long.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-long.hxx>
+#include <xsd/cxx/tree/serialization/boolean.hxx>
+#include <xsd/cxx/tree/serialization/float.hxx>
+#include <xsd/cxx/tree/serialization/double.hxx>
+#include <xsd/cxx/tree/serialization/decimal.hxx>
 
 namespace xml_schema
 {
@@ -175,6 +194,16 @@ namespace xml_schema
   typedef ::xsd::cxx::tree::entities< char, simple_type, entity > entities;
 
   typedef ::xsd::cxx::tree::content_order content_order;
+  // Namespace information and list stream. Used in
+  // serialization functions.
+  //
+  typedef ::xsd::cxx::xml::dom::namespace_info< char > namespace_info;
+  typedef ::xsd::cxx::xml::dom::namespace_infomap< char > namespace_infomap;
+  typedef ::xsd::cxx::tree::list_stream< char > list_stream;
+  typedef ::xsd::cxx::tree::as_double< double_ > as_double;
+  typedef ::xsd::cxx::tree::as_decimal< decimal > as_decimal;
+  typedef ::xsd::cxx::tree::facet facet;
+
   // Flags and properties.
   //
   typedef ::xsd::cxx::tree::flags flags;
@@ -198,6 +227,7 @@ namespace xml_schema
   typedef ::xsd::cxx::tree::unexpected_enumerator< char > unexpected_enumerator;
   typedef ::xsd::cxx::tree::expected_text_content< char > expected_text_content;
   typedef ::xsd::cxx::tree::no_prefix_mapping< char > no_prefix_mapping;
+  typedef ::xsd::cxx::tree::serialization< char > serialization;
 
   // Error handler callback interface.
   //
@@ -209,7 +239,7 @@ namespace xml_schema
   {
     // Automatic pointer for DOMDocument.
     //
-    using ::xsd::cxx::xml::dom::auto_ptr;
+    using ::xsd::cxx::xml::dom::unique_ptr;
 
 #ifndef XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
 #define XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
@@ -376,9 +406,10 @@ class e_roadMarkRule;
 class e_orientation;
 class OpenDRIVE;
 
-#include <memory>    // ::std::auto_ptr
+#include <memory>    // ::std::unique_ptr
 #include <limits>    // std::numeric_limits
 #include <algorithm> // std::binary_search
+#include <utility>   // std::move
 
 #include <xsd/cxx/xml/char-utf8.hxx>
 
@@ -775,7 +806,7 @@ class t_header: public ::xml_schema::type
   geoReference (const geoReference_optional& x);
 
   void
-  geoReference (::std::auto_ptr< geoReference_type > p);
+  geoReference (::std::unique_ptr< geoReference_type > p);
 
   // offset
   //
@@ -796,7 +827,7 @@ class t_header: public ::xml_schema::type
   offset (const offset_optional& x);
 
   void
-  offset (::std::auto_ptr< offset_type > p);
+  offset (::std::unique_ptr< offset_type > p);
 
   // userData
   //
@@ -851,7 +882,7 @@ class t_header: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // revMajor
   //
@@ -894,7 +925,7 @@ class t_header: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // version
   //
@@ -915,7 +946,7 @@ class t_header: public ::xml_schema::type
   version (const version_optional& x);
 
   void
-  version (::std::auto_ptr< version_type > p);
+  version (::std::unique_ptr< version_type > p);
 
   // date
   //
@@ -936,7 +967,7 @@ class t_header: public ::xml_schema::type
   date (const date_optional& x);
 
   void
-  date (::std::auto_ptr< date_type > p);
+  date (::std::unique_ptr< date_type > p);
 
   // north
   //
@@ -1029,7 +1060,7 @@ class t_header: public ::xml_schema::type
   vendor (const vendor_optional& x);
 
   void
-  vendor (::std::auto_ptr< vendor_type > p);
+  vendor (::std::unique_ptr< vendor_type > p);
 
   // Constructors.
   //
@@ -1134,7 +1165,7 @@ class t_header_GeoReference: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -1227,7 +1258,7 @@ class t_header_Offset: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // x
   //
@@ -1337,19 +1368,19 @@ class t_road: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< link_type, char > link_traits;
 
   const link_optional&
-  lane_link () const;
+  link () const;
 
   link_optional&
-  lane_link ();
+  link ();
 
   void
-  lane_link (const link_type& x);
+  link (const link_type& x);
 
   void
-  lane_link (const link_optional& x);
+  link (const link_optional& x);
 
   void
-  lane_link (::std::auto_ptr< link_type > p);
+  link (::std::unique_ptr< link_type > p);
 
   // type
   //
@@ -1383,7 +1414,7 @@ class t_road: public ::xml_schema::type
   planView (const planView_type& x);
 
   void
-  planView (::std::auto_ptr< planView_type > p);
+  planView (::std::unique_ptr< planView_type > p);
 
   // elevationProfile
   //
@@ -1404,7 +1435,7 @@ class t_road: public ::xml_schema::type
   elevationProfile (const elevationProfile_optional& x);
 
   void
-  elevationProfile (::std::auto_ptr< elevationProfile_type > p);
+  elevationProfile (::std::unique_ptr< elevationProfile_type > p);
 
   // lateralProfile
   //
@@ -1425,7 +1456,7 @@ class t_road: public ::xml_schema::type
   lateralProfile (const lateralProfile_optional& x);
 
   void
-  lateralProfile (::std::auto_ptr< lateralProfile_type > p);
+  lateralProfile (::std::unique_ptr< lateralProfile_type > p);
 
   // lanes
   //
@@ -1442,7 +1473,7 @@ class t_road: public ::xml_schema::type
   lanes (const lanes_type& x);
 
   void
-  lanes (::std::auto_ptr< lanes_type > p);
+  lanes (::std::unique_ptr< lanes_type > p);
 
   // objects
   //
@@ -1463,7 +1494,7 @@ class t_road: public ::xml_schema::type
   objects (const objects_optional& x);
 
   void
-  objects (::std::auto_ptr< objects_type > p);
+  objects (::std::unique_ptr< objects_type > p);
 
   // signals
   //
@@ -1484,7 +1515,7 @@ class t_road: public ::xml_schema::type
   signals (const signals_optional& x);
 
   void
-  signals (::std::auto_ptr< signals_type > p);
+  signals (::std::unique_ptr< signals_type > p);
 
   // surface
   //
@@ -1505,7 +1536,7 @@ class t_road: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // railroad
   //
@@ -1526,7 +1557,7 @@ class t_road: public ::xml_schema::type
   railroad (const railroad_optional& x);
 
   void
-  railroad (::std::auto_ptr< railroad_type > p);
+  railroad (::std::unique_ptr< railroad_type > p);
 
   // userData
   //
@@ -1581,7 +1612,7 @@ class t_road: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -1602,7 +1633,7 @@ class t_road: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // length
   //
@@ -1619,7 +1650,7 @@ class t_road: public ::xml_schema::type
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // id
   //
@@ -1636,7 +1667,7 @@ class t_road: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // junction
   //
@@ -1653,7 +1684,7 @@ class t_road: public ::xml_schema::type
   junction (const junction_type& x);
 
   void
-  junction (::std::auto_ptr< junction_type > p);
+  junction (::std::unique_ptr< junction_type > p);
 
   // rule
   //
@@ -1674,7 +1705,7 @@ class t_road: public ::xml_schema::type
   rule (const rule_optional& x);
 
   void
-  rule (::std::auto_ptr< rule_type > p);
+  rule (::std::unique_ptr< rule_type > p);
 
   // Constructors.
   //
@@ -1684,8 +1715,8 @@ class t_road: public ::xml_schema::type
           const id_type&,
           const junction_type&);
 
-  t_road (::std::auto_ptr< planView_type >,
-          ::std::auto_ptr< lanes_type >,
+  t_road (::std::unique_ptr< planView_type >,
+          ::std::unique_ptr< lanes_type >,
           const length_type&,
           const id_type&,
           const junction_type&);
@@ -1716,7 +1747,7 @@ class t_road: public ::xml_schema::type
          ::xml_schema::flags);
 
   protected:
-  link_optional lane_link_;
+  link_optional link_;
   type_sequence type_;
   ::xsd::cxx::tree::one< planView_type > planView_;
   elevationProfile_optional elevationProfile_;
@@ -1814,7 +1845,7 @@ class t_road_link: public ::xml_schema::type
   predecessor (const predecessor_optional& x);
 
   void
-  predecessor (::std::auto_ptr< predecessor_type > p);
+  predecessor (::std::unique_ptr< predecessor_type > p);
 
   // successor
   //
@@ -1835,7 +1866,7 @@ class t_road_link: public ::xml_schema::type
   successor (const successor_optional& x);
 
   void
-  successor (::std::auto_ptr< successor_type > p);
+  successor (::std::unique_ptr< successor_type > p);
 
   // neighbor
   //
@@ -1907,7 +1938,7 @@ class t_road_link: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -2003,7 +2034,7 @@ class t_road_link_predecessorSuccessor: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // elementType
   //
@@ -2020,7 +2051,7 @@ class t_road_link_predecessorSuccessor: public ::xml_schema::type
   elementType (const elementType_type& x);
 
   void
-  elementType (::std::auto_ptr< elementType_type > p);
+  elementType (::std::unique_ptr< elementType_type > p);
 
   // elementId
   //
@@ -2037,7 +2068,7 @@ class t_road_link_predecessorSuccessor: public ::xml_schema::type
   elementId (const elementId_type& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // contactPoint
   //
@@ -2058,7 +2089,7 @@ class t_road_link_predecessorSuccessor: public ::xml_schema::type
   contactPoint (const contactPoint_optional& x);
 
   void
-  contactPoint (::std::auto_ptr< contactPoint_type > p);
+  contactPoint (::std::unique_ptr< contactPoint_type > p);
 
   // elementS
   //
@@ -2079,7 +2110,7 @@ class t_road_link_predecessorSuccessor: public ::xml_schema::type
   elementS (const elementS_optional& x);
 
   void
-  elementS (::std::auto_ptr< elementS_type > p);
+  elementS (::std::unique_ptr< elementS_type > p);
 
   // elementDir
   //
@@ -2100,7 +2131,7 @@ class t_road_link_predecessorSuccessor: public ::xml_schema::type
   elementDir (const elementDir_optional& x);
 
   void
-  elementDir (::std::auto_ptr< elementDir_type > p);
+  elementDir (::std::unique_ptr< elementDir_type > p);
 
   // Constructors.
   //
@@ -2255,7 +2286,7 @@ class t_road_link_neighbor: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // side
   //
@@ -2272,7 +2303,7 @@ class t_road_link_neighbor: public ::xml_schema::type
   side (const side_type& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // elementId
   //
@@ -2289,7 +2320,7 @@ class t_road_link_neighbor: public ::xml_schema::type
   elementId (const elementId_type& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // direction
   //
@@ -2306,7 +2337,7 @@ class t_road_link_neighbor: public ::xml_schema::type
   direction (const direction_type& x);
 
   void
-  direction (::std::auto_ptr< direction_type > p);
+  direction (::std::unique_ptr< direction_type > p);
 
   // Constructors.
   //
@@ -2426,7 +2457,7 @@ class t_road_type: public ::xml_schema::type
   speed (const speed_optional& x);
 
   void
-  speed (::std::auto_ptr< speed_type > p);
+  speed (::std::unique_ptr< speed_type > p);
 
   // userData
   //
@@ -2481,7 +2512,7 @@ class t_road_type: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -2498,7 +2529,7 @@ class t_road_type: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // type
   //
@@ -2515,7 +2546,7 @@ class t_road_type: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // country
   //
@@ -2536,7 +2567,7 @@ class t_road_type: public ::xml_schema::type
   country (const country_optional& x);
 
   void
-  country (::std::auto_ptr< country_type > p);
+  country (::std::unique_ptr< country_type > p);
 
   // Constructors.
   //
@@ -2634,7 +2665,7 @@ class t_road_type_speed: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // max
   //
@@ -2642,16 +2673,16 @@ class t_road_type_speed: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< max_type, char > max_traits;
 
   const max_type&
-  max () const;
+  fmax () const;
 
   max_type&
-  max ();
+  fmax ();
 
   void
-  max (const max_type& x);
+  fmax (const max_type& x);
 
   void
-  max (::std::auto_ptr< max_type > p);
+  fmax (::std::unique_ptr< max_type > p);
 
   // unit
   //
@@ -2672,7 +2703,7 @@ class t_road_type_speed: public ::xml_schema::type
   unit (const unit_optional& x);
 
   void
-  unit (::std::auto_ptr< unit_type > p);
+  unit (::std::unique_ptr< unit_type > p);
 
   // Constructors.
   //
@@ -2707,7 +2738,7 @@ class t_road_type_speed: public ::xml_schema::type
   userData_sequence userData_;
   include_sequence include_;
   dataQuality_optional dataQuality_;
-  ::xsd::cxx::tree::one< max_type > max_;
+  ::xsd::cxx::tree::one< max_type > fmax_;
   unit_optional unit_;
 };
 
@@ -2784,7 +2815,7 @@ class t_road_planView: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -2844,7 +2875,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   line (const line_optional& x);
 
   void
-  line (::std::auto_ptr< line_type > p);
+  line (::std::unique_ptr< line_type > p);
 
   // spiral
   //
@@ -2865,7 +2896,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   spiral (const spiral_optional& x);
 
   void
-  spiral (::std::auto_ptr< spiral_type > p);
+  spiral (::std::unique_ptr< spiral_type > p);
 
   // arc
   //
@@ -2886,7 +2917,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   arc (const arc_optional& x);
 
   void
-  arc (::std::auto_ptr< arc_type > p);
+  arc (::std::unique_ptr< arc_type > p);
 
   // poly3
   //
@@ -2907,7 +2938,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   poly3 (const poly3_optional& x);
 
   void
-  poly3 (::std::auto_ptr< poly3_type > p);
+  poly3 (::std::unique_ptr< poly3_type > p);
 
   // paramPoly3
   //
@@ -2928,7 +2959,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   paramPoly3 (const paramPoly3_optional& x);
 
   void
-  paramPoly3 (::std::auto_ptr< paramPoly3_type > p);
+  paramPoly3 (::std::unique_ptr< paramPoly3_type > p);
 
   // userData
   //
@@ -2983,7 +3014,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -3000,7 +3031,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // x
   //
@@ -3059,7 +3090,7 @@ class t_road_planView_geometry: public ::xml_schema::type
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // Constructors.
   //
@@ -3166,7 +3197,7 @@ class t_road_planView_geometry_line: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -3259,7 +3290,7 @@ class t_road_planView_geometry_spiral: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // curvStart
   //
@@ -3383,7 +3414,7 @@ class t_road_planView_geometry_arc: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // curvature
   //
@@ -3491,7 +3522,7 @@ class t_road_planView_geometry_poly3: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // a
   //
@@ -3647,7 +3678,7 @@ class t_road_planView_geometry_paramPoly3: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // aU
   //
@@ -3776,7 +3807,7 @@ class t_road_planView_geometry_paramPoly3: public ::xml_schema::type
   pRange (const pRange_type& x);
 
   void
-  pRange (::std::auto_ptr< pRange_type > p);
+  pRange (::std::unique_ptr< pRange_type > p);
 
   // Constructors.
   //
@@ -3959,7 +3990,7 @@ class t_road_elevationProfile: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -4053,7 +4084,7 @@ class t_road_elevationProfile_elevation: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -4070,7 +4101,7 @@ class t_road_elevationProfile_elevation: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // a
   //
@@ -4279,7 +4310,7 @@ class t_road_lateralProfile: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -4375,7 +4406,7 @@ class t_road_lateralProfile_superelevation: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -4392,7 +4423,7 @@ class t_road_lateralProfile_superelevation: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // a
   //
@@ -4550,7 +4581,7 @@ class t_road_lateralProfile_crossfall: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // side
   //
@@ -4567,7 +4598,7 @@ class t_road_lateralProfile_crossfall: public ::xml_schema::type
   side (const side_type& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // s
   //
@@ -4584,7 +4615,7 @@ class t_road_lateralProfile_crossfall: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // a
   //
@@ -4801,7 +4832,7 @@ class t_road_lateralProfile_shape: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -4818,7 +4849,7 @@ class t_road_lateralProfile_shape: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -5026,7 +5057,7 @@ class t_road_lanes: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -5121,7 +5152,7 @@ class t_road_lanes_laneOffset: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -5138,7 +5169,7 @@ class t_road_lanes_laneOffset: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // a
   //
@@ -5262,7 +5293,7 @@ class t_road_lanes_laneSection: public ::xml_schema::type
   left (const left_optional& x);
 
   void
-  left (::std::auto_ptr< left_type > p);
+  left (::std::unique_ptr< left_type > p);
 
   // center
   //
@@ -5283,7 +5314,7 @@ class t_road_lanes_laneSection: public ::xml_schema::type
   center (const center_optional& x);
 
   void
-  center (::std::auto_ptr< center_type > p);
+  center (::std::unique_ptr< center_type > p);
 
   // right
   //
@@ -5304,7 +5335,7 @@ class t_road_lanes_laneSection: public ::xml_schema::type
   right (const right_optional& x);
 
   void
-  right (::std::auto_ptr< right_type > p);
+  right (::std::unique_ptr< right_type > p);
 
   // userData
   //
@@ -5359,7 +5390,7 @@ class t_road_lanes_laneSection: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -5376,7 +5407,7 @@ class t_road_lanes_laneSection: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // singleSide
   //
@@ -5397,7 +5428,7 @@ class t_road_lanes_laneSection: public ::xml_schema::type
   singleSide (const singleSide_optional& x);
 
   void
-  singleSide (::std::auto_ptr< singleSide_type > p);
+  singleSide (::std::unique_ptr< singleSide_type > p);
 
   // Constructors.
   //
@@ -5512,7 +5543,7 @@ class t_road_lanes_laneSection_left: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -5623,7 +5654,7 @@ class t_road_lanes_laneSection_center: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -5734,7 +5765,7 @@ class t_road_lanes_laneSection_right: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -5782,19 +5813,19 @@ class t_road_lanes_laneSection_center_lane: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< link_type, char > link_traits;
 
   const link_optional&
-  lane_link () const;
+  link () const;
 
   link_optional&
-  lane_link ();
+  link ();
 
   void
-  lane_link (const link_type& x);
+  link (const link_type& x);
 
   void
-  lane_link (const link_optional& x);
+  link (const link_optional& x);
 
   void
-  lane_link (::std::auto_ptr< link_type > p);
+  link (::std::unique_ptr< link_type > p);
 
   // roadMark
   //
@@ -5866,7 +5897,7 @@ class t_road_lanes_laneSection_center_lane: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -5894,7 +5925,7 @@ class t_road_lanes_laneSection_center_lane: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // level
   //
@@ -5915,7 +5946,7 @@ class t_road_lanes_laneSection_center_lane: public ::xml_schema::type
   level (const level_optional& x);
 
   void
-  level (::std::auto_ptr< level_type > p);
+  level (::std::unique_ptr< level_type > p);
 
   // Constructors.
   //
@@ -5947,7 +5978,7 @@ class t_road_lanes_laneSection_center_lane: public ::xml_schema::type
          ::xml_schema::flags);
 
   protected:
-  link_optional lane_link_;
+  link_optional link_;
   roadMark_sequence roadMark_;
   userData_sequence userData_;
   include_sequence include_;
@@ -5967,19 +5998,19 @@ class t_road_lanes_laneSection_lr_lane: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< link_type, char > link_traits;
 
   const link_optional&
-  lane_link () const;
+  link () const;
 
   link_optional&
-  lane_link ();
+  link ();
 
   void
-  lane_link (const link_type& x);
+  link (const link_type& x);
 
   void
-  lane_link (const link_optional& x);
+  link (const link_optional& x);
 
   void
-  lane_link (::std::auto_ptr< link_type > p);
+  link (::std::unique_ptr< link_type > p);
 
   // width
   //
@@ -6092,13 +6123,13 @@ class t_road_lanes_laneSection_lr_lane: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< access_type, char > access_traits;
 
   const access_sequence&
-  parkingSpace_access () const;
+  access () const;
 
   access_sequence&
-  parkingSpace_access ();
+  access ();
 
   void
-  parkingSpace_access (const access_sequence& s);
+  access (const access_sequence& s);
 
   // height
   //
@@ -6187,7 +6218,7 @@ class t_road_lanes_laneSection_lr_lane: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // type
   //
@@ -6204,7 +6235,7 @@ class t_road_lanes_laneSection_lr_lane: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // level
   //
@@ -6225,7 +6256,7 @@ class t_road_lanes_laneSection_lr_lane: public ::xml_schema::type
   level (const level_optional& x);
 
   void
-  level (::std::auto_ptr< level_type > p);
+  level (::std::unique_ptr< level_type > p);
 
   // Constructors.
   //
@@ -6257,14 +6288,14 @@ class t_road_lanes_laneSection_lr_lane: public ::xml_schema::type
          ::xml_schema::flags);
 
   protected:
-  link_optional lane_link_;
+  link_optional link_;
   width_sequence width_;
   border_sequence border_;
   roadMark_sequence roadMark_;
   material_sequence material_;
   visibility_sequence visibility_;
   speed_sequence speed_;
-  access_sequence parkingSpace_access_;
+  access_sequence access_;
   height_sequence height_;
   rule_sequence rule_;
   userData_sequence userData_;
@@ -6466,7 +6497,7 @@ class t_road_lanes_laneSection_lcr_lane_link: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -6561,7 +6592,7 @@ class t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor: public ::xml_
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -6669,7 +6700,7 @@ class t_road_lanes_laneSection_lr_lane_width: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -6686,7 +6717,7 @@ class t_road_lanes_laneSection_lr_lane_width: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // a
   //
@@ -6844,7 +6875,7 @@ class t_road_lanes_laneSection_lr_lane_border: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -6861,7 +6892,7 @@ class t_road_lanes_laneSection_lr_lane_border: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // a
   //
@@ -7002,7 +7033,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // explicit
   //
@@ -7023,7 +7054,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   explicit_ (const explicit_optional& x);
 
   void
-  explicit_ (::std::auto_ptr< explicit_type > p);
+  explicit_ (::std::unique_ptr< explicit_type > p);
 
   // userData
   //
@@ -7078,7 +7109,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -7095,7 +7126,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // type
   //
@@ -7112,7 +7143,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   type1 (const type1_type& x);
 
   void
-  type1 (::std::auto_ptr< type1_type > p);
+  type1 (::std::unique_ptr< type1_type > p);
 
   // weight
   //
@@ -7133,7 +7164,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   weight (const weight_optional& x);
 
   void
-  weight (::std::auto_ptr< weight_type > p);
+  weight (::std::unique_ptr< weight_type > p);
 
   // color
   //
@@ -7150,7 +7181,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   color (const color_type& x);
 
   void
-  color (::std::auto_ptr< color_type > p);
+  color (::std::unique_ptr< color_type > p);
 
   // material
   //
@@ -7171,7 +7202,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   material (const material_optional& x);
 
   void
-  material (::std::auto_ptr< material_type > p);
+  material (::std::unique_ptr< material_type > p);
 
   // width
   //
@@ -7192,7 +7223,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   width (const width_optional& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // laneChange
   //
@@ -7213,7 +7244,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark: public ::xml_schema::type
   laneChange (const laneChange_optional& x);
 
   void
-  laneChange (::std::auto_ptr< laneChange_type > p);
+  laneChange (::std::unique_ptr< laneChange_type > p);
 
   // height
   //
@@ -7395,7 +7426,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_sway: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // ds
   //
@@ -7412,7 +7443,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_sway: public ::xml_schema::type
   ds (const ds_type& x);
 
   void
-  ds (::std::auto_ptr< ds_type > p);
+  ds (::std::unique_ptr< ds_type > p);
 
   // a
   //
@@ -7587,7 +7618,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -7604,7 +7635,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // width
   //
@@ -7621,7 +7652,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type: public ::xml_schema::type
   width (const width_type& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // Constructors.
   //
@@ -7718,7 +7749,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // length
   //
@@ -7735,7 +7766,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // space
   //
@@ -7752,7 +7783,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   space (const space_type& x);
 
   void
-  space (::std::auto_ptr< space_type > p);
+  space (::std::unique_ptr< space_type > p);
 
   // tOffset
   //
@@ -7783,7 +7814,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // rule
   //
@@ -7804,7 +7835,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   rule (const rule_optional& x);
 
   void
-  rule (::std::auto_ptr< rule_type > p);
+  rule (::std::unique_ptr< rule_type > p);
 
   // width
   //
@@ -7821,7 +7852,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   width (const width_type& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // color
   //
@@ -7842,7 +7873,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_type_line: public ::xml_schema:
   color (const color_optional& x);
 
   void
-  color (::std::auto_ptr< color_type > p);
+  color (::std::unique_ptr< color_type > p);
 
   // Constructors.
   //
@@ -7963,7 +7994,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_explicit: public ::xml_schema::
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -8057,7 +8088,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line: public ::xml_sch
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // length
   //
@@ -8074,7 +8105,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line: public ::xml_sch
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // tOffset
   //
@@ -8105,7 +8136,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line: public ::xml_sch
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // rule
   //
@@ -8126,7 +8157,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line: public ::xml_sch
   rule (const rule_optional& x);
 
   void
-  rule (::std::auto_ptr< rule_type > p);
+  rule (::std::unique_ptr< rule_type > p);
 
   // width
   //
@@ -8143,7 +8174,7 @@ class t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line: public ::xml_sch
   width (const width_type& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // Constructors.
   //
@@ -8244,7 +8275,7 @@ class t_road_lanes_laneSection_lr_lane_material: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -8261,7 +8292,7 @@ class t_road_lanes_laneSection_lr_lane_material: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // surface
   //
@@ -8282,7 +8313,7 @@ class t_road_lanes_laneSection_lr_lane_material: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // friction
   //
@@ -8299,7 +8330,7 @@ class t_road_lanes_laneSection_lr_lane_material: public ::xml_schema::type
   friction (const friction_type& x);
 
   void
-  friction (::std::auto_ptr< friction_type > p);
+  friction (::std::unique_ptr< friction_type > p);
 
   // roughness
   //
@@ -8320,7 +8351,7 @@ class t_road_lanes_laneSection_lr_lane_material: public ::xml_schema::type
   roughness (const roughness_optional& x);
 
   void
-  roughness (::std::auto_ptr< roughness_type > p);
+  roughness (::std::unique_ptr< roughness_type > p);
 
   // Constructors.
   //
@@ -8418,7 +8449,7 @@ class t_road_lanes_laneSection_lr_lane_visibility: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -8435,7 +8466,7 @@ class t_road_lanes_laneSection_lr_lane_visibility: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // forward
   //
@@ -8452,7 +8483,7 @@ class t_road_lanes_laneSection_lr_lane_visibility: public ::xml_schema::type
   forward (const forward_type& x);
 
   void
-  forward (::std::auto_ptr< forward_type > p);
+  forward (::std::unique_ptr< forward_type > p);
 
   // back
   //
@@ -8469,7 +8500,7 @@ class t_road_lanes_laneSection_lr_lane_visibility: public ::xml_schema::type
   back (const back_type& x);
 
   void
-  back (::std::auto_ptr< back_type > p);
+  back (::std::unique_ptr< back_type > p);
 
   // left
   //
@@ -8486,7 +8517,7 @@ class t_road_lanes_laneSection_lr_lane_visibility: public ::xml_schema::type
   left (const left_type& x);
 
   void
-  left (::std::auto_ptr< left_type > p);
+  left (::std::unique_ptr< left_type > p);
 
   // right
   //
@@ -8503,7 +8534,7 @@ class t_road_lanes_laneSection_lr_lane_visibility: public ::xml_schema::type
   right (const right_type& x);
 
   void
-  right (::std::auto_ptr< right_type > p);
+  right (::std::unique_ptr< right_type > p);
 
   // Constructors.
   //
@@ -8605,7 +8636,7 @@ class t_road_lanes_laneSection_lr_lane_speed: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -8622,7 +8653,7 @@ class t_road_lanes_laneSection_lr_lane_speed: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // max
   //
@@ -8630,16 +8661,16 @@ class t_road_lanes_laneSection_lr_lane_speed: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< max_type, char > max_traits;
 
   const max_type&
-  max () const;
+  fmax () const;
 
   max_type&
-  max ();
+  fmax ();
 
   void
-  max (const max_type& x);
+  fmax (const max_type& x);
 
   void
-  max (::std::auto_ptr< max_type > p);
+  fmax (::std::unique_ptr< max_type > p);
 
   // unit
   //
@@ -8660,7 +8691,7 @@ class t_road_lanes_laneSection_lr_lane_speed: public ::xml_schema::type
   unit (const unit_optional& x);
 
   void
-  unit (::std::auto_ptr< unit_type > p);
+  unit (::std::unique_ptr< unit_type > p);
 
   // Constructors.
   //
@@ -8697,7 +8728,7 @@ class t_road_lanes_laneSection_lr_lane_speed: public ::xml_schema::type
   include_sequence include_;
   dataQuality_optional dataQuality_;
   ::xsd::cxx::tree::one< sOffset_type > sOffset_;
-  ::xsd::cxx::tree::one< max_type > max_;
+  ::xsd::cxx::tree::one< max_type > fmax_;
   unit_optional unit_;
 };
 
@@ -8757,7 +8788,7 @@ class t_road_lanes_laneSection_lr_lane_access: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -8774,7 +8805,7 @@ class t_road_lanes_laneSection_lr_lane_access: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // rule
   //
@@ -8791,7 +8822,7 @@ class t_road_lanes_laneSection_lr_lane_access: public ::xml_schema::type
   rule (const rule_type& x);
 
   void
-  rule (::std::auto_ptr< rule_type > p);
+  rule (::std::unique_ptr< rule_type > p);
 
   // restriction
   //
@@ -8808,7 +8839,7 @@ class t_road_lanes_laneSection_lr_lane_access: public ::xml_schema::type
   restriction (const restriction_type& x);
 
   void
-  restriction (::std::auto_ptr< restriction_type > p);
+  restriction (::std::unique_ptr< restriction_type > p);
 
   // Constructors.
   //
@@ -8962,7 +8993,7 @@ class t_road_lanes_laneSection_lr_lane_height: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -8979,7 +9010,7 @@ class t_road_lanes_laneSection_lr_lane_height: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // inner
   //
@@ -9105,7 +9136,7 @@ class t_road_lanes_laneSection_lr_lane_rule: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // sOffset
   //
@@ -9122,7 +9153,7 @@ class t_road_lanes_laneSection_lr_lane_rule: public ::xml_schema::type
   sOffset (const sOffset_type& x);
 
   void
-  sOffset (::std::auto_ptr< sOffset_type > p);
+  sOffset (::std::unique_ptr< sOffset_type > p);
 
   // value
   //
@@ -9139,7 +9170,7 @@ class t_road_lanes_laneSection_lr_lane_rule: public ::xml_schema::type
   value (const value_type& x);
 
   void
-  value (::std::auto_ptr< value_type > p);
+  value (::std::unique_ptr< value_type > p);
 
   // Constructors.
   //
@@ -9303,7 +9334,7 @@ class t_road_objects: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -9366,7 +9397,7 @@ class t_road_objects_object: public ::xml_schema::type
   repeat (const repeat_optional& x);
 
   void
-  repeat (::std::auto_ptr< repeat_type > p);
+  repeat (::std::unique_ptr< repeat_type > p);
 
   // outline
   //
@@ -9387,7 +9418,7 @@ class t_road_objects_object: public ::xml_schema::type
   outline (const outline_optional& x);
 
   void
-  outline (::std::auto_ptr< outline_type > p);
+  outline (::std::unique_ptr< outline_type > p);
 
   // outlines
   //
@@ -9408,7 +9439,7 @@ class t_road_objects_object: public ::xml_schema::type
   outlines (const outlines_optional& x);
 
   void
-  outlines (::std::auto_ptr< outlines_type > p);
+  outlines (::std::unique_ptr< outlines_type > p);
 
   // material
   //
@@ -9463,7 +9494,7 @@ class t_road_objects_object: public ::xml_schema::type
   parkingSpace (const parkingSpace_optional& x);
 
   void
-  parkingSpace (::std::auto_ptr< parkingSpace_type > p);
+  parkingSpace (::std::unique_ptr< parkingSpace_type > p);
 
   // markings
   //
@@ -9484,7 +9515,7 @@ class t_road_objects_object: public ::xml_schema::type
   markings (const markings_optional& x);
 
   void
-  markings (::std::auto_ptr< markings_type > p);
+  markings (::std::unique_ptr< markings_type > p);
 
   // borders
   //
@@ -9505,7 +9536,7 @@ class t_road_objects_object: public ::xml_schema::type
   borders (const borders_optional& x);
 
   void
-  borders (::std::auto_ptr< borders_type > p);
+  borders (::std::unique_ptr< borders_type > p);
 
   // userData
   //
@@ -9560,7 +9591,7 @@ class t_road_objects_object: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // type
   //
@@ -9581,7 +9612,7 @@ class t_road_objects_object: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // subtype
   //
@@ -9602,7 +9633,7 @@ class t_road_objects_object: public ::xml_schema::type
   subtype (const subtype_optional& x);
 
   void
-  subtype (::std::auto_ptr< subtype_type > p);
+  subtype (::std::unique_ptr< subtype_type > p);
 
   // dynamic
   //
@@ -9619,7 +9650,7 @@ class t_road_objects_object: public ::xml_schema::type
   dynamic (const dynamic_type& x);
 
   void
-  dynamic (::std::auto_ptr< dynamic_type > p);
+  dynamic (::std::unique_ptr< dynamic_type > p);
 
   // name
   //
@@ -9640,7 +9671,7 @@ class t_road_objects_object: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -9657,7 +9688,7 @@ class t_road_objects_object: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // s
   //
@@ -9674,7 +9705,7 @@ class t_road_objects_object: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -9719,7 +9750,7 @@ class t_road_objects_object: public ::xml_schema::type
   validLength (const validLength_type& x);
 
   void
-  validLength (::std::auto_ptr< validLength_type > p);
+  validLength (::std::unique_ptr< validLength_type > p);
 
   // orientation
   //
@@ -9736,7 +9767,7 @@ class t_road_objects_object: public ::xml_schema::type
   orientation (const orientation_type& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // hdg
   //
@@ -9974,7 +10005,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -9991,7 +10022,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // length
   //
@@ -10008,7 +10039,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // distance
   //
@@ -10025,7 +10056,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   distance (const distance_type& x);
 
   void
-  distance (::std::auto_ptr< distance_type > p);
+  distance (::std::unique_ptr< distance_type > p);
 
   // tStart
   //
@@ -10126,7 +10157,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   widthStart (const widthStart_type& x);
 
   void
-  widthStart (::std::auto_ptr< widthStart_type > p);
+  widthStart (::std::unique_ptr< widthStart_type > p);
 
   // widthEnd
   //
@@ -10143,7 +10174,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   widthEnd (const widthEnd_type& x);
 
   void
-  widthEnd (::std::auto_ptr< widthEnd_type > p);
+  widthEnd (::std::unique_ptr< widthEnd_type > p);
 
   // lengthStart
   //
@@ -10164,7 +10195,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   lengthStart (const lengthStart_optional& x);
 
   void
-  lengthStart (::std::auto_ptr< lengthStart_type > p);
+  lengthStart (::std::unique_ptr< lengthStart_type > p);
 
   // lengthEnd
   //
@@ -10185,7 +10216,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   lengthEnd (const lengthEnd_optional& x);
 
   void
-  lengthEnd (::std::auto_ptr< lengthEnd_type > p);
+  lengthEnd (::std::unique_ptr< lengthEnd_type > p);
 
   // radiusStart
   //
@@ -10206,7 +10237,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   radiusStart (const radiusStart_optional& x);
 
   void
-  radiusStart (::std::auto_ptr< radiusStart_type > p);
+  radiusStart (::std::unique_ptr< radiusStart_type > p);
 
   // radiusEnd
   //
@@ -10227,7 +10258,7 @@ class t_road_objects_object_repeat: public ::xml_schema::type
   radiusEnd (const radiusEnd_optional& x);
 
   void
-  radiusEnd (::std::auto_ptr< radiusEnd_type > p);
+  radiusEnd (::std::unique_ptr< radiusEnd_type > p);
 
   // Constructors.
   //
@@ -10362,7 +10393,7 @@ class t_road_objects_object_outlines: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -10490,7 +10521,7 @@ class t_road_objects_object_outlines_outline: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -10521,7 +10552,7 @@ class t_road_objects_object_outlines_outline: public ::xml_schema::type
   fillType (const fillType_type& x);
 
   void
-  fillType (::std::auto_ptr< fillType_type > p);
+  fillType (::std::unique_ptr< fillType_type > p);
 
   // outer
   //
@@ -10538,7 +10569,7 @@ class t_road_objects_object_outlines_outline: public ::xml_schema::type
   outer (const outer_type& x);
 
   void
-  outer (::std::auto_ptr< outer_type > p);
+  outer (::std::unique_ptr< outer_type > p);
 
   // closed
   //
@@ -10555,7 +10586,7 @@ class t_road_objects_object_outlines_outline: public ::xml_schema::type
   closed (const closed_type& x);
 
   void
-  closed (::std::auto_ptr< closed_type > p);
+  closed (::std::unique_ptr< closed_type > p);
 
   // laneType
   //
@@ -10572,7 +10603,7 @@ class t_road_objects_object_outlines_outline: public ::xml_schema::type
   laneType (const laneType_type& x);
 
   void
-  laneType (::std::auto_ptr< laneType_type > p);
+  laneType (::std::unique_ptr< laneType_type > p);
 
   // Constructors.
   //
@@ -10676,7 +10707,7 @@ class t_road_objects_object_outlines_outline_cornerRoad: public ::xml_schema::ty
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -10693,7 +10724,7 @@ class t_road_objects_object_outlines_outline_cornerRoad: public ::xml_schema::ty
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -10851,7 +10882,7 @@ class t_road_objects_object_outlines_outline_cornerLocal: public ::xml_schema::t
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // u
   //
@@ -11023,7 +11054,7 @@ class t_road_objects_object_material: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // surface
   //
@@ -11044,7 +11075,7 @@ class t_road_objects_object_material: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // friction
   //
@@ -11065,7 +11096,7 @@ class t_road_objects_object_material: public ::xml_schema::type
   friction (const friction_optional& x);
 
   void
-  friction (::std::auto_ptr< friction_type > p);
+  friction (::std::unique_ptr< friction_type > p);
 
   // roughness
   //
@@ -11086,7 +11117,7 @@ class t_road_objects_object_material: public ::xml_schema::type
   roughness (const roughness_optional& x);
 
   void
-  roughness (::std::auto_ptr< roughness_type > p);
+  roughness (::std::unique_ptr< roughness_type > p);
 
   // Constructors.
   //
@@ -11182,7 +11213,7 @@ class t_road_objects_object_laneValidity: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // fromLane
   //
@@ -11306,7 +11337,7 @@ class t_road_objects_object_parkingSpace: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // access
   //
@@ -11314,16 +11345,16 @@ class t_road_objects_object_parkingSpace: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< access_type, char > access_traits;
 
   const access_type&
-  parkingSpace_access () const;
+  access () const;
 
   access_type&
-  parkingSpace_access ();
+  access ();
 
   void
-  parkingSpace_access (const access_type& x);
+  access (const access_type& x);
 
   void
-  parkingSpace_access (::std::auto_ptr< access_type > p);
+  access (::std::unique_ptr< access_type > p);
 
   // restrictions
   //
@@ -11344,7 +11375,7 @@ class t_road_objects_object_parkingSpace: public ::xml_schema::type
   restrictions (const restrictions_optional& x);
 
   void
-  restrictions (::std::auto_ptr< restrictions_type > p);
+  restrictions (::std::unique_ptr< restrictions_type > p);
 
   // Constructors.
   //
@@ -11379,7 +11410,7 @@ class t_road_objects_object_parkingSpace: public ::xml_schema::type
   userData_sequence userData_;
   include_sequence include_;
   dataQuality_optional dataQuality_;
-  ::xsd::cxx::tree::one< access_type > parkingSpace_access_;
+  ::xsd::cxx::tree::one< access_type > access_;
   restrictions_optional restrictions_;
 };
 
@@ -11518,7 +11549,7 @@ class t_road_objects_object_markings: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -11629,7 +11660,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // side
   //
@@ -11646,7 +11677,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   side (const side_type& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // weight
   //
@@ -11663,7 +11694,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   weight (const weight_type& x);
 
   void
-  weight (::std::auto_ptr< weight_type > p);
+  weight (::std::unique_ptr< weight_type > p);
 
   // width
   //
@@ -11684,7 +11715,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   width (const width_optional& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // color
   //
@@ -11701,7 +11732,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   color (const color_type& x);
 
   void
-  color (::std::auto_ptr< color_type > p);
+  color (::std::unique_ptr< color_type > p);
 
   // zOffset
   //
@@ -11722,7 +11753,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   zOffset (const zOffset_optional& x);
 
   void
-  zOffset (::std::auto_ptr< zOffset_type > p);
+  zOffset (::std::unique_ptr< zOffset_type > p);
 
   // spaceLength
   //
@@ -11739,7 +11770,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   spaceLength (const spaceLength_type& x);
 
   void
-  spaceLength (::std::auto_ptr< spaceLength_type > p);
+  spaceLength (::std::unique_ptr< spaceLength_type > p);
 
   // lineLength
   //
@@ -11756,7 +11787,7 @@ class t_road_objects_object_markings_marking: public ::xml_schema::type
   lineLength (const lineLength_type& x);
 
   void
-  lineLength (::std::auto_ptr< lineLength_type > p);
+  lineLength (::std::unique_ptr< lineLength_type > p);
 
   // startOffset
   //
@@ -11893,7 +11924,7 @@ class t_road_objects_object_markings_marking_cornerReference: public ::xml_schem
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -12018,7 +12049,7 @@ class t_road_objects_object_borders: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -12129,7 +12160,7 @@ class t_road_objects_object_borders_border: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // width
   //
@@ -12146,7 +12177,7 @@ class t_road_objects_object_borders_border: public ::xml_schema::type
   width (const width_type& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // type
   //
@@ -12163,7 +12194,7 @@ class t_road_objects_object_borders_border: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // outlineId
   //
@@ -12198,7 +12229,7 @@ class t_road_objects_object_borders_border: public ::xml_schema::type
   useCompleteOutline (const useCompleteOutline_optional& x);
 
   void
-  useCompleteOutline (::std::auto_ptr< useCompleteOutline_type > p);
+  useCompleteOutline (::std::unique_ptr< useCompleteOutline_type > p);
 
   // Constructors.
   //
@@ -12315,7 +12346,7 @@ class t_road_objects_objectReference: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -12332,7 +12363,7 @@ class t_road_objects_objectReference: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -12363,7 +12394,7 @@ class t_road_objects_objectReference: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // zOffset
   //
@@ -12394,7 +12425,7 @@ class t_road_objects_objectReference: public ::xml_schema::type
   validLength (const validLength_type& x);
 
   void
-  validLength (::std::auto_ptr< validLength_type > p);
+  validLength (::std::unique_ptr< validLength_type > p);
 
   // orientation
   //
@@ -12411,7 +12442,7 @@ class t_road_objects_objectReference: public ::xml_schema::type
   orientation (const orientation_type& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // Constructors.
   //
@@ -12533,7 +12564,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -12550,7 +12581,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // length
   //
@@ -12567,7 +12598,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // name
   //
@@ -12588,7 +12619,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -12605,7 +12636,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -12622,7 +12653,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // lighting
   //
@@ -12643,7 +12674,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   lighting (const lighting_optional& x);
 
   void
-  lighting (::std::auto_ptr< lighting_type > p);
+  lighting (::std::unique_ptr< lighting_type > p);
 
   // daylight
   //
@@ -12664,7 +12695,7 @@ class t_road_objects_tunnel: public ::xml_schema::type
   daylight (const daylight_optional& x);
 
   void
-  daylight (::std::auto_ptr< daylight_type > p);
+  daylight (::std::unique_ptr< daylight_type > p);
 
   // Constructors.
   //
@@ -12785,7 +12816,7 @@ class t_road_objects_bridge: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -12802,7 +12833,7 @@ class t_road_objects_bridge: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // length
   //
@@ -12819,7 +12850,7 @@ class t_road_objects_bridge: public ::xml_schema::type
   length (const length_type& x);
 
   void
-  length (::std::auto_ptr< length_type > p);
+  length (::std::unique_ptr< length_type > p);
 
   // name
   //
@@ -12840,7 +12871,7 @@ class t_road_objects_bridge: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -12857,7 +12888,7 @@ class t_road_objects_bridge: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -12874,7 +12905,7 @@ class t_road_objects_bridge: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -13010,7 +13041,7 @@ class t_road_signals: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -13122,7 +13153,7 @@ class t_road_signals_signal: public ::xml_schema::type
   positionRoad (const positionRoad_optional& x);
 
   void
-  positionRoad (::std::auto_ptr< positionRoad_type > p);
+  positionRoad (::std::unique_ptr< positionRoad_type > p);
 
   // positionInertial
   //
@@ -13143,7 +13174,7 @@ class t_road_signals_signal: public ::xml_schema::type
   positionInertial (const positionInertial_optional& x);
 
   void
-  positionInertial (::std::auto_ptr< positionInertial_type > p);
+  positionInertial (::std::unique_ptr< positionInertial_type > p);
 
   // userData
   //
@@ -13198,7 +13229,7 @@ class t_road_signals_signal: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -13215,7 +13246,7 @@ class t_road_signals_signal: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -13246,7 +13277,7 @@ class t_road_signals_signal: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // name
   //
@@ -13267,7 +13298,7 @@ class t_road_signals_signal: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // dynamic
   //
@@ -13284,7 +13315,7 @@ class t_road_signals_signal: public ::xml_schema::type
   dynamic (const dynamic_type& x);
 
   void
-  dynamic (::std::auto_ptr< dynamic_type > p);
+  dynamic (::std::unique_ptr< dynamic_type > p);
 
   // orientation
   //
@@ -13301,7 +13332,7 @@ class t_road_signals_signal: public ::xml_schema::type
   orientation (const orientation_type& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // zOffset
   //
@@ -13336,7 +13367,7 @@ class t_road_signals_signal: public ::xml_schema::type
   country (const country_optional& x);
 
   void
-  country (::std::auto_ptr< country_type > p);
+  country (::std::unique_ptr< country_type > p);
 
   // countryRevision
   //
@@ -13357,7 +13388,7 @@ class t_road_signals_signal: public ::xml_schema::type
   countryRevision (const countryRevision_optional& x);
 
   void
-  countryRevision (::std::auto_ptr< countryRevision_type > p);
+  countryRevision (::std::unique_ptr< countryRevision_type > p);
 
   // type
   //
@@ -13374,7 +13405,7 @@ class t_road_signals_signal: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // subtype
   //
@@ -13391,7 +13422,7 @@ class t_road_signals_signal: public ::xml_schema::type
   subtype (const subtype_type& x);
 
   void
-  subtype (::std::auto_ptr< subtype_type > p);
+  subtype (::std::unique_ptr< subtype_type > p);
 
   // value
   //
@@ -13430,7 +13461,7 @@ class t_road_signals_signal: public ::xml_schema::type
   unit (const unit_optional& x);
 
   void
-  unit (::std::auto_ptr< unit_type > p);
+  unit (::std::unique_ptr< unit_type > p);
 
   // height
   //
@@ -13447,7 +13478,7 @@ class t_road_signals_signal: public ::xml_schema::type
   height (const height_type& x);
 
   void
-  height (::std::auto_ptr< height_type > p);
+  height (::std::unique_ptr< height_type > p);
 
   // width
   //
@@ -13464,7 +13495,7 @@ class t_road_signals_signal: public ::xml_schema::type
   width (const width_type& x);
 
   void
-  width (::std::auto_ptr< width_type > p);
+  width (::std::unique_ptr< width_type > p);
 
   // text
   //
@@ -13485,7 +13516,7 @@ class t_road_signals_signal: public ::xml_schema::type
   text (const text_optional& x);
 
   void
-  text (::std::auto_ptr< text_type > p);
+  text (::std::unique_ptr< text_type > p);
 
   // hOffset
   //
@@ -13665,7 +13696,7 @@ class t_road_signals_signal_dependency: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -13682,7 +13713,7 @@ class t_road_signals_signal_dependency: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -13703,7 +13734,7 @@ class t_road_signals_signal_dependency: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -13798,7 +13829,7 @@ class t_road_signals_signal_reference: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // elementType
   //
@@ -13815,7 +13846,7 @@ class t_road_signals_signal_reference: public ::xml_schema::type
   elementType (const elementType_type& x);
 
   void
-  elementType (::std::auto_ptr< elementType_type > p);
+  elementType (::std::unique_ptr< elementType_type > p);
 
   // elementId
   //
@@ -13832,7 +13863,7 @@ class t_road_signals_signal_reference: public ::xml_schema::type
   elementId (const elementId_type& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // type
   //
@@ -13853,7 +13884,7 @@ class t_road_signals_signal_reference: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -14006,7 +14037,7 @@ class t_road_signals_signal_positionRoad: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // roadId
   //
@@ -14023,7 +14054,7 @@ class t_road_signals_signal_positionRoad: public ::xml_schema::type
   roadId (const roadId_type& x);
 
   void
-  roadId (::std::auto_ptr< roadId_type > p);
+  roadId (::std::unique_ptr< roadId_type > p);
 
   // s
   //
@@ -14040,7 +14071,7 @@ class t_road_signals_signal_positionRoad: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -14222,7 +14253,7 @@ class t_road_signals_signal_positionInertial: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // x
   //
@@ -14433,7 +14464,7 @@ class t_road_signals_signalReference: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // s
   //
@@ -14450,7 +14481,7 @@ class t_road_signals_signalReference: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // t
   //
@@ -14481,7 +14512,7 @@ class t_road_signals_signalReference: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // orientation
   //
@@ -14498,7 +14529,7 @@ class t_road_signals_signalReference: public ::xml_schema::type
   orientation (const orientation_type& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // Constructors.
   //
@@ -14616,7 +14647,7 @@ class t_road_surface: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -14710,7 +14741,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // file
   //
@@ -14727,7 +14758,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   file (const file_type& x);
 
   void
-  file (::std::auto_ptr< file_type > p);
+  file (::std::unique_ptr< file_type > p);
 
   // sStart
   //
@@ -14744,7 +14775,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   sStart (const sStart_type& x);
 
   void
-  sStart (::std::auto_ptr< sStart_type > p);
+  sStart (::std::unique_ptr< sStart_type > p);
 
   // sEnd
   //
@@ -14761,7 +14792,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   sEnd (const sEnd_type& x);
 
   void
-  sEnd (::std::auto_ptr< sEnd_type > p);
+  sEnd (::std::unique_ptr< sEnd_type > p);
 
   // orientation
   //
@@ -14778,7 +14809,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   orientation (const orientation_type& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // mode
   //
@@ -14795,7 +14826,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   mode (const mode_type& x);
 
   void
-  mode (::std::auto_ptr< mode_type > p);
+  mode (::std::unique_ptr< mode_type > p);
 
   // purpose
   //
@@ -14816,7 +14847,7 @@ class t_road_surface_CRG: public ::xml_schema::type
   purpose (const purpose_optional& x);
 
   void
-  purpose (::std::auto_ptr< purpose_type > p);
+  purpose (::std::unique_ptr< purpose_type > p);
 
   // sOffset
   //
@@ -15145,7 +15176,7 @@ class t_road_railroad: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -15201,7 +15232,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   mainTrack (const mainTrack_type& x);
 
   void
-  mainTrack (::std::auto_ptr< mainTrack_type > p);
+  mainTrack (::std::unique_ptr< mainTrack_type > p);
 
   // sideTrack
   //
@@ -15218,7 +15249,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   sideTrack (const sideTrack_type& x);
 
   void
-  sideTrack (::std::auto_ptr< sideTrack_type > p);
+  sideTrack (::std::unique_ptr< sideTrack_type > p);
 
   // partner
   //
@@ -15239,7 +15270,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   partner (const partner_optional& x);
 
   void
-  partner (::std::auto_ptr< partner_type > p);
+  partner (::std::unique_ptr< partner_type > p);
 
   // userData
   //
@@ -15294,7 +15325,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -15311,7 +15342,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -15328,7 +15359,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // position
   //
@@ -15345,7 +15376,7 @@ class t_road_railroad_switch: public ::xml_schema::type
   position (const position_type& x);
 
   void
-  position (::std::auto_ptr< position_type > p);
+  position (::std::unique_ptr< position_type > p);
 
   // Constructors.
   //
@@ -15355,8 +15386,8 @@ class t_road_railroad_switch: public ::xml_schema::type
                           const id_type&,
                           const position_type&);
 
-  t_road_railroad_switch (::std::auto_ptr< mainTrack_type >,
-                          ::std::auto_ptr< sideTrack_type >,
+  t_road_railroad_switch (::std::unique_ptr< mainTrack_type >,
+                          ::std::unique_ptr< sideTrack_type >,
                           const name_type&,
                           const id_type&,
                           const position_type&);
@@ -15511,7 +15542,7 @@ class t_road_railroad_switch_mainTrack: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -15528,7 +15559,7 @@ class t_road_railroad_switch_mainTrack: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // s
   //
@@ -15545,7 +15576,7 @@ class t_road_railroad_switch_mainTrack: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // dir
   //
@@ -15562,7 +15593,7 @@ class t_road_railroad_switch_mainTrack: public ::xml_schema::type
   dir (const dir_type& x);
 
   void
-  dir (::std::auto_ptr< dir_type > p);
+  dir (::std::unique_ptr< dir_type > p);
 
   // Constructors.
   //
@@ -15660,7 +15691,7 @@ class t_road_railroad_switch_sideTrack: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -15677,7 +15708,7 @@ class t_road_railroad_switch_sideTrack: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // s
   //
@@ -15694,7 +15725,7 @@ class t_road_railroad_switch_sideTrack: public ::xml_schema::type
   s (const s_type& x);
 
   void
-  s (::std::auto_ptr< s_type > p);
+  s (::std::unique_ptr< s_type > p);
 
   // dir
   //
@@ -15711,7 +15742,7 @@ class t_road_railroad_switch_sideTrack: public ::xml_schema::type
   dir (const dir_type& x);
 
   void
-  dir (::std::auto_ptr< dir_type > p);
+  dir (::std::unique_ptr< dir_type > p);
 
   // Constructors.
   //
@@ -15809,7 +15840,7 @@ class t_road_railroad_switch_partner: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -15830,7 +15861,7 @@ class t_road_railroad_switch_partner: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -15847,7 +15878,7 @@ class t_road_railroad_switch_partner: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // Constructors.
   //
@@ -15959,7 +15990,7 @@ class t_controller: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -15976,7 +16007,7 @@ class t_controller: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // name
   //
@@ -15997,7 +16028,7 @@ class t_controller: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // sequence
   //
@@ -16112,7 +16143,7 @@ class t_controller_control: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // signalId
   //
@@ -16129,7 +16160,7 @@ class t_controller_control: public ::xml_schema::type
   signalId (const signalId_type& x);
 
   void
-  signalId (::std::auto_ptr< signalId_type > p);
+  signalId (::std::unique_ptr< signalId_type > p);
 
   // type
   //
@@ -16150,7 +16181,7 @@ class t_controller_control: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -16262,7 +16293,7 @@ class t_junction: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // userData
   //
@@ -16317,7 +16348,7 @@ class t_junction: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -16338,7 +16369,7 @@ class t_junction: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -16355,7 +16386,7 @@ class t_junction: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -16376,7 +16407,7 @@ class t_junction: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -16498,7 +16529,7 @@ class t_junction_connection: public ::xml_schema::type
   predecessor (const predecessor_optional& x);
 
   void
-  predecessor (::std::auto_ptr< predecessor_type > p);
+  predecessor (::std::unique_ptr< predecessor_type > p);
 
   // successor
   //
@@ -16519,7 +16550,7 @@ class t_junction_connection: public ::xml_schema::type
   successor (const successor_optional& x);
 
   void
-  successor (::std::auto_ptr< successor_type > p);
+  successor (::std::unique_ptr< successor_type > p);
 
   // laneLink
   //
@@ -16591,7 +16622,7 @@ class t_junction_connection: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -16608,7 +16639,7 @@ class t_junction_connection: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // incomingRoad
   //
@@ -16625,7 +16656,7 @@ class t_junction_connection: public ::xml_schema::type
   incomingRoad (const incomingRoad_type& x);
 
   void
-  incomingRoad (::std::auto_ptr< incomingRoad_type > p);
+  incomingRoad (::std::unique_ptr< incomingRoad_type > p);
 
   // connectingRoad
   //
@@ -16642,7 +16673,7 @@ class t_junction_connection: public ::xml_schema::type
   connectingRoad (const connectingRoad_type& x);
 
   void
-  connectingRoad (::std::auto_ptr< connectingRoad_type > p);
+  connectingRoad (::std::unique_ptr< connectingRoad_type > p);
 
   // contactPoint
   //
@@ -16659,7 +16690,7 @@ class t_junction_connection: public ::xml_schema::type
   contactPoint (const contactPoint_type& x);
 
   void
-  contactPoint (::std::auto_ptr< contactPoint_type > p);
+  contactPoint (::std::unique_ptr< contactPoint_type > p);
 
   // connectionMaster
   //
@@ -16680,7 +16711,7 @@ class t_junction_connection: public ::xml_schema::type
   connectionMaster (const connectionMaster_optional& x);
 
   void
-  connectionMaster (::std::auto_ptr< connectionMaster_type > p);
+  connectionMaster (::std::unique_ptr< connectionMaster_type > p);
 
   // type
   //
@@ -16701,7 +16732,7 @@ class t_junction_connection: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -16806,7 +16837,7 @@ class t_junction_predecessorSuccessor: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // elementType
   //
@@ -16834,7 +16865,7 @@ class t_junction_predecessorSuccessor: public ::xml_schema::type
   elementId (const elementId_type& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // elementS
   //
@@ -16851,7 +16882,7 @@ class t_junction_predecessorSuccessor: public ::xml_schema::type
   elementS (const elementS_type& x);
 
   void
-  elementS (::std::auto_ptr< elementS_type > p);
+  elementS (::std::unique_ptr< elementS_type > p);
 
   // elementDir
   //
@@ -16868,7 +16899,7 @@ class t_junction_predecessorSuccessor: public ::xml_schema::type
   elementDir (const elementDir_type& x);
 
   void
-  elementDir (::std::auto_ptr< elementDir_type > p);
+  elementDir (::std::unique_ptr< elementDir_type > p);
 
   // Constructors.
   //
@@ -16968,7 +16999,7 @@ class t_junction_connection_laneLink: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // from
   //
@@ -17092,7 +17123,7 @@ class t_junction_priority: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // high
   //
@@ -17113,7 +17144,7 @@ class t_junction_priority: public ::xml_schema::type
   high (const high_optional& x);
 
   void
-  high (::std::auto_ptr< high_type > p);
+  high (::std::unique_ptr< high_type > p);
 
   // low
   //
@@ -17134,7 +17165,7 @@ class t_junction_priority: public ::xml_schema::type
   low (const low_optional& x);
 
   void
-  low (::std::auto_ptr< low_type > p);
+  low (::std::unique_ptr< low_type > p);
 
   // Constructors.
   //
@@ -17229,7 +17260,7 @@ class t_junction_controller: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // id
   //
@@ -17246,7 +17277,7 @@ class t_junction_controller: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -17267,7 +17298,7 @@ class t_junction_controller: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // sequence
   //
@@ -17398,7 +17429,7 @@ class t_junction_surface: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
@@ -17492,7 +17523,7 @@ class t_junction_surface_CRG: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // file
   //
@@ -17509,7 +17540,7 @@ class t_junction_surface_CRG: public ::xml_schema::type
   file (const file_type& x);
 
   void
-  file (::std::auto_ptr< file_type > p);
+  file (::std::unique_ptr< file_type > p);
 
   // mode
   //
@@ -17541,7 +17572,7 @@ class t_junction_surface_CRG: public ::xml_schema::type
   purpose (const purpose_optional& x);
 
   void
-  purpose (::std::auto_ptr< purpose_type > p);
+  purpose (::std::unique_ptr< purpose_type > p);
 
   // zOffset
   //
@@ -17693,7 +17724,7 @@ class t_junctionGroup: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -17714,7 +17745,7 @@ class t_junctionGroup: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -17731,7 +17762,7 @@ class t_junctionGroup: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -17748,7 +17779,7 @@ class t_junctionGroup: public ::xml_schema::type
   type (const type_type& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -17902,7 +17933,7 @@ class t_junctionGroup_junctionReference: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // junction
   //
@@ -17919,7 +17950,7 @@ class t_junctionGroup_junctionReference: public ::xml_schema::type
   junction (const junction_type& x);
 
   void
-  junction (::std::auto_ptr< junction_type > p);
+  junction (::std::unique_ptr< junction_type > p);
 
   // Constructors.
   //
@@ -18030,7 +18061,7 @@ class t_station: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -18047,7 +18078,7 @@ class t_station: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -18064,7 +18095,7 @@ class t_station: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -18085,7 +18116,7 @@ class t_station: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -18132,7 +18163,7 @@ class e_station_type: public ::xml_schema::string
   public:
   enum value
   {
-    small,
+    smaller,
     medium,
     large
   };
@@ -18257,7 +18288,7 @@ class t_station_platform: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // name
   //
@@ -18278,7 +18309,7 @@ class t_station_platform: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -18295,7 +18326,7 @@ class t_station_platform: public ::xml_schema::type
   id (const id_type& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // Constructors.
   //
@@ -18391,7 +18422,7 @@ class t_station_platform_segment: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // roadId
   //
@@ -18408,7 +18439,7 @@ class t_station_platform_segment: public ::xml_schema::type
   roadId (const roadId_type& x);
 
   void
-  roadId (::std::auto_ptr< roadId_type > p);
+  roadId (::std::unique_ptr< roadId_type > p);
 
   // sStart
   //
@@ -18425,7 +18456,7 @@ class t_station_platform_segment: public ::xml_schema::type
   sStart (const sStart_type& x);
 
   void
-  sStart (::std::auto_ptr< sStart_type > p);
+  sStart (::std::unique_ptr< sStart_type > p);
 
   // sEnd
   //
@@ -18442,7 +18473,7 @@ class t_station_platform_segment: public ::xml_schema::type
   sEnd (const sEnd_type& x);
 
   void
-  sEnd (::std::auto_ptr< sEnd_type > p);
+  sEnd (::std::unique_ptr< sEnd_type > p);
 
   // side
   //
@@ -18459,7 +18490,7 @@ class t_station_platform_segment: public ::xml_schema::type
   side (const side_type& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // Constructors.
   //
@@ -18577,7 +18608,7 @@ class t_userData: public ::xml_schema::type
   code (const code_type& x);
 
   void
-  code (::std::auto_ptr< code_type > p);
+  code (::std::unique_ptr< code_type > p);
 
   // value
   //
@@ -18594,7 +18625,7 @@ class t_userData: public ::xml_schema::type
   value (const value_type& x);
 
   void
-  value (::std::auto_ptr< value_type > p);
+  value (::std::unique_ptr< value_type > p);
 
   // Constructors.
   //
@@ -18649,7 +18680,7 @@ class t_include: public ::xml_schema::type
   file (const file_type& x);
 
   void
-  file (::std::auto_ptr< file_type > p);
+  file (::std::unique_ptr< file_type > p);
 
   // Constructors.
   //
@@ -18706,7 +18737,7 @@ class t_dataQuality: public ::xml_schema::type
   error (const error_optional& x);
 
   void
-  error (::std::auto_ptr< error_type > p);
+  error (::std::unique_ptr< error_type > p);
 
   // rawData
   //
@@ -18727,7 +18758,7 @@ class t_dataQuality: public ::xml_schema::type
   rawData (const rawData_optional& x);
 
   void
-  rawData (::std::auto_ptr< rawData_type > p);
+  rawData (::std::unique_ptr< rawData_type > p);
 
   // Constructors.
   //
@@ -18879,7 +18910,7 @@ class t_dataQuality_RawData: public ::xml_schema::type
   date (const date_type& x);
 
   void
-  date (::std::auto_ptr< date_type > p);
+  date (::std::unique_ptr< date_type > p);
 
   // source
   //
@@ -18896,7 +18927,7 @@ class t_dataQuality_RawData: public ::xml_schema::type
   source (const source_type& x);
 
   void
-  source (::std::auto_ptr< source_type > p);
+  source (::std::unique_ptr< source_type > p);
 
   // sourceComment
   //
@@ -18917,7 +18948,7 @@ class t_dataQuality_RawData: public ::xml_schema::type
   sourceComment (const sourceComment_optional& x);
 
   void
-  sourceComment (::std::auto_ptr< sourceComment_type > p);
+  sourceComment (::std::unique_ptr< sourceComment_type > p);
 
   // postProcessing
   //
@@ -18934,7 +18965,7 @@ class t_dataQuality_RawData: public ::xml_schema::type
   postProcessing (const postProcessing_type& x);
 
   void
-  postProcessing (::std::auto_ptr< postProcessing_type > p);
+  postProcessing (::std::unique_ptr< postProcessing_type > p);
 
   // postProcessingComment
   //
@@ -18955,7 +18986,7 @@ class t_dataQuality_RawData: public ::xml_schema::type
   postProcessingComment (const postProcessingComment_optional& x);
 
   void
-  postProcessingComment (::std::auto_ptr< postProcessingComment_type > p);
+  postProcessingComment (::std::unique_ptr< postProcessingComment_type > p);
 
   // Constructors.
   //
@@ -20600,7 +20631,7 @@ class OpenDRIVE: public ::xml_schema::type
   header (const header_type& x);
 
   void
-  header (::std::auto_ptr< header_type > p);
+  header (::std::unique_ptr< header_type > p);
 
   // road
   //
@@ -20740,13 +20771,13 @@ class OpenDRIVE: public ::xml_schema::type
   dataQuality (const dataQuality_optional& x);
 
   void
-  dataQuality (::std::auto_ptr< dataQuality_type > p);
+  dataQuality (::std::unique_ptr< dataQuality_type > p);
 
   // Constructors.
   //
   OpenDRIVE (const header_type&);
 
-  OpenDRIVE (::std::auto_ptr< header_type >);
+  OpenDRIVE (::std::unique_ptr< header_type >);
 
   OpenDRIVE (const ::xercesc::DOMElement& e,
              ::xml_schema::flags f = 0,
@@ -20794,18 +20825,18 @@ class OpenDRIVE: public ::xml_schema::type
 // Parse a URI or a local file.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& uri,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& uri,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& uri,
             ::xercesc::DOMErrorHandler& eh,
             ::xml_schema::flags f = 0,
@@ -20814,37 +20845,37 @@ OpenDRIVE_ (const ::std::string& uri,
 // Parse std::istream.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xercesc::DOMErrorHandler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& id,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& id,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& id,
             ::xercesc::DOMErrorHandler& eh,
@@ -20854,18 +20885,18 @@ OpenDRIVE_ (::std::istream& is,
 // Parse xercesc::InputSource.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& is,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& is,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& is,
             ::xercesc::DOMErrorHandler& eh,
             ::xml_schema::flags f = 0,
@@ -20874,15 +20905,914 @@ OpenDRIVE_ (::xercesc::InputSource& is,
 // Parse xercesc::DOMDocument.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::xercesc::DOMDocument& d,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
-OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
+::std::unique_ptr< ::OpenDRIVE >
+OpenDRIVE_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+#include <iosfwd>
+
+#include <xercesc/dom/DOMDocument.hpp>
+#include <xercesc/dom/DOMErrorHandler.hpp>
+#include <xercesc/framework/XMLFormatter.hpp>
+
+#include <xsd/cxx/xml/dom/auto-ptr.hxx>
+
+void
+operator<< (::xercesc::DOMElement&, const t_grEqZero&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_grEqZero&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_grEqZero&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_grZero&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_grZero&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_grZero&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_zeroOne&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_zeroOne&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_zeroOne&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_bool&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_bool&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_bool&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_yesNo&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_yesNo&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_yesNo&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_header_Version&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_header_Version&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_header_Version&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_maxSpeed&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_maxSpeed&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_maxSpeed&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_maxSpeedString&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_maxSpeedString&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_maxSpeedString&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_id&);
+
+void
+operator<< (::xercesc::DOMAttr&, const t_junction_id&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const t_junction_id&);
+
+// Serialize to std::ostream.
+//
+
+void
+OpenDRIVE_ (::std::ostream& os,
+            const ::OpenDRIVE& x, 
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+OpenDRIVE_ (::std::ostream& os,
+            const ::OpenDRIVE& x, 
+            ::xml_schema::error_handler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+OpenDRIVE_ (::std::ostream& os,
+            const ::OpenDRIVE& x, 
+            ::xercesc::DOMErrorHandler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+OpenDRIVE_ (::xercesc::XMLFormatTarget& ft,
+            const ::OpenDRIVE& x, 
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+OpenDRIVE_ (::xercesc::XMLFormatTarget& ft,
+            const ::OpenDRIVE& x, 
+            ::xml_schema::error_handler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+OpenDRIVE_ (::xercesc::XMLFormatTarget& ft,
+            const ::OpenDRIVE& x, 
+            ::xercesc::DOMErrorHandler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+OpenDRIVE_ (::xercesc::DOMDocument& d,
+            const ::OpenDRIVE& x,
+            ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+OpenDRIVE_ (const ::OpenDRIVE& x, 
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            ::xml_schema::flags f = 0);
+
+void
+operator<< (::xercesc::DOMElement&, const t_header&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_header_GeoReference&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_header_Offset&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_trafficRule&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_trafficRule&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_trafficRule&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_link&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_link_predecessorSuccessor&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_link_elementType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_link_elementType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_link_elementType&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_link_neighbor&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_link_neighbor_side&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_link_neighbor_side&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_link_neighbor_side&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_type&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_type_speed&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView_geometry&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView_geometry_line&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView_geometry_spiral&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView_geometry_arc&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView_geometry_poly3&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_planView_geometry_paramPoly3&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_paramPoly3_pRange&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_paramPoly3_pRange&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_paramPoly3_pRange&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_elevationProfile&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_elevationProfile_elevation&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lateralProfile&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lateralProfile_superelevation&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lateralProfile_crossfall&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_lateralProfile_crossfall_side&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_lateralProfile_crossfall_side&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_lateralProfile_crossfall_side&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lateralProfile_shape&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneOffset&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_left&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_center&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_right&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_center_lane&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_left_lane&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_right_lane&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_link&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_width&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_border&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_roadMark&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_lanes_laneSection_lcr_lane_roadMark_laneChange&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_lanes_laneSection_lcr_lane_roadMark_laneChange&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_lanes_laneSection_lcr_lane_roadMark_laneChange&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_roadMark_sway&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_roadMark_type&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_roadMark_type_line&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_roadMark_explicit&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_material&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_visibility&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_speed&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_access&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_lanes_laneSection_lr_lane_access_rule&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_lanes_laneSection_lr_lane_access_rule&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_lanes_laneSection_lr_lane_access_rule&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_height&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_lanes_laneSection_lr_lane_rule&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_repeat&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_outlines&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_outlines_outline&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_outlines_outline_cornerRoad&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_outlines_outline_cornerLocal&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_material&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_laneValidity&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_parkingSpace&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_objects_object_parkingSpace_access&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_objects_object_parkingSpace_access&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_objects_object_parkingSpace_access&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_markings&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_markings_marking&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_markings_marking_cornerReference&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_borders&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_object_borders_border&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_objectReference&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_tunnel&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_objects_bridge&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals_signal&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals_signal_dependency&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals_signal_reference&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_signals_signal_reference_elementType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_signals_signal_reference_elementType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_signals_signal_reference_elementType&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals_signal_positionRoad&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals_signal_positionInertial&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_signals_signalReference&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_surface&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_surface_CRG&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_surface_CRG_purpose&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_surface_CRG_purpose&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_surface_CRG_purpose&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_surface_CRG_mode&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_surface_CRG_mode&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_surface_CRG_mode&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_railroad&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_railroad_switch&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_road_railroad_switch_position&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_road_railroad_switch_position&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_road_railroad_switch_position&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_railroad_switch_mainTrack&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_railroad_switch_sideTrack&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_road_railroad_switch_partner&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_controller&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_controller_control&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_junction_type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_junction_type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_junction_type&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_connection&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_predecessorSuccessor&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_connection_laneLink&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_priority&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_controller&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_surface&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junction_surface_CRG&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junctionGroup&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_junctionGroup_type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_junctionGroup_type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_junctionGroup_type&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_junctionGroup_junctionReference&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_station&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_station_type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_station_type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_station_type&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_station_platform&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_station_platform_segment&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_station_platform_segment_side&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_station_platform_segment_side&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_station_platform_segment_side&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_userData&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_include&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_dataQuality&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_dataQuality_Error&);
+
+void
+operator<< (::xercesc::DOMElement&, const t_dataQuality_RawData&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_dataQuality_RawData_Source&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_dataQuality_RawData_Source&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_dataQuality_RawData_Source&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_dataQuality_RawData_PostProcessing&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_dataQuality_RawData_PostProcessing&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_dataQuality_RawData_PostProcessing&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_unitDistance&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_unitDistance&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_unitDistance&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_unitSpeed&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_unitSpeed&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_unitSpeed&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_unitMass&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_unitMass&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_unitMass&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_unitSlope&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_unitSlope&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_unitSlope&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_unit&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_unit&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_unit&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_roadType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_roadType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_roadType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_roadMarkType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_roadMarkType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_roadMarkType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_roadMarkWeight&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_roadMarkWeight&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_roadMarkWeight&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_roadMarkColor&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_roadMarkColor&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_roadMarkColor&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_laneType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_laneType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_laneType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_objectType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_objectType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_objectType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_tunnelType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_tunnelType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_tunnelType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_bridgeType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_bridgeType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_bridgeType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_accessRestrictionType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_accessRestrictionType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_accessRestrictionType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_countryCode&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_countryCode&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_countryCode&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_countryCode_deprecated&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_countryCode_deprecated&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_countryCode_deprecated&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_countryCode_iso3166alpha3&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_countryCode_iso3166alpha3&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_countryCode_iso3166alpha3&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_sideType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_sideType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_sideType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_outlineFillType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_outlineFillType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_outlineFillType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_borderType&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_borderType&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_borderType&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_contactPoint&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_contactPoint&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_contactPoint&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_elementDir&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_elementDir&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_elementDir&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_direction&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_direction&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_direction&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_roadMarkRule&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_roadMarkRule&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_roadMarkRule&);
+
+void
+operator<< (::xercesc::DOMElement&, const e_orientation&);
+
+void
+operator<< (::xercesc::DOMAttr&, const e_orientation&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const e_orientation&);
+
+void
+operator<< (::xercesc::DOMElement&, const OpenDRIVE&);
 
 #include <xsd/cxx/post.hxx>
 
@@ -20891,4 +21821,4 @@ OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
 //
 // End epilogue.
 
-#endif // CXX______OPEN_DRIVE_1_5M_H
+#endif // OPEN_DRIVE_1_5M_H

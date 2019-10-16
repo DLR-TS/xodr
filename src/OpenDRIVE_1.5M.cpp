@@ -246,9 +246,9 @@ geoReference (const geoReference_optional& x)
 }
 
 void t_header::
-geoReference (::std::auto_ptr< geoReference_type > x)
+geoReference (::std::unique_ptr< geoReference_type > x)
 {
-  this->geoReference_.set (x);
+  this->geoReference_.set (std::move (x));
 }
 
 const t_header::offset_optional& t_header::
@@ -276,9 +276,9 @@ offset (const offset_optional& x)
 }
 
 void t_header::
-offset (::std::auto_ptr< offset_type > x)
+offset (::std::unique_ptr< offset_type > x)
 {
-  this->offset_.set (x);
+  this->offset_.set (std::move (x));
 }
 
 const t_header::userData_sequence& t_header::
@@ -342,9 +342,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_header::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_header::revMajor_type& t_header::
@@ -396,9 +396,9 @@ name (const name_optional& x)
 }
 
 void t_header::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_header::version_optional& t_header::
@@ -426,9 +426,9 @@ version (const version_optional& x)
 }
 
 void t_header::
-version (::std::auto_ptr< version_type > x)
+version (::std::unique_ptr< version_type > x)
 {
-  this->version_.set (x);
+  this->version_.set (std::move (x));
 }
 
 const t_header::date_optional& t_header::
@@ -456,9 +456,9 @@ date (const date_optional& x)
 }
 
 void t_header::
-date (::std::auto_ptr< date_type > x)
+date (::std::unique_ptr< date_type > x)
 {
-  this->date_.set (x);
+  this->date_.set (std::move (x));
 }
 
 const t_header::north_optional& t_header::
@@ -582,9 +582,9 @@ vendor (const vendor_optional& x)
 }
 
 void t_header::
-vendor (::std::auto_ptr< vendor_type > x)
+vendor (::std::unique_ptr< vendor_type > x)
 {
-  this->vendor_.set (x);
+  this->vendor_.set (std::move (x));
 }
 
 
@@ -652,9 +652,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_header_GeoReference::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -722,9 +722,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_header_Offset::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_header_Offset::x_type& t_header_Offset::
@@ -804,33 +804,33 @@ hdg (const hdg_type& x)
 // 
 
 const t_road::link_optional& t_road::
-lane_link () const
+link () const
 {
-  return this->lane_link_;
+  return this->link_;
 }
 
 t_road::link_optional& t_road::
-lane_link ()
+link ()
 {
-  return this->lane_link_;
+  return this->link_;
 }
 
 void t_road::
-lane_link (const link_type& x)
+link (const link_type& x)
 {
-  this->lane_link_.set (x);
+  this->link_.set (x);
 }
 
 void t_road::
-lane_link (const link_optional& x)
+link (const link_optional& x)
 {
-  this->lane_link_ = x;
+  this->link_ = x;
 }
 
 void t_road::
-lane_link (::std::auto_ptr< link_type > x)
+link (::std::unique_ptr< link_type > x)
 {
-  this->lane_link_.set (x);
+  this->link_.set (std::move (x));
 }
 
 const t_road::type_sequence& t_road::
@@ -870,9 +870,9 @@ planView (const planView_type& x)
 }
 
 void t_road::
-planView (::std::auto_ptr< planView_type > x)
+planView (::std::unique_ptr< planView_type > x)
 {
-  this->planView_.set (x);
+  this->planView_.set (std::move (x));
 }
 
 const t_road::elevationProfile_optional& t_road::
@@ -900,9 +900,9 @@ elevationProfile (const elevationProfile_optional& x)
 }
 
 void t_road::
-elevationProfile (::std::auto_ptr< elevationProfile_type > x)
+elevationProfile (::std::unique_ptr< elevationProfile_type > x)
 {
-  this->elevationProfile_.set (x);
+  this->elevationProfile_.set (std::move (x));
 }
 
 const t_road::lateralProfile_optional& t_road::
@@ -930,9 +930,9 @@ lateralProfile (const lateralProfile_optional& x)
 }
 
 void t_road::
-lateralProfile (::std::auto_ptr< lateralProfile_type > x)
+lateralProfile (::std::unique_ptr< lateralProfile_type > x)
 {
-  this->lateralProfile_.set (x);
+  this->lateralProfile_.set (std::move (x));
 }
 
 const t_road::lanes_type& t_road::
@@ -954,9 +954,9 @@ lanes (const lanes_type& x)
 }
 
 void t_road::
-lanes (::std::auto_ptr< lanes_type > x)
+lanes (::std::unique_ptr< lanes_type > x)
 {
-  this->lanes_.set (x);
+  this->lanes_.set (std::move (x));
 }
 
 const t_road::objects_optional& t_road::
@@ -984,9 +984,9 @@ objects (const objects_optional& x)
 }
 
 void t_road::
-objects (::std::auto_ptr< objects_type > x)
+objects (::std::unique_ptr< objects_type > x)
 {
-  this->objects_.set (x);
+  this->objects_.set (std::move (x));
 }
 
 const t_road::signals_optional& t_road::
@@ -1014,9 +1014,9 @@ signals (const signals_optional& x)
 }
 
 void t_road::
-signals (::std::auto_ptr< signals_type > x)
+signals (::std::unique_ptr< signals_type > x)
 {
-  this->signals_.set (x);
+  this->signals_.set (std::move (x));
 }
 
 const t_road::surface_optional& t_road::
@@ -1044,9 +1044,9 @@ surface (const surface_optional& x)
 }
 
 void t_road::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const t_road::railroad_optional& t_road::
@@ -1074,9 +1074,9 @@ railroad (const railroad_optional& x)
 }
 
 void t_road::
-railroad (::std::auto_ptr< railroad_type > x)
+railroad (::std::unique_ptr< railroad_type > x)
 {
-  this->railroad_.set (x);
+  this->railroad_.set (std::move (x));
 }
 
 const t_road::userData_sequence& t_road::
@@ -1140,9 +1140,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road::name_optional& t_road::
@@ -1170,9 +1170,9 @@ name (const name_optional& x)
 }
 
 void t_road::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road::length_type& t_road::
@@ -1194,9 +1194,9 @@ length (const length_type& x)
 }
 
 void t_road::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 const t_road::id_type& t_road::
@@ -1218,9 +1218,9 @@ id (const id_type& x)
 }
 
 void t_road::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road::junction_type& t_road::
@@ -1242,9 +1242,9 @@ junction (const junction_type& x)
 }
 
 void t_road::
-junction (::std::auto_ptr< junction_type > x)
+junction (::std::unique_ptr< junction_type > x)
 {
-  this->junction_.set (x);
+  this->junction_.set (std::move (x));
 }
 
 const t_road::rule_optional& t_road::
@@ -1272,9 +1272,9 @@ rule (const rule_optional& x)
 }
 
 void t_road::
-rule (::std::auto_ptr< rule_type > x)
+rule (::std::unique_ptr< rule_type > x)
 {
-  this->rule_.set (x);
+  this->rule_.set (std::move (x));
 }
 
 
@@ -1351,9 +1351,9 @@ predecessor (const predecessor_optional& x)
 }
 
 void t_road_link::
-predecessor (::std::auto_ptr< predecessor_type > x)
+predecessor (::std::unique_ptr< predecessor_type > x)
 {
-  this->predecessor_.set (x);
+  this->predecessor_.set (std::move (x));
 }
 
 const t_road_link::successor_optional& t_road_link::
@@ -1381,9 +1381,9 @@ successor (const successor_optional& x)
 }
 
 void t_road_link::
-successor (::std::auto_ptr< successor_type > x)
+successor (::std::unique_ptr< successor_type > x)
 {
-  this->successor_.set (x);
+  this->successor_.set (std::move (x));
 }
 
 const t_road_link::neighbor_sequence& t_road_link::
@@ -1465,9 +1465,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_link::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -1535,9 +1535,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_link_predecessorSuccessor::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_link_predecessorSuccessor::elementType_type& t_road_link_predecessorSuccessor::
@@ -1559,9 +1559,9 @@ elementType (const elementType_type& x)
 }
 
 void t_road_link_predecessorSuccessor::
-elementType (::std::auto_ptr< elementType_type > x)
+elementType (::std::unique_ptr< elementType_type > x)
 {
-  this->elementType_.set (x);
+  this->elementType_.set (std::move (x));
 }
 
 const t_road_link_predecessorSuccessor::elementId_type& t_road_link_predecessorSuccessor::
@@ -1583,9 +1583,9 @@ elementId (const elementId_type& x)
 }
 
 void t_road_link_predecessorSuccessor::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const t_road_link_predecessorSuccessor::contactPoint_optional& t_road_link_predecessorSuccessor::
@@ -1613,9 +1613,9 @@ contactPoint (const contactPoint_optional& x)
 }
 
 void t_road_link_predecessorSuccessor::
-contactPoint (::std::auto_ptr< contactPoint_type > x)
+contactPoint (::std::unique_ptr< contactPoint_type > x)
 {
-  this->contactPoint_.set (x);
+  this->contactPoint_.set (std::move (x));
 }
 
 const t_road_link_predecessorSuccessor::elementS_optional& t_road_link_predecessorSuccessor::
@@ -1643,9 +1643,9 @@ elementS (const elementS_optional& x)
 }
 
 void t_road_link_predecessorSuccessor::
-elementS (::std::auto_ptr< elementS_type > x)
+elementS (::std::unique_ptr< elementS_type > x)
 {
-  this->elementS_.set (x);
+  this->elementS_.set (std::move (x));
 }
 
 const t_road_link_predecessorSuccessor::elementDir_optional& t_road_link_predecessorSuccessor::
@@ -1673,9 +1673,9 @@ elementDir (const elementDir_optional& x)
 }
 
 void t_road_link_predecessorSuccessor::
-elementDir (::std::auto_ptr< elementDir_type > x)
+elementDir (::std::unique_ptr< elementDir_type > x)
 {
-  this->elementDir_.set (x);
+  this->elementDir_.set (std::move (x));
 }
 
 
@@ -1788,9 +1788,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_link_neighbor::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_link_neighbor::side_type& t_road_link_neighbor::
@@ -1812,9 +1812,9 @@ side (const side_type& x)
 }
 
 void t_road_link_neighbor::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 const t_road_link_neighbor::elementId_type& t_road_link_neighbor::
@@ -1836,9 +1836,9 @@ elementId (const elementId_type& x)
 }
 
 void t_road_link_neighbor::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const t_road_link_neighbor::direction_type& t_road_link_neighbor::
@@ -1860,9 +1860,9 @@ direction (const direction_type& x)
 }
 
 void t_road_link_neighbor::
-direction (::std::auto_ptr< direction_type > x)
+direction (::std::unique_ptr< direction_type > x)
 {
-  this->direction_.set (x);
+  this->direction_.set (std::move (x));
 }
 
 
@@ -1939,9 +1939,9 @@ speed (const speed_optional& x)
 }
 
 void t_road_type::
-speed (::std::auto_ptr< speed_type > x)
+speed (::std::unique_ptr< speed_type > x)
 {
-  this->speed_.set (x);
+  this->speed_.set (std::move (x));
 }
 
 const t_road_type::userData_sequence& t_road_type::
@@ -2005,9 +2005,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_type::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_type::s_type& t_road_type::
@@ -2029,9 +2029,9 @@ s (const s_type& x)
 }
 
 void t_road_type::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_type::type_type& t_road_type::
@@ -2053,9 +2053,9 @@ type (const type_type& x)
 }
 
 void t_road_type::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_type::country_optional& t_road_type::
@@ -2083,9 +2083,9 @@ country (const country_optional& x)
 }
 
 void t_road_type::
-country (::std::auto_ptr< country_type > x)
+country (::std::unique_ptr< country_type > x)
 {
-  this->country_.set (x);
+  this->country_.set (std::move (x));
 }
 
 
@@ -2153,33 +2153,33 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_type_speed::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_type_speed::max_type& t_road_type_speed::
-max () const
+fmax () const
 {
-  return this->max_.get ();
+  return this->fmax_.get ();
 }
 
 t_road_type_speed::max_type& t_road_type_speed::
-max ()
+fmax ()
 {
-  return this->max_.get ();
+  return this->fmax_.get ();
 }
 
 void t_road_type_speed::
-max (const max_type& x)
+fmax (const max_type& x)
 {
-  this->max_.set (x);
+  this->fmax_.set (x);
 }
 
 void t_road_type_speed::
-max (::std::auto_ptr< max_type > x)
+fmax (::std::unique_ptr< max_type > x)
 {
-  this->max_.set (x);
+  this->fmax_.set (std::move (x));
 }
 
 const t_road_type_speed::unit_optional& t_road_type_speed::
@@ -2207,9 +2207,9 @@ unit (const unit_optional& x)
 }
 
 void t_road_type_speed::
-unit (::std::auto_ptr< unit_type > x)
+unit (::std::unique_ptr< unit_type > x)
 {
-  this->unit_.set (x);
+  this->unit_.set (std::move (x));
 }
 
 
@@ -2295,9 +2295,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -2329,9 +2329,9 @@ line (const line_optional& x)
 }
 
 void t_road_planView_geometry::
-line (::std::auto_ptr< line_type > x)
+line (::std::unique_ptr< line_type > x)
 {
-  this->line_.set (x);
+  this->line_.set (std::move (x));
 }
 
 const t_road_planView_geometry::spiral_optional& t_road_planView_geometry::
@@ -2359,9 +2359,9 @@ spiral (const spiral_optional& x)
 }
 
 void t_road_planView_geometry::
-spiral (::std::auto_ptr< spiral_type > x)
+spiral (::std::unique_ptr< spiral_type > x)
 {
-  this->spiral_.set (x);
+  this->spiral_.set (std::move (x));
 }
 
 const t_road_planView_geometry::arc_optional& t_road_planView_geometry::
@@ -2389,9 +2389,9 @@ arc (const arc_optional& x)
 }
 
 void t_road_planView_geometry::
-arc (::std::auto_ptr< arc_type > x)
+arc (::std::unique_ptr< arc_type > x)
 {
-  this->arc_.set (x);
+  this->arc_.set (std::move (x));
 }
 
 const t_road_planView_geometry::poly3_optional& t_road_planView_geometry::
@@ -2419,9 +2419,9 @@ poly3 (const poly3_optional& x)
 }
 
 void t_road_planView_geometry::
-poly3 (::std::auto_ptr< poly3_type > x)
+poly3 (::std::unique_ptr< poly3_type > x)
 {
-  this->poly3_.set (x);
+  this->poly3_.set (std::move (x));
 }
 
 const t_road_planView_geometry::paramPoly3_optional& t_road_planView_geometry::
@@ -2449,9 +2449,9 @@ paramPoly3 (const paramPoly3_optional& x)
 }
 
 void t_road_planView_geometry::
-paramPoly3 (::std::auto_ptr< paramPoly3_type > x)
+paramPoly3 (::std::unique_ptr< paramPoly3_type > x)
 {
-  this->paramPoly3_.set (x);
+  this->paramPoly3_.set (std::move (x));
 }
 
 const t_road_planView_geometry::userData_sequence& t_road_planView_geometry::
@@ -2515,9 +2515,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView_geometry::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_planView_geometry::s_type& t_road_planView_geometry::
@@ -2539,9 +2539,9 @@ s (const s_type& x)
 }
 
 void t_road_planView_geometry::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_planView_geometry::x_type& t_road_planView_geometry::
@@ -2617,9 +2617,9 @@ length (const length_type& x)
 }
 
 void t_road_planView_geometry::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 
@@ -2687,9 +2687,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView_geometry_line::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -2757,9 +2757,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView_geometry_spiral::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_planView_geometry_spiral::curvStart_type& t_road_planView_geometry_spiral::
@@ -2863,9 +2863,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView_geometry_arc::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_planView_geometry_arc::curvature_type& t_road_planView_geometry_arc::
@@ -2951,9 +2951,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView_geometry_poly3::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_planView_geometry_poly3::a_type& t_road_planView_geometry_poly3::
@@ -3093,9 +3093,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_planView_geometry_paramPoly3::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_planView_geometry_paramPoly3::aU_type& t_road_planView_geometry_paramPoly3::
@@ -3261,9 +3261,9 @@ pRange (const pRange_type& x)
 }
 
 void t_road_planView_geometry_paramPoly3::
-pRange (::std::auto_ptr< pRange_type > x)
+pRange (::std::unique_ptr< pRange_type > x)
 {
-  this->pRange_.set (x);
+  this->pRange_.set (std::move (x));
 }
 
 
@@ -3394,9 +3394,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_elevationProfile::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -3464,9 +3464,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_elevationProfile_elevation::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_elevationProfile_elevation::s_type& t_road_elevationProfile_elevation::
@@ -3488,9 +3488,9 @@ s (const s_type& x)
 }
 
 void t_road_elevationProfile_elevation::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_elevationProfile_elevation::a_type& t_road_elevationProfile_elevation::
@@ -3684,9 +3684,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lateralProfile::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -3754,9 +3754,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lateralProfile_superelevation::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lateralProfile_superelevation::s_type& t_road_lateralProfile_superelevation::
@@ -3778,9 +3778,9 @@ s (const s_type& x)
 }
 
 void t_road_lateralProfile_superelevation::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_lateralProfile_superelevation::a_type& t_road_lateralProfile_superelevation::
@@ -3920,9 +3920,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lateralProfile_crossfall::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lateralProfile_crossfall::side_type& t_road_lateralProfile_crossfall::
@@ -3944,9 +3944,9 @@ side (const side_type& x)
 }
 
 void t_road_lateralProfile_crossfall::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 const t_road_lateralProfile_crossfall::s_type& t_road_lateralProfile_crossfall::
@@ -3968,9 +3968,9 @@ s (const s_type& x)
 }
 
 void t_road_lateralProfile_crossfall::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_lateralProfile_crossfall::a_type& t_road_lateralProfile_crossfall::
@@ -4155,9 +4155,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lateralProfile_shape::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lateralProfile_shape::s_type& t_road_lateralProfile_shape::
@@ -4179,9 +4179,9 @@ s (const s_type& x)
 }
 
 void t_road_lateralProfile_shape::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_lateralProfile_shape::t_type& t_road_lateralProfile_shape::
@@ -4375,9 +4375,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -4445,9 +4445,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneOffset::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneOffset::s_type& t_road_lanes_laneOffset::
@@ -4469,9 +4469,9 @@ s (const s_type& x)
 }
 
 void t_road_lanes_laneOffset::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_lanes_laneOffset::a_type& t_road_lanes_laneOffset::
@@ -4575,9 +4575,9 @@ left (const left_optional& x)
 }
 
 void t_road_lanes_laneSection::
-left (::std::auto_ptr< left_type > x)
+left (::std::unique_ptr< left_type > x)
 {
-  this->left_.set (x);
+  this->left_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection::center_optional& t_road_lanes_laneSection::
@@ -4605,9 +4605,9 @@ center (const center_optional& x)
 }
 
 void t_road_lanes_laneSection::
-center (::std::auto_ptr< center_type > x)
+center (::std::unique_ptr< center_type > x)
 {
-  this->center_.set (x);
+  this->center_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection::right_optional& t_road_lanes_laneSection::
@@ -4635,9 +4635,9 @@ right (const right_optional& x)
 }
 
 void t_road_lanes_laneSection::
-right (::std::auto_ptr< right_type > x)
+right (::std::unique_ptr< right_type > x)
 {
-  this->right_.set (x);
+  this->right_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection::userData_sequence& t_road_lanes_laneSection::
@@ -4701,9 +4701,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection::s_type& t_road_lanes_laneSection::
@@ -4725,9 +4725,9 @@ s (const s_type& x)
 }
 
 void t_road_lanes_laneSection::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection::singleSide_optional& t_road_lanes_laneSection::
@@ -4755,9 +4755,9 @@ singleSide (const singleSide_optional& x)
 }
 
 void t_road_lanes_laneSection::
-singleSide (::std::auto_ptr< singleSide_type > x)
+singleSide (::std::unique_ptr< singleSide_type > x)
 {
-  this->singleSide_.set (x);
+  this->singleSide_.set (std::move (x));
 }
 
 
@@ -4843,9 +4843,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_left::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -4931,9 +4931,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_center::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -5019,9 +5019,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_right::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -5029,33 +5029,33 @@ dataQuality (::std::auto_ptr< dataQuality_type > x)
 // 
 
 const t_road_lanes_laneSection_center_lane::link_optional& t_road_lanes_laneSection_center_lane::
-lane_link () const
+link () const
 {
-  return this->lane_link_;
+  return this->link_;
 }
 
 t_road_lanes_laneSection_center_lane::link_optional& t_road_lanes_laneSection_center_lane::
-lane_link ()
+link ()
 {
-  return this->lane_link_;
+  return this->link_;
 }
 
 void t_road_lanes_laneSection_center_lane::
-lane_link (const link_type& x)
+link (const link_type& x)
 {
-  this->lane_link_.set (x);
+  this->link_.set (x);
 }
 
 void t_road_lanes_laneSection_center_lane::
-lane_link (const link_optional& x)
+link (const link_optional& x)
 {
-  this->lane_link_ = x;
+  this->link_ = x;
 }
 
 void t_road_lanes_laneSection_center_lane::
-lane_link (::std::auto_ptr< link_type > x)
+link (::std::unique_ptr< link_type > x)
 {
-  this->lane_link_.set (x);
+  this->link_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_center_lane::roadMark_sequence& t_road_lanes_laneSection_center_lane::
@@ -5137,9 +5137,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_center_lane::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_center_lane::id_type& t_road_lanes_laneSection_center_lane::
@@ -5173,9 +5173,9 @@ type (const type_type& x)
 }
 
 void t_road_lanes_laneSection_center_lane::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_center_lane::level_optional& t_road_lanes_laneSection_center_lane::
@@ -5203,9 +5203,9 @@ level (const level_optional& x)
 }
 
 void t_road_lanes_laneSection_center_lane::
-level (::std::auto_ptr< level_type > x)
+level (::std::unique_ptr< level_type > x)
 {
-  this->level_.set (x);
+  this->level_.set (std::move (x));
 }
 
 
@@ -5213,33 +5213,33 @@ level (::std::auto_ptr< level_type > x)
 // 
 
 const t_road_lanes_laneSection_lr_lane::link_optional& t_road_lanes_laneSection_lr_lane::
-lane_link () const
+link () const
 {
-  return this->lane_link_;
+  return this->link_;
 }
 
 t_road_lanes_laneSection_lr_lane::link_optional& t_road_lanes_laneSection_lr_lane::
-lane_link ()
+link ()
 {
-  return this->lane_link_;
+  return this->link_;
 }
 
 void t_road_lanes_laneSection_lr_lane::
-lane_link (const link_type& x)
+link (const link_type& x)
 {
-  this->lane_link_.set (x);
+  this->link_.set (x);
 }
 
 void t_road_lanes_laneSection_lr_lane::
-lane_link (const link_optional& x)
+link (const link_optional& x)
 {
-  this->lane_link_ = x;
+  this->link_ = x;
 }
 
 void t_road_lanes_laneSection_lr_lane::
-lane_link (::std::auto_ptr< link_type > x)
+link (::std::unique_ptr< link_type > x)
 {
-  this->lane_link_.set (x);
+  this->link_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane::width_sequence& t_road_lanes_laneSection_lr_lane::
@@ -5351,21 +5351,21 @@ speed (const speed_sequence& s)
 }
 
 const t_road_lanes_laneSection_lr_lane::access_sequence& t_road_lanes_laneSection_lr_lane::
-parkingSpace_access () const
+access () const
 {
-  return this->parkingSpace_access_;
+  return this->access_;
 }
 
 t_road_lanes_laneSection_lr_lane::access_sequence& t_road_lanes_laneSection_lr_lane::
-parkingSpace_access ()
+access ()
 {
-  return this->parkingSpace_access_;
+  return this->access_;
 }
 
 void t_road_lanes_laneSection_lr_lane::
-parkingSpace_access (const access_sequence& s)
+access (const access_sequence& s)
 {
-  this->parkingSpace_access_ = s;
+  this->access_ = s;
 }
 
 const t_road_lanes_laneSection_lr_lane::height_sequence& t_road_lanes_laneSection_lr_lane::
@@ -5465,9 +5465,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane::type_type& t_road_lanes_laneSection_lr_lane::
@@ -5489,9 +5489,9 @@ type (const type_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane::level_optional& t_road_lanes_laneSection_lr_lane::
@@ -5519,9 +5519,9 @@ level (const level_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane::
-level (::std::auto_ptr< level_type > x)
+level (::std::unique_ptr< level_type > x)
 {
-  this->level_.set (x);
+  this->level_.set (std::move (x));
 }
 
 
@@ -5669,9 +5669,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_link::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -5739,9 +5739,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor::id_type& t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor::
@@ -5827,9 +5827,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_width::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_width::sOffset_type& t_road_lanes_laneSection_lr_lane_width::
@@ -5851,9 +5851,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_width::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_width::a_type& t_road_lanes_laneSection_lr_lane_width::
@@ -5993,9 +5993,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_border::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_border::sOffset_type& t_road_lanes_laneSection_lr_lane_border::
@@ -6017,9 +6017,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_border::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_border::a_type& t_road_lanes_laneSection_lr_lane_border::
@@ -6141,9 +6141,9 @@ type (const type_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::explicit_optional& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6171,9 +6171,9 @@ explicit_ (const explicit_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-explicit_ (::std::auto_ptr< explicit_type > x)
+explicit_ (::std::unique_ptr< explicit_type > x)
 {
-  this->explicit__.set (x);
+  this->explicit__.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::userData_sequence& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6237,9 +6237,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::sOffset_type& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6261,9 +6261,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::type1_type& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6285,9 +6285,9 @@ type1 (const type1_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-type1 (::std::auto_ptr< type1_type > x)
+type1 (::std::unique_ptr< type1_type > x)
 {
-  this->type1_.set (x);
+  this->type1_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::weight_optional& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6315,9 +6315,9 @@ weight (const weight_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-weight (::std::auto_ptr< weight_type > x)
+weight (::std::unique_ptr< weight_type > x)
 {
-  this->weight_.set (x);
+  this->weight_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::color_type& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6339,9 +6339,9 @@ color (const color_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-color (::std::auto_ptr< color_type > x)
+color (::std::unique_ptr< color_type > x)
 {
-  this->color_.set (x);
+  this->color_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::material_optional& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6369,9 +6369,9 @@ material (const material_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-material (::std::auto_ptr< material_type > x)
+material (::std::unique_ptr< material_type > x)
 {
-  this->material_.set (x);
+  this->material_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::width_optional& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6399,9 +6399,9 @@ width (const width_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::laneChange_optional& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6429,9 +6429,9 @@ laneChange (const laneChange_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark::
-laneChange (::std::auto_ptr< laneChange_type > x)
+laneChange (::std::unique_ptr< laneChange_type > x)
 {
-  this->laneChange_.set (x);
+  this->laneChange_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark::height_optional& t_road_lanes_laneSection_lcr_lane_roadMark::
@@ -6568,9 +6568,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_sway::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_sway::ds_type& t_road_lanes_laneSection_lcr_lane_roadMark_sway::
@@ -6592,9 +6592,9 @@ ds (const ds_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_sway::
-ds (::std::auto_ptr< ds_type > x)
+ds (::std::unique_ptr< ds_type > x)
 {
-  this->ds_.set (x);
+  this->ds_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_sway::a_type& t_road_lanes_laneSection_lcr_lane_roadMark_sway::
@@ -6752,9 +6752,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type::name_type& t_road_lanes_laneSection_lcr_lane_roadMark_type::
@@ -6776,9 +6776,9 @@ name (const name_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type::width_type& t_road_lanes_laneSection_lcr_lane_roadMark_type::
@@ -6800,9 +6800,9 @@ width (const width_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 
@@ -6870,9 +6870,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type_line::length_type& t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
@@ -6894,9 +6894,9 @@ length (const length_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type_line::space_type& t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
@@ -6918,9 +6918,9 @@ space (const space_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-space (::std::auto_ptr< space_type > x)
+space (::std::unique_ptr< space_type > x)
 {
-  this->space_.set (x);
+  this->space_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type_line::tOffset_type& t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
@@ -6960,9 +6960,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type_line::rule_optional& t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
@@ -6990,9 +6990,9 @@ rule (const rule_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-rule (::std::auto_ptr< rule_type > x)
+rule (::std::unique_ptr< rule_type > x)
 {
-  this->rule_.set (x);
+  this->rule_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type_line::width_type& t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
@@ -7014,9 +7014,9 @@ width (const width_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_type_line::color_optional& t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
@@ -7044,9 +7044,9 @@ color (const color_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_type_line::
-color (::std::auto_ptr< color_type > x)
+color (::std::unique_ptr< color_type > x)
 {
-  this->color_.set (x);
+  this->color_.set (std::move (x));
 }
 
 
@@ -7132,9 +7132,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_explicit::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -7202,9 +7202,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::length_type& t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
@@ -7226,9 +7226,9 @@ length (const length_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::tOffset_type& t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
@@ -7268,9 +7268,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::rule_optional& t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
@@ -7298,9 +7298,9 @@ rule (const rule_optional& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
-rule (::std::auto_ptr< rule_type > x)
+rule (::std::unique_ptr< rule_type > x)
 {
-  this->rule_.set (x);
+  this->rule_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::width_type& t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
@@ -7322,9 +7322,9 @@ width (const width_type& x)
 }
 
 void t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 
@@ -7392,9 +7392,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_material::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_material::sOffset_type& t_road_lanes_laneSection_lr_lane_material::
@@ -7416,9 +7416,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_material::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_material::surface_optional& t_road_lanes_laneSection_lr_lane_material::
@@ -7446,9 +7446,9 @@ surface (const surface_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_material::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_material::friction_type& t_road_lanes_laneSection_lr_lane_material::
@@ -7470,9 +7470,9 @@ friction (const friction_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_material::
-friction (::std::auto_ptr< friction_type > x)
+friction (::std::unique_ptr< friction_type > x)
 {
-  this->friction_.set (x);
+  this->friction_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_material::roughness_optional& t_road_lanes_laneSection_lr_lane_material::
@@ -7500,9 +7500,9 @@ roughness (const roughness_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_material::
-roughness (::std::auto_ptr< roughness_type > x)
+roughness (::std::unique_ptr< roughness_type > x)
 {
-  this->roughness_.set (x);
+  this->roughness_.set (std::move (x));
 }
 
 
@@ -7570,9 +7570,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_visibility::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_visibility::sOffset_type& t_road_lanes_laneSection_lr_lane_visibility::
@@ -7594,9 +7594,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_visibility::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_visibility::forward_type& t_road_lanes_laneSection_lr_lane_visibility::
@@ -7618,9 +7618,9 @@ forward (const forward_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_visibility::
-forward (::std::auto_ptr< forward_type > x)
+forward (::std::unique_ptr< forward_type > x)
 {
-  this->forward_.set (x);
+  this->forward_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_visibility::back_type& t_road_lanes_laneSection_lr_lane_visibility::
@@ -7642,9 +7642,9 @@ back (const back_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_visibility::
-back (::std::auto_ptr< back_type > x)
+back (::std::unique_ptr< back_type > x)
 {
-  this->back_.set (x);
+  this->back_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_visibility::left_type& t_road_lanes_laneSection_lr_lane_visibility::
@@ -7666,9 +7666,9 @@ left (const left_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_visibility::
-left (::std::auto_ptr< left_type > x)
+left (::std::unique_ptr< left_type > x)
 {
-  this->left_.set (x);
+  this->left_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_visibility::right_type& t_road_lanes_laneSection_lr_lane_visibility::
@@ -7690,9 +7690,9 @@ right (const right_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_visibility::
-right (::std::auto_ptr< right_type > x)
+right (::std::unique_ptr< right_type > x)
 {
-  this->right_.set (x);
+  this->right_.set (std::move (x));
 }
 
 
@@ -7760,9 +7760,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_speed::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_speed::sOffset_type& t_road_lanes_laneSection_lr_lane_speed::
@@ -7784,33 +7784,33 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_speed::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_speed::max_type& t_road_lanes_laneSection_lr_lane_speed::
-max () const
+fmax () const
 {
-  return this->max_.get ();
+  return this->fmax_.get ();
 }
 
 t_road_lanes_laneSection_lr_lane_speed::max_type& t_road_lanes_laneSection_lr_lane_speed::
-max ()
+fmax ()
 {
-  return this->max_.get ();
+  return this->fmax_.get ();
 }
 
 void t_road_lanes_laneSection_lr_lane_speed::
-max (const max_type& x)
+fmax (const max_type& x)
 {
-  this->max_.set (x);
+  this->fmax_.set (x);
 }
 
 void t_road_lanes_laneSection_lr_lane_speed::
-max (::std::auto_ptr< max_type > x)
+fmax (::std::unique_ptr< max_type > x)
 {
-  this->max_.set (x);
+  this->fmax_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_speed::unit_optional& t_road_lanes_laneSection_lr_lane_speed::
@@ -7838,9 +7838,9 @@ unit (const unit_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_speed::
-unit (::std::auto_ptr< unit_type > x)
+unit (::std::unique_ptr< unit_type > x)
 {
-  this->unit_.set (x);
+  this->unit_.set (std::move (x));
 }
 
 
@@ -7908,9 +7908,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_access::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_access::sOffset_type& t_road_lanes_laneSection_lr_lane_access::
@@ -7932,9 +7932,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_access::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_access::rule_type& t_road_lanes_laneSection_lr_lane_access::
@@ -7956,9 +7956,9 @@ rule (const rule_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_access::
-rule (::std::auto_ptr< rule_type > x)
+rule (::std::unique_ptr< rule_type > x)
 {
-  this->rule_.set (x);
+  this->rule_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_access::restriction_type& t_road_lanes_laneSection_lr_lane_access::
@@ -7980,9 +7980,9 @@ restriction (const restriction_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_access::
-restriction (::std::auto_ptr< restriction_type > x)
+restriction (::std::unique_ptr< restriction_type > x)
 {
-  this->restriction_.set (x);
+  this->restriction_.set (std::move (x));
 }
 
 
@@ -8095,9 +8095,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_height::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_height::sOffset_type& t_road_lanes_laneSection_lr_lane_height::
@@ -8119,9 +8119,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_height::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_height::inner_type& t_road_lanes_laneSection_lr_lane_height::
@@ -8225,9 +8225,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_rule::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_rule::sOffset_type& t_road_lanes_laneSection_lr_lane_rule::
@@ -8249,9 +8249,9 @@ sOffset (const sOffset_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_rule::
-sOffset (::std::auto_ptr< sOffset_type > x)
+sOffset (::std::unique_ptr< sOffset_type > x)
 {
-  this->sOffset_.set (x);
+  this->sOffset_.set (std::move (x));
 }
 
 const t_road_lanes_laneSection_lr_lane_rule::value_type& t_road_lanes_laneSection_lr_lane_rule::
@@ -8273,9 +8273,9 @@ value (const value_type& x)
 }
 
 void t_road_lanes_laneSection_lr_lane_rule::
-value (::std::auto_ptr< value_type > x)
+value (::std::unique_ptr< value_type > x)
 {
-  this->value_.set (x);
+  this->value_.set (std::move (x));
 }
 
 
@@ -8415,9 +8415,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -8449,9 +8449,9 @@ repeat (const repeat_optional& x)
 }
 
 void t_road_objects_object::
-repeat (::std::auto_ptr< repeat_type > x)
+repeat (::std::unique_ptr< repeat_type > x)
 {
-  this->repeat_.set (x);
+  this->repeat_.set (std::move (x));
 }
 
 const t_road_objects_object::outline_optional& t_road_objects_object::
@@ -8479,9 +8479,9 @@ outline (const outline_optional& x)
 }
 
 void t_road_objects_object::
-outline (::std::auto_ptr< outline_type > x)
+outline (::std::unique_ptr< outline_type > x)
 {
-  this->outline_.set (x);
+  this->outline_.set (std::move (x));
 }
 
 const t_road_objects_object::outlines_optional& t_road_objects_object::
@@ -8509,9 +8509,9 @@ outlines (const outlines_optional& x)
 }
 
 void t_road_objects_object::
-outlines (::std::auto_ptr< outlines_type > x)
+outlines (::std::unique_ptr< outlines_type > x)
 {
-  this->outlines_.set (x);
+  this->outlines_.set (std::move (x));
 }
 
 const t_road_objects_object::material_sequence& t_road_objects_object::
@@ -8575,9 +8575,9 @@ parkingSpace (const parkingSpace_optional& x)
 }
 
 void t_road_objects_object::
-parkingSpace (::std::auto_ptr< parkingSpace_type > x)
+parkingSpace (::std::unique_ptr< parkingSpace_type > x)
 {
-  this->parkingSpace_.set (x);
+  this->parkingSpace_.set (std::move (x));
 }
 
 const t_road_objects_object::markings_optional& t_road_objects_object::
@@ -8605,9 +8605,9 @@ markings (const markings_optional& x)
 }
 
 void t_road_objects_object::
-markings (::std::auto_ptr< markings_type > x)
+markings (::std::unique_ptr< markings_type > x)
 {
-  this->markings_.set (x);
+  this->markings_.set (std::move (x));
 }
 
 const t_road_objects_object::borders_optional& t_road_objects_object::
@@ -8635,9 +8635,9 @@ borders (const borders_optional& x)
 }
 
 void t_road_objects_object::
-borders (::std::auto_ptr< borders_type > x)
+borders (::std::unique_ptr< borders_type > x)
 {
-  this->borders_.set (x);
+  this->borders_.set (std::move (x));
 }
 
 const t_road_objects_object::userData_sequence& t_road_objects_object::
@@ -8701,9 +8701,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object::type_optional& t_road_objects_object::
@@ -8731,9 +8731,9 @@ type (const type_optional& x)
 }
 
 void t_road_objects_object::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_objects_object::subtype_optional& t_road_objects_object::
@@ -8761,9 +8761,9 @@ subtype (const subtype_optional& x)
 }
 
 void t_road_objects_object::
-subtype (::std::auto_ptr< subtype_type > x)
+subtype (::std::unique_ptr< subtype_type > x)
 {
-  this->subtype_.set (x);
+  this->subtype_.set (std::move (x));
 }
 
 const t_road_objects_object::dynamic_type& t_road_objects_object::
@@ -8785,9 +8785,9 @@ dynamic (const dynamic_type& x)
 }
 
 void t_road_objects_object::
-dynamic (::std::auto_ptr< dynamic_type > x)
+dynamic (::std::unique_ptr< dynamic_type > x)
 {
-  this->dynamic_.set (x);
+  this->dynamic_.set (std::move (x));
 }
 
 const t_road_objects_object::name_optional& t_road_objects_object::
@@ -8815,9 +8815,9 @@ name (const name_optional& x)
 }
 
 void t_road_objects_object::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_objects_object::id_type& t_road_objects_object::
@@ -8839,9 +8839,9 @@ id (const id_type& x)
 }
 
 void t_road_objects_object::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_objects_object::s_type& t_road_objects_object::
@@ -8863,9 +8863,9 @@ s (const s_type& x)
 }
 
 void t_road_objects_object::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_objects_object::t_type& t_road_objects_object::
@@ -8923,9 +8923,9 @@ validLength (const validLength_type& x)
 }
 
 void t_road_objects_object::
-validLength (::std::auto_ptr< validLength_type > x)
+validLength (::std::unique_ptr< validLength_type > x)
 {
-  this->validLength_.set (x);
+  this->validLength_.set (std::move (x));
 }
 
 const t_road_objects_object::orientation_type& t_road_objects_object::
@@ -8947,9 +8947,9 @@ orientation (const orientation_type& x)
 }
 
 void t_road_objects_object::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 const t_road_objects_object::hdg_type& t_road_objects_object::
@@ -9161,9 +9161,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_repeat::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::s_type& t_road_objects_object_repeat::
@@ -9185,9 +9185,9 @@ s (const s_type& x)
 }
 
 void t_road_objects_object_repeat::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::length_type& t_road_objects_object_repeat::
@@ -9209,9 +9209,9 @@ length (const length_type& x)
 }
 
 void t_road_objects_object_repeat::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::distance_type& t_road_objects_object_repeat::
@@ -9233,9 +9233,9 @@ distance (const distance_type& x)
 }
 
 void t_road_objects_object_repeat::
-distance (::std::auto_ptr< distance_type > x)
+distance (::std::unique_ptr< distance_type > x)
 {
-  this->distance_.set (x);
+  this->distance_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::tStart_type& t_road_objects_object_repeat::
@@ -9365,9 +9365,9 @@ widthStart (const widthStart_type& x)
 }
 
 void t_road_objects_object_repeat::
-widthStart (::std::auto_ptr< widthStart_type > x)
+widthStart (::std::unique_ptr< widthStart_type > x)
 {
-  this->widthStart_.set (x);
+  this->widthStart_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::widthEnd_type& t_road_objects_object_repeat::
@@ -9389,9 +9389,9 @@ widthEnd (const widthEnd_type& x)
 }
 
 void t_road_objects_object_repeat::
-widthEnd (::std::auto_ptr< widthEnd_type > x)
+widthEnd (::std::unique_ptr< widthEnd_type > x)
 {
-  this->widthEnd_.set (x);
+  this->widthEnd_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::lengthStart_optional& t_road_objects_object_repeat::
@@ -9419,9 +9419,9 @@ lengthStart (const lengthStart_optional& x)
 }
 
 void t_road_objects_object_repeat::
-lengthStart (::std::auto_ptr< lengthStart_type > x)
+lengthStart (::std::unique_ptr< lengthStart_type > x)
 {
-  this->lengthStart_.set (x);
+  this->lengthStart_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::lengthEnd_optional& t_road_objects_object_repeat::
@@ -9449,9 +9449,9 @@ lengthEnd (const lengthEnd_optional& x)
 }
 
 void t_road_objects_object_repeat::
-lengthEnd (::std::auto_ptr< lengthEnd_type > x)
+lengthEnd (::std::unique_ptr< lengthEnd_type > x)
 {
-  this->lengthEnd_.set (x);
+  this->lengthEnd_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::radiusStart_optional& t_road_objects_object_repeat::
@@ -9479,9 +9479,9 @@ radiusStart (const radiusStart_optional& x)
 }
 
 void t_road_objects_object_repeat::
-radiusStart (::std::auto_ptr< radiusStart_type > x)
+radiusStart (::std::unique_ptr< radiusStart_type > x)
 {
-  this->radiusStart_.set (x);
+  this->radiusStart_.set (std::move (x));
 }
 
 const t_road_objects_object_repeat::radiusEnd_optional& t_road_objects_object_repeat::
@@ -9509,9 +9509,9 @@ radiusEnd (const radiusEnd_optional& x)
 }
 
 void t_road_objects_object_repeat::
-radiusEnd (::std::auto_ptr< radiusEnd_type > x)
+radiusEnd (::std::unique_ptr< radiusEnd_type > x)
 {
-  this->radiusEnd_.set (x);
+  this->radiusEnd_.set (std::move (x));
 }
 
 
@@ -9597,9 +9597,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_outlines::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -9703,9 +9703,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_outlines_outline::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline::id_type& t_road_objects_object_outlines_outline::
@@ -9745,9 +9745,9 @@ fillType (const fillType_type& x)
 }
 
 void t_road_objects_object_outlines_outline::
-fillType (::std::auto_ptr< fillType_type > x)
+fillType (::std::unique_ptr< fillType_type > x)
 {
-  this->fillType_.set (x);
+  this->fillType_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline::outer_type& t_road_objects_object_outlines_outline::
@@ -9769,9 +9769,9 @@ outer (const outer_type& x)
 }
 
 void t_road_objects_object_outlines_outline::
-outer (::std::auto_ptr< outer_type > x)
+outer (::std::unique_ptr< outer_type > x)
 {
-  this->outer_.set (x);
+  this->outer_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline::closed_type& t_road_objects_object_outlines_outline::
@@ -9793,9 +9793,9 @@ closed (const closed_type& x)
 }
 
 void t_road_objects_object_outlines_outline::
-closed (::std::auto_ptr< closed_type > x)
+closed (::std::unique_ptr< closed_type > x)
 {
-  this->closed_.set (x);
+  this->closed_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline::laneType_type& t_road_objects_object_outlines_outline::
@@ -9817,9 +9817,9 @@ laneType (const laneType_type& x)
 }
 
 void t_road_objects_object_outlines_outline::
-laneType (::std::auto_ptr< laneType_type > x)
+laneType (::std::unique_ptr< laneType_type > x)
 {
-  this->laneType_.set (x);
+  this->laneType_.set (std::move (x));
 }
 
 
@@ -9887,9 +9887,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_outlines_outline_cornerRoad::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline_cornerRoad::s_type& t_road_objects_object_outlines_outline_cornerRoad::
@@ -9911,9 +9911,9 @@ s (const s_type& x)
 }
 
 void t_road_objects_object_outlines_outline_cornerRoad::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline_cornerRoad::t_type& t_road_objects_object_outlines_outline_cornerRoad::
@@ -10053,9 +10053,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_outlines_outline_cornerLocal::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_outlines_outline_cornerLocal::u_type& t_road_objects_object_outlines_outline_cornerLocal::
@@ -10213,9 +10213,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_material::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_material::surface_optional& t_road_objects_object_material::
@@ -10243,9 +10243,9 @@ surface (const surface_optional& x)
 }
 
 void t_road_objects_object_material::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const t_road_objects_object_material::friction_optional& t_road_objects_object_material::
@@ -10273,9 +10273,9 @@ friction (const friction_optional& x)
 }
 
 void t_road_objects_object_material::
-friction (::std::auto_ptr< friction_type > x)
+friction (::std::unique_ptr< friction_type > x)
 {
-  this->friction_.set (x);
+  this->friction_.set (std::move (x));
 }
 
 const t_road_objects_object_material::roughness_optional& t_road_objects_object_material::
@@ -10303,9 +10303,9 @@ roughness (const roughness_optional& x)
 }
 
 void t_road_objects_object_material::
-roughness (::std::auto_ptr< roughness_type > x)
+roughness (::std::unique_ptr< roughness_type > x)
 {
-  this->roughness_.set (x);
+  this->roughness_.set (std::move (x));
 }
 
 
@@ -10373,9 +10373,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_laneValidity::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_laneValidity::fromLane_type& t_road_objects_object_laneValidity::
@@ -10479,33 +10479,33 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_parkingSpace::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_parkingSpace::access_type& t_road_objects_object_parkingSpace::
-parkingSpace_access () const
+access () const
 {
-  return this->parkingSpace_access_.get ();
+  return this->access_.get ();
 }
 
 t_road_objects_object_parkingSpace::access_type& t_road_objects_object_parkingSpace::
-parkingSpace_access ()
+access ()
 {
-  return this->parkingSpace_access_.get ();
+  return this->access_.get ();
 }
 
 void t_road_objects_object_parkingSpace::
-parkingSpace_access (const access_type& x)
+access (const access_type& x)
 {
-  this->parkingSpace_access_.set (x);
+  this->access_.set (x);
 }
 
 void t_road_objects_object_parkingSpace::
-parkingSpace_access (::std::auto_ptr< access_type > x)
+access (::std::unique_ptr< access_type > x)
 {
-  this->parkingSpace_access_.set (x);
+  this->access_.set (std::move (x));
 }
 
 const t_road_objects_object_parkingSpace::restrictions_optional& t_road_objects_object_parkingSpace::
@@ -10533,9 +10533,9 @@ restrictions (const restrictions_optional& x)
 }
 
 void t_road_objects_object_parkingSpace::
-restrictions (::std::auto_ptr< restrictions_type > x)
+restrictions (::std::unique_ptr< restrictions_type > x)
 {
-  this->restrictions_.set (x);
+  this->restrictions_.set (std::move (x));
 }
 
 
@@ -10666,9 +10666,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_markings::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -10754,9 +10754,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_markings_marking::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::side_type& t_road_objects_object_markings_marking::
@@ -10778,9 +10778,9 @@ side (const side_type& x)
 }
 
 void t_road_objects_object_markings_marking::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::weight_type& t_road_objects_object_markings_marking::
@@ -10802,9 +10802,9 @@ weight (const weight_type& x)
 }
 
 void t_road_objects_object_markings_marking::
-weight (::std::auto_ptr< weight_type > x)
+weight (::std::unique_ptr< weight_type > x)
 {
-  this->weight_.set (x);
+  this->weight_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::width_optional& t_road_objects_object_markings_marking::
@@ -10832,9 +10832,9 @@ width (const width_optional& x)
 }
 
 void t_road_objects_object_markings_marking::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::color_type& t_road_objects_object_markings_marking::
@@ -10856,9 +10856,9 @@ color (const color_type& x)
 }
 
 void t_road_objects_object_markings_marking::
-color (::std::auto_ptr< color_type > x)
+color (::std::unique_ptr< color_type > x)
 {
-  this->color_.set (x);
+  this->color_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::zOffset_optional& t_road_objects_object_markings_marking::
@@ -10886,9 +10886,9 @@ zOffset (const zOffset_optional& x)
 }
 
 void t_road_objects_object_markings_marking::
-zOffset (::std::auto_ptr< zOffset_type > x)
+zOffset (::std::unique_ptr< zOffset_type > x)
 {
-  this->zOffset_.set (x);
+  this->zOffset_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::spaceLength_type& t_road_objects_object_markings_marking::
@@ -10910,9 +10910,9 @@ spaceLength (const spaceLength_type& x)
 }
 
 void t_road_objects_object_markings_marking::
-spaceLength (::std::auto_ptr< spaceLength_type > x)
+spaceLength (::std::unique_ptr< spaceLength_type > x)
 {
-  this->spaceLength_.set (x);
+  this->spaceLength_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::lineLength_type& t_road_objects_object_markings_marking::
@@ -10934,9 +10934,9 @@ lineLength (const lineLength_type& x)
 }
 
 void t_road_objects_object_markings_marking::
-lineLength (::std::auto_ptr< lineLength_type > x)
+lineLength (::std::unique_ptr< lineLength_type > x)
 {
-  this->lineLength_.set (x);
+  this->lineLength_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking::startOffset_type& t_road_objects_object_markings_marking::
@@ -11040,9 +11040,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_markings_marking_cornerReference::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_markings_marking_cornerReference::id_type& t_road_objects_object_markings_marking_cornerReference::
@@ -11146,9 +11146,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_borders::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -11234,9 +11234,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_object_borders_border::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_object_borders_border::width_type& t_road_objects_object_borders_border::
@@ -11258,9 +11258,9 @@ width (const width_type& x)
 }
 
 void t_road_objects_object_borders_border::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 const t_road_objects_object_borders_border::type_type& t_road_objects_object_borders_border::
@@ -11282,9 +11282,9 @@ type (const type_type& x)
 }
 
 void t_road_objects_object_borders_border::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_objects_object_borders_border::outlineId_type& t_road_objects_object_borders_border::
@@ -11330,9 +11330,9 @@ useCompleteOutline (const useCompleteOutline_optional& x)
 }
 
 void t_road_objects_object_borders_border::
-useCompleteOutline (::std::auto_ptr< useCompleteOutline_type > x)
+useCompleteOutline (::std::unique_ptr< useCompleteOutline_type > x)
 {
-  this->useCompleteOutline_.set (x);
+  this->useCompleteOutline_.set (std::move (x));
 }
 
 
@@ -11418,9 +11418,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_objectReference::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_objectReference::s_type& t_road_objects_objectReference::
@@ -11442,9 +11442,9 @@ s (const s_type& x)
 }
 
 void t_road_objects_objectReference::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_objects_objectReference::t_type& t_road_objects_objectReference::
@@ -11484,9 +11484,9 @@ id (const id_type& x)
 }
 
 void t_road_objects_objectReference::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_objects_objectReference::zOffset_type& t_road_objects_objectReference::
@@ -11526,9 +11526,9 @@ validLength (const validLength_type& x)
 }
 
 void t_road_objects_objectReference::
-validLength (::std::auto_ptr< validLength_type > x)
+validLength (::std::unique_ptr< validLength_type > x)
 {
-  this->validLength_.set (x);
+  this->validLength_.set (std::move (x));
 }
 
 const t_road_objects_objectReference::orientation_type& t_road_objects_objectReference::
@@ -11550,9 +11550,9 @@ orientation (const orientation_type& x)
 }
 
 void t_road_objects_objectReference::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 
@@ -11638,9 +11638,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_tunnel::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::s_type& t_road_objects_tunnel::
@@ -11662,9 +11662,9 @@ s (const s_type& x)
 }
 
 void t_road_objects_tunnel::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::length_type& t_road_objects_tunnel::
@@ -11686,9 +11686,9 @@ length (const length_type& x)
 }
 
 void t_road_objects_tunnel::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::name_optional& t_road_objects_tunnel::
@@ -11716,9 +11716,9 @@ name (const name_optional& x)
 }
 
 void t_road_objects_tunnel::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::id_type& t_road_objects_tunnel::
@@ -11740,9 +11740,9 @@ id (const id_type& x)
 }
 
 void t_road_objects_tunnel::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::type_type& t_road_objects_tunnel::
@@ -11764,9 +11764,9 @@ type (const type_type& x)
 }
 
 void t_road_objects_tunnel::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::lighting_optional& t_road_objects_tunnel::
@@ -11794,9 +11794,9 @@ lighting (const lighting_optional& x)
 }
 
 void t_road_objects_tunnel::
-lighting (::std::auto_ptr< lighting_type > x)
+lighting (::std::unique_ptr< lighting_type > x)
 {
-  this->lighting_.set (x);
+  this->lighting_.set (std::move (x));
 }
 
 const t_road_objects_tunnel::daylight_optional& t_road_objects_tunnel::
@@ -11824,9 +11824,9 @@ daylight (const daylight_optional& x)
 }
 
 void t_road_objects_tunnel::
-daylight (::std::auto_ptr< daylight_type > x)
+daylight (::std::unique_ptr< daylight_type > x)
 {
-  this->daylight_.set (x);
+  this->daylight_.set (std::move (x));
 }
 
 
@@ -11912,9 +11912,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_objects_bridge::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_objects_bridge::s_type& t_road_objects_bridge::
@@ -11936,9 +11936,9 @@ s (const s_type& x)
 }
 
 void t_road_objects_bridge::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_objects_bridge::length_type& t_road_objects_bridge::
@@ -11960,9 +11960,9 @@ length (const length_type& x)
 }
 
 void t_road_objects_bridge::
-length (::std::auto_ptr< length_type > x)
+length (::std::unique_ptr< length_type > x)
 {
-  this->length_.set (x);
+  this->length_.set (std::move (x));
 }
 
 const t_road_objects_bridge::name_optional& t_road_objects_bridge::
@@ -11990,9 +11990,9 @@ name (const name_optional& x)
 }
 
 void t_road_objects_bridge::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_objects_bridge::id_type& t_road_objects_bridge::
@@ -12014,9 +12014,9 @@ id (const id_type& x)
 }
 
 void t_road_objects_bridge::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_objects_bridge::type_type& t_road_objects_bridge::
@@ -12038,9 +12038,9 @@ type (const type_type& x)
 }
 
 void t_road_objects_bridge::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -12144,9 +12144,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -12232,9 +12232,9 @@ positionRoad (const positionRoad_optional& x)
 }
 
 void t_road_signals_signal::
-positionRoad (::std::auto_ptr< positionRoad_type > x)
+positionRoad (::std::unique_ptr< positionRoad_type > x)
 {
-  this->positionRoad_.set (x);
+  this->positionRoad_.set (std::move (x));
 }
 
 const t_road_signals_signal::positionInertial_optional& t_road_signals_signal::
@@ -12262,9 +12262,9 @@ positionInertial (const positionInertial_optional& x)
 }
 
 void t_road_signals_signal::
-positionInertial (::std::auto_ptr< positionInertial_type > x)
+positionInertial (::std::unique_ptr< positionInertial_type > x)
 {
-  this->positionInertial_.set (x);
+  this->positionInertial_.set (std::move (x));
 }
 
 const t_road_signals_signal::userData_sequence& t_road_signals_signal::
@@ -12328,9 +12328,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals_signal::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_signals_signal::s_type& t_road_signals_signal::
@@ -12352,9 +12352,9 @@ s (const s_type& x)
 }
 
 void t_road_signals_signal::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_signals_signal::t_type& t_road_signals_signal::
@@ -12394,9 +12394,9 @@ id (const id_type& x)
 }
 
 void t_road_signals_signal::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_signals_signal::name_optional& t_road_signals_signal::
@@ -12424,9 +12424,9 @@ name (const name_optional& x)
 }
 
 void t_road_signals_signal::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_signals_signal::dynamic_type& t_road_signals_signal::
@@ -12448,9 +12448,9 @@ dynamic (const dynamic_type& x)
 }
 
 void t_road_signals_signal::
-dynamic (::std::auto_ptr< dynamic_type > x)
+dynamic (::std::unique_ptr< dynamic_type > x)
 {
-  this->dynamic_.set (x);
+  this->dynamic_.set (std::move (x));
 }
 
 const t_road_signals_signal::orientation_type& t_road_signals_signal::
@@ -12472,9 +12472,9 @@ orientation (const orientation_type& x)
 }
 
 void t_road_signals_signal::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 const t_road_signals_signal::zOffset_type& t_road_signals_signal::
@@ -12520,9 +12520,9 @@ country (const country_optional& x)
 }
 
 void t_road_signals_signal::
-country (::std::auto_ptr< country_type > x)
+country (::std::unique_ptr< country_type > x)
 {
-  this->country_.set (x);
+  this->country_.set (std::move (x));
 }
 
 const t_road_signals_signal::countryRevision_optional& t_road_signals_signal::
@@ -12550,9 +12550,9 @@ countryRevision (const countryRevision_optional& x)
 }
 
 void t_road_signals_signal::
-countryRevision (::std::auto_ptr< countryRevision_type > x)
+countryRevision (::std::unique_ptr< countryRevision_type > x)
 {
-  this->countryRevision_.set (x);
+  this->countryRevision_.set (std::move (x));
 }
 
 const t_road_signals_signal::type_type& t_road_signals_signal::
@@ -12574,9 +12574,9 @@ type (const type_type& x)
 }
 
 void t_road_signals_signal::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_road_signals_signal::subtype_type& t_road_signals_signal::
@@ -12598,9 +12598,9 @@ subtype (const subtype_type& x)
 }
 
 void t_road_signals_signal::
-subtype (::std::auto_ptr< subtype_type > x)
+subtype (::std::unique_ptr< subtype_type > x)
 {
-  this->subtype_.set (x);
+  this->subtype_.set (std::move (x));
 }
 
 const t_road_signals_signal::value_optional& t_road_signals_signal::
@@ -12652,9 +12652,9 @@ unit (const unit_optional& x)
 }
 
 void t_road_signals_signal::
-unit (::std::auto_ptr< unit_type > x)
+unit (::std::unique_ptr< unit_type > x)
 {
-  this->unit_.set (x);
+  this->unit_.set (std::move (x));
 }
 
 const t_road_signals_signal::height_type& t_road_signals_signal::
@@ -12676,9 +12676,9 @@ height (const height_type& x)
 }
 
 void t_road_signals_signal::
-height (::std::auto_ptr< height_type > x)
+height (::std::unique_ptr< height_type > x)
 {
-  this->height_.set (x);
+  this->height_.set (std::move (x));
 }
 
 const t_road_signals_signal::width_type& t_road_signals_signal::
@@ -12700,9 +12700,9 @@ width (const width_type& x)
 }
 
 void t_road_signals_signal::
-width (::std::auto_ptr< width_type > x)
+width (::std::unique_ptr< width_type > x)
 {
-  this->width_.set (x);
+  this->width_.set (std::move (x));
 }
 
 const t_road_signals_signal::text_optional& t_road_signals_signal::
@@ -12730,9 +12730,9 @@ text (const text_optional& x)
 }
 
 void t_road_signals_signal::
-text (::std::auto_ptr< text_type > x)
+text (::std::unique_ptr< text_type > x)
 {
-  this->text_.set (x);
+  this->text_.set (std::move (x));
 }
 
 const t_road_signals_signal::hOffset_optional& t_road_signals_signal::
@@ -12872,9 +12872,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals_signal_dependency::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_signals_signal_dependency::id_type& t_road_signals_signal_dependency::
@@ -12896,9 +12896,9 @@ id (const id_type& x)
 }
 
 void t_road_signals_signal_dependency::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_signals_signal_dependency::type_optional& t_road_signals_signal_dependency::
@@ -12926,9 +12926,9 @@ type (const type_optional& x)
 }
 
 void t_road_signals_signal_dependency::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -12996,9 +12996,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals_signal_reference::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_signals_signal_reference::elementType_type& t_road_signals_signal_reference::
@@ -13020,9 +13020,9 @@ elementType (const elementType_type& x)
 }
 
 void t_road_signals_signal_reference::
-elementType (::std::auto_ptr< elementType_type > x)
+elementType (::std::unique_ptr< elementType_type > x)
 {
-  this->elementType_.set (x);
+  this->elementType_.set (std::move (x));
 }
 
 const t_road_signals_signal_reference::elementId_type& t_road_signals_signal_reference::
@@ -13044,9 +13044,9 @@ elementId (const elementId_type& x)
 }
 
 void t_road_signals_signal_reference::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const t_road_signals_signal_reference::type_optional& t_road_signals_signal_reference::
@@ -13074,9 +13074,9 @@ type (const type_optional& x)
 }
 
 void t_road_signals_signal_reference::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -13189,9 +13189,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals_signal_positionRoad::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_signals_signal_positionRoad::roadId_type& t_road_signals_signal_positionRoad::
@@ -13213,9 +13213,9 @@ roadId (const roadId_type& x)
 }
 
 void t_road_signals_signal_positionRoad::
-roadId (::std::auto_ptr< roadId_type > x)
+roadId (::std::unique_ptr< roadId_type > x)
 {
-  this->roadId_.set (x);
+  this->roadId_.set (std::move (x));
 }
 
 const t_road_signals_signal_positionRoad::s_type& t_road_signals_signal_positionRoad::
@@ -13237,9 +13237,9 @@ s (const s_type& x)
 }
 
 void t_road_signals_signal_positionRoad::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_signals_signal_positionRoad::t_type& t_road_signals_signal_positionRoad::
@@ -13409,9 +13409,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals_signal_positionInertial::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_signals_signal_positionInertial::x_type& t_road_signals_signal_positionInertial::
@@ -13617,9 +13617,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_signals_signalReference::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_signals_signalReference::s_type& t_road_signals_signalReference::
@@ -13641,9 +13641,9 @@ s (const s_type& x)
 }
 
 void t_road_signals_signalReference::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_signals_signalReference::t_type& t_road_signals_signalReference::
@@ -13683,9 +13683,9 @@ id (const id_type& x)
 }
 
 void t_road_signals_signalReference::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_signals_signalReference::orientation_type& t_road_signals_signalReference::
@@ -13707,9 +13707,9 @@ orientation (const orientation_type& x)
 }
 
 void t_road_signals_signalReference::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 
@@ -13795,9 +13795,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_surface::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -13865,9 +13865,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_surface_CRG::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_surface_CRG::file_type& t_road_surface_CRG::
@@ -13889,9 +13889,9 @@ file (const file_type& x)
 }
 
 void t_road_surface_CRG::
-file (::std::auto_ptr< file_type > x)
+file (::std::unique_ptr< file_type > x)
 {
-  this->file_.set (x);
+  this->file_.set (std::move (x));
 }
 
 const t_road_surface_CRG::sStart_type& t_road_surface_CRG::
@@ -13913,9 +13913,9 @@ sStart (const sStart_type& x)
 }
 
 void t_road_surface_CRG::
-sStart (::std::auto_ptr< sStart_type > x)
+sStart (::std::unique_ptr< sStart_type > x)
 {
-  this->sStart_.set (x);
+  this->sStart_.set (std::move (x));
 }
 
 const t_road_surface_CRG::sEnd_type& t_road_surface_CRG::
@@ -13937,9 +13937,9 @@ sEnd (const sEnd_type& x)
 }
 
 void t_road_surface_CRG::
-sEnd (::std::auto_ptr< sEnd_type > x)
+sEnd (::std::unique_ptr< sEnd_type > x)
 {
-  this->sEnd_.set (x);
+  this->sEnd_.set (std::move (x));
 }
 
 const t_road_surface_CRG::orientation_type& t_road_surface_CRG::
@@ -13961,9 +13961,9 @@ orientation (const orientation_type& x)
 }
 
 void t_road_surface_CRG::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 const t_road_surface_CRG::mode_type& t_road_surface_CRG::
@@ -13985,9 +13985,9 @@ mode (const mode_type& x)
 }
 
 void t_road_surface_CRG::
-mode (::std::auto_ptr< mode_type > x)
+mode (::std::unique_ptr< mode_type > x)
 {
-  this->mode_.set (x);
+  this->mode_.set (std::move (x));
 }
 
 const t_road_surface_CRG::purpose_optional& t_road_surface_CRG::
@@ -14015,9 +14015,9 @@ purpose (const purpose_optional& x)
 }
 
 void t_road_surface_CRG::
-purpose (::std::auto_ptr< purpose_type > x)
+purpose (::std::unique_ptr< purpose_type > x)
 {
-  this->purpose_.set (x);
+  this->purpose_.set (std::move (x));
 }
 
 const t_road_surface_CRG::sOffset_optional& t_road_surface_CRG::
@@ -14313,9 +14313,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_railroad::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -14341,9 +14341,9 @@ mainTrack (const mainTrack_type& x)
 }
 
 void t_road_railroad_switch::
-mainTrack (::std::auto_ptr< mainTrack_type > x)
+mainTrack (::std::unique_ptr< mainTrack_type > x)
 {
-  this->mainTrack_.set (x);
+  this->mainTrack_.set (std::move (x));
 }
 
 const t_road_railroad_switch::sideTrack_type& t_road_railroad_switch::
@@ -14365,9 +14365,9 @@ sideTrack (const sideTrack_type& x)
 }
 
 void t_road_railroad_switch::
-sideTrack (::std::auto_ptr< sideTrack_type > x)
+sideTrack (::std::unique_ptr< sideTrack_type > x)
 {
-  this->sideTrack_.set (x);
+  this->sideTrack_.set (std::move (x));
 }
 
 const t_road_railroad_switch::partner_optional& t_road_railroad_switch::
@@ -14395,9 +14395,9 @@ partner (const partner_optional& x)
 }
 
 void t_road_railroad_switch::
-partner (::std::auto_ptr< partner_type > x)
+partner (::std::unique_ptr< partner_type > x)
 {
-  this->partner_.set (x);
+  this->partner_.set (std::move (x));
 }
 
 const t_road_railroad_switch::userData_sequence& t_road_railroad_switch::
@@ -14461,9 +14461,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_railroad_switch::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_railroad_switch::name_type& t_road_railroad_switch::
@@ -14485,9 +14485,9 @@ name (const name_type& x)
 }
 
 void t_road_railroad_switch::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_railroad_switch::id_type& t_road_railroad_switch::
@@ -14509,9 +14509,9 @@ id (const id_type& x)
 }
 
 void t_road_railroad_switch::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_railroad_switch::position_type& t_road_railroad_switch::
@@ -14533,9 +14533,9 @@ position (const position_type& x)
 }
 
 void t_road_railroad_switch::
-position (::std::auto_ptr< position_type > x)
+position (::std::unique_ptr< position_type > x)
 {
-  this->position_.set (x);
+  this->position_.set (std::move (x));
 }
 
 
@@ -14648,9 +14648,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_railroad_switch_mainTrack::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_railroad_switch_mainTrack::id_type& t_road_railroad_switch_mainTrack::
@@ -14672,9 +14672,9 @@ id (const id_type& x)
 }
 
 void t_road_railroad_switch_mainTrack::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_railroad_switch_mainTrack::s_type& t_road_railroad_switch_mainTrack::
@@ -14696,9 +14696,9 @@ s (const s_type& x)
 }
 
 void t_road_railroad_switch_mainTrack::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_railroad_switch_mainTrack::dir_type& t_road_railroad_switch_mainTrack::
@@ -14720,9 +14720,9 @@ dir (const dir_type& x)
 }
 
 void t_road_railroad_switch_mainTrack::
-dir (::std::auto_ptr< dir_type > x)
+dir (::std::unique_ptr< dir_type > x)
 {
-  this->dir_.set (x);
+  this->dir_.set (std::move (x));
 }
 
 
@@ -14790,9 +14790,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_railroad_switch_sideTrack::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_railroad_switch_sideTrack::id_type& t_road_railroad_switch_sideTrack::
@@ -14814,9 +14814,9 @@ id (const id_type& x)
 }
 
 void t_road_railroad_switch_sideTrack::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_road_railroad_switch_sideTrack::s_type& t_road_railroad_switch_sideTrack::
@@ -14838,9 +14838,9 @@ s (const s_type& x)
 }
 
 void t_road_railroad_switch_sideTrack::
-s (::std::auto_ptr< s_type > x)
+s (::std::unique_ptr< s_type > x)
 {
-  this->s_.set (x);
+  this->s_.set (std::move (x));
 }
 
 const t_road_railroad_switch_sideTrack::dir_type& t_road_railroad_switch_sideTrack::
@@ -14862,9 +14862,9 @@ dir (const dir_type& x)
 }
 
 void t_road_railroad_switch_sideTrack::
-dir (::std::auto_ptr< dir_type > x)
+dir (::std::unique_ptr< dir_type > x)
 {
-  this->dir_.set (x);
+  this->dir_.set (std::move (x));
 }
 
 
@@ -14932,9 +14932,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_road_railroad_switch_partner::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_road_railroad_switch_partner::name_optional& t_road_railroad_switch_partner::
@@ -14962,9 +14962,9 @@ name (const name_optional& x)
 }
 
 void t_road_railroad_switch_partner::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_road_railroad_switch_partner::id_type& t_road_railroad_switch_partner::
@@ -14986,9 +14986,9 @@ id (const id_type& x)
 }
 
 void t_road_railroad_switch_partner::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 
@@ -15074,9 +15074,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_controller::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_controller::id_type& t_controller::
@@ -15098,9 +15098,9 @@ id (const id_type& x)
 }
 
 void t_controller::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_controller::name_optional& t_controller::
@@ -15128,9 +15128,9 @@ name (const name_optional& x)
 }
 
 void t_controller::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_controller::sequence_optional& t_controller::
@@ -15222,9 +15222,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_controller_control::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_controller_control::signalId_type& t_controller_control::
@@ -15246,9 +15246,9 @@ signalId (const signalId_type& x)
 }
 
 void t_controller_control::
-signalId (::std::auto_ptr< signalId_type > x)
+signalId (::std::unique_ptr< signalId_type > x)
 {
-  this->signalId_.set (x);
+  this->signalId_.set (std::move (x));
 }
 
 const t_controller_control::type_optional& t_controller_control::
@@ -15276,9 +15276,9 @@ type (const type_optional& x)
 }
 
 void t_controller_control::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -15364,9 +15364,9 @@ surface (const surface_optional& x)
 }
 
 void t_junction::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const t_junction::userData_sequence& t_junction::
@@ -15430,9 +15430,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction::name_optional& t_junction::
@@ -15460,9 +15460,9 @@ name (const name_optional& x)
 }
 
 void t_junction::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_junction::id_type& t_junction::
@@ -15484,9 +15484,9 @@ id (const id_type& x)
 }
 
 void t_junction::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_junction::type_optional& t_junction::
@@ -15514,9 +15514,9 @@ type (const type_optional& x)
 }
 
 void t_junction::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -15593,9 +15593,9 @@ predecessor (const predecessor_optional& x)
 }
 
 void t_junction_connection::
-predecessor (::std::auto_ptr< predecessor_type > x)
+predecessor (::std::unique_ptr< predecessor_type > x)
 {
-  this->predecessor_.set (x);
+  this->predecessor_.set (std::move (x));
 }
 
 const t_junction_connection::successor_optional& t_junction_connection::
@@ -15623,9 +15623,9 @@ successor (const successor_optional& x)
 }
 
 void t_junction_connection::
-successor (::std::auto_ptr< successor_type > x)
+successor (::std::unique_ptr< successor_type > x)
 {
-  this->successor_.set (x);
+  this->successor_.set (std::move (x));
 }
 
 const t_junction_connection::laneLink_sequence& t_junction_connection::
@@ -15707,9 +15707,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_connection::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction_connection::id_type& t_junction_connection::
@@ -15731,9 +15731,9 @@ id (const id_type& x)
 }
 
 void t_junction_connection::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_junction_connection::incomingRoad_type& t_junction_connection::
@@ -15755,9 +15755,9 @@ incomingRoad (const incomingRoad_type& x)
 }
 
 void t_junction_connection::
-incomingRoad (::std::auto_ptr< incomingRoad_type > x)
+incomingRoad (::std::unique_ptr< incomingRoad_type > x)
 {
-  this->incomingRoad_.set (x);
+  this->incomingRoad_.set (std::move (x));
 }
 
 const t_junction_connection::connectingRoad_type& t_junction_connection::
@@ -15779,9 +15779,9 @@ connectingRoad (const connectingRoad_type& x)
 }
 
 void t_junction_connection::
-connectingRoad (::std::auto_ptr< connectingRoad_type > x)
+connectingRoad (::std::unique_ptr< connectingRoad_type > x)
 {
-  this->connectingRoad_.set (x);
+  this->connectingRoad_.set (std::move (x));
 }
 
 const t_junction_connection::contactPoint_type& t_junction_connection::
@@ -15803,9 +15803,9 @@ contactPoint (const contactPoint_type& x)
 }
 
 void t_junction_connection::
-contactPoint (::std::auto_ptr< contactPoint_type > x)
+contactPoint (::std::unique_ptr< contactPoint_type > x)
 {
-  this->contactPoint_.set (x);
+  this->contactPoint_.set (std::move (x));
 }
 
 const t_junction_connection::connectionMaster_optional& t_junction_connection::
@@ -15833,9 +15833,9 @@ connectionMaster (const connectionMaster_optional& x)
 }
 
 void t_junction_connection::
-connectionMaster (::std::auto_ptr< connectionMaster_type > x)
+connectionMaster (::std::unique_ptr< connectionMaster_type > x)
 {
-  this->connectionMaster_.set (x);
+  this->connectionMaster_.set (std::move (x));
 }
 
 const t_junction_connection::type_optional& t_junction_connection::
@@ -15863,9 +15863,9 @@ type (const type_optional& x)
 }
 
 void t_junction_connection::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -15933,9 +15933,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_predecessorSuccessor::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction_predecessorSuccessor::elementType_type& t_junction_predecessorSuccessor::
@@ -15969,9 +15969,9 @@ elementId (const elementId_type& x)
 }
 
 void t_junction_predecessorSuccessor::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const t_junction_predecessorSuccessor::elementS_type& t_junction_predecessorSuccessor::
@@ -15993,9 +15993,9 @@ elementS (const elementS_type& x)
 }
 
 void t_junction_predecessorSuccessor::
-elementS (::std::auto_ptr< elementS_type > x)
+elementS (::std::unique_ptr< elementS_type > x)
 {
-  this->elementS_.set (x);
+  this->elementS_.set (std::move (x));
 }
 
 const t_junction_predecessorSuccessor::elementDir_type& t_junction_predecessorSuccessor::
@@ -16017,9 +16017,9 @@ elementDir (const elementDir_type& x)
 }
 
 void t_junction_predecessorSuccessor::
-elementDir (::std::auto_ptr< elementDir_type > x)
+elementDir (::std::unique_ptr< elementDir_type > x)
 {
-  this->elementDir_.set (x);
+  this->elementDir_.set (std::move (x));
 }
 
 
@@ -16087,9 +16087,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_connection_laneLink::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction_connection_laneLink::from_type& t_junction_connection_laneLink::
@@ -16193,9 +16193,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_priority::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction_priority::high_optional& t_junction_priority::
@@ -16223,9 +16223,9 @@ high (const high_optional& x)
 }
 
 void t_junction_priority::
-high (::std::auto_ptr< high_type > x)
+high (::std::unique_ptr< high_type > x)
 {
-  this->high_.set (x);
+  this->high_.set (std::move (x));
 }
 
 const t_junction_priority::low_optional& t_junction_priority::
@@ -16253,9 +16253,9 @@ low (const low_optional& x)
 }
 
 void t_junction_priority::
-low (::std::auto_ptr< low_type > x)
+low (::std::unique_ptr< low_type > x)
 {
-  this->low_.set (x);
+  this->low_.set (std::move (x));
 }
 
 
@@ -16323,9 +16323,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_controller::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction_controller::id_type& t_junction_controller::
@@ -16347,9 +16347,9 @@ id (const id_type& x)
 }
 
 void t_junction_controller::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_junction_controller::type_optional& t_junction_controller::
@@ -16377,9 +16377,9 @@ type (const type_optional& x)
 }
 
 void t_junction_controller::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const t_junction_controller::sequence_optional& t_junction_controller::
@@ -16489,9 +16489,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_surface::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -16559,9 +16559,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junction_surface_CRG::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junction_surface_CRG::file_type& t_junction_surface_CRG::
@@ -16583,9 +16583,9 @@ file (const file_type& x)
 }
 
 void t_junction_surface_CRG::
-file (::std::auto_ptr< file_type > x)
+file (::std::unique_ptr< file_type > x)
 {
-  this->file_.set (x);
+  this->file_.set (std::move (x));
 }
 
 const t_junction_surface_CRG::mode_type& t_junction_surface_CRG::
@@ -16625,9 +16625,9 @@ purpose (const purpose_optional& x)
 }
 
 void t_junction_surface_CRG::
-purpose (::std::auto_ptr< purpose_type > x)
+purpose (::std::unique_ptr< purpose_type > x)
 {
-  this->purpose_.set (x);
+  this->purpose_.set (std::move (x));
 }
 
 const t_junction_surface_CRG::zOffset_optional& t_junction_surface_CRG::
@@ -16761,9 +16761,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junctionGroup::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junctionGroup::name_optional& t_junctionGroup::
@@ -16791,9 +16791,9 @@ name (const name_optional& x)
 }
 
 void t_junctionGroup::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_junctionGroup::id_type& t_junctionGroup::
@@ -16815,9 +16815,9 @@ id (const id_type& x)
 }
 
 void t_junctionGroup::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_junctionGroup::type_type& t_junctionGroup::
@@ -16839,9 +16839,9 @@ type (const type_type& x)
 }
 
 void t_junctionGroup::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -16954,9 +16954,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_junctionGroup_junctionReference::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_junctionGroup_junctionReference::junction_type& t_junctionGroup_junctionReference::
@@ -16978,9 +16978,9 @@ junction (const junction_type& x)
 }
 
 void t_junctionGroup_junctionReference::
-junction (::std::auto_ptr< junction_type > x)
+junction (::std::unique_ptr< junction_type > x)
 {
-  this->junction_.set (x);
+  this->junction_.set (std::move (x));
 }
 
 
@@ -17066,9 +17066,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_station::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_station::name_type& t_station::
@@ -17090,9 +17090,9 @@ name (const name_type& x)
 }
 
 void t_station::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_station::id_type& t_station::
@@ -17114,9 +17114,9 @@ id (const id_type& x)
 }
 
 void t_station::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const t_station::type_optional& t_station::
@@ -17144,9 +17144,9 @@ type (const type_optional& x)
 }
 
 void t_station::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -17277,9 +17277,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_station_platform::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_station_platform::name_optional& t_station_platform::
@@ -17307,9 +17307,9 @@ name (const name_optional& x)
 }
 
 void t_station_platform::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const t_station_platform::id_type& t_station_platform::
@@ -17331,9 +17331,9 @@ id (const id_type& x)
 }
 
 void t_station_platform::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 
@@ -17401,9 +17401,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void t_station_platform_segment::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 const t_station_platform_segment::roadId_type& t_station_platform_segment::
@@ -17425,9 +17425,9 @@ roadId (const roadId_type& x)
 }
 
 void t_station_platform_segment::
-roadId (::std::auto_ptr< roadId_type > x)
+roadId (::std::unique_ptr< roadId_type > x)
 {
-  this->roadId_.set (x);
+  this->roadId_.set (std::move (x));
 }
 
 const t_station_platform_segment::sStart_type& t_station_platform_segment::
@@ -17449,9 +17449,9 @@ sStart (const sStart_type& x)
 }
 
 void t_station_platform_segment::
-sStart (::std::auto_ptr< sStart_type > x)
+sStart (::std::unique_ptr< sStart_type > x)
 {
-  this->sStart_.set (x);
+  this->sStart_.set (std::move (x));
 }
 
 const t_station_platform_segment::sEnd_type& t_station_platform_segment::
@@ -17473,9 +17473,9 @@ sEnd (const sEnd_type& x)
 }
 
 void t_station_platform_segment::
-sEnd (::std::auto_ptr< sEnd_type > x)
+sEnd (::std::unique_ptr< sEnd_type > x)
 {
-  this->sEnd_.set (x);
+  this->sEnd_.set (std::move (x));
 }
 
 const t_station_platform_segment::side_type& t_station_platform_segment::
@@ -17497,9 +17497,9 @@ side (const side_type& x)
 }
 
 void t_station_platform_segment::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 
@@ -17570,9 +17570,9 @@ code (const code_type& x)
 }
 
 void t_userData::
-code (::std::auto_ptr< code_type > x)
+code (::std::unique_ptr< code_type > x)
 {
-  this->code_.set (x);
+  this->code_.set (std::move (x));
 }
 
 const t_userData::value_type& t_userData::
@@ -17594,9 +17594,9 @@ value (const value_type& x)
 }
 
 void t_userData::
-value (::std::auto_ptr< value_type > x)
+value (::std::unique_ptr< value_type > x)
 {
-  this->value_.set (x);
+  this->value_.set (std::move (x));
 }
 
 
@@ -17622,9 +17622,9 @@ file (const file_type& x)
 }
 
 void t_include::
-file (::std::auto_ptr< file_type > x)
+file (::std::unique_ptr< file_type > x)
 {
-  this->file_.set (x);
+  this->file_.set (std::move (x));
 }
 
 
@@ -17656,9 +17656,9 @@ error (const error_optional& x)
 }
 
 void t_dataQuality::
-error (::std::auto_ptr< error_type > x)
+error (::std::unique_ptr< error_type > x)
 {
-  this->error_.set (x);
+  this->error_.set (std::move (x));
 }
 
 const t_dataQuality::rawData_optional& t_dataQuality::
@@ -17686,9 +17686,9 @@ rawData (const rawData_optional& x)
 }
 
 void t_dataQuality::
-rawData (::std::auto_ptr< rawData_type > x)
+rawData (::std::unique_ptr< rawData_type > x)
 {
-  this->rawData_.set (x);
+  this->rawData_.set (std::move (x));
 }
 
 
@@ -17790,9 +17790,9 @@ date (const date_type& x)
 }
 
 void t_dataQuality_RawData::
-date (::std::auto_ptr< date_type > x)
+date (::std::unique_ptr< date_type > x)
 {
-  this->date_.set (x);
+  this->date_.set (std::move (x));
 }
 
 const t_dataQuality_RawData::source_type& t_dataQuality_RawData::
@@ -17814,9 +17814,9 @@ source (const source_type& x)
 }
 
 void t_dataQuality_RawData::
-source (::std::auto_ptr< source_type > x)
+source (::std::unique_ptr< source_type > x)
 {
-  this->source_.set (x);
+  this->source_.set (std::move (x));
 }
 
 const t_dataQuality_RawData::sourceComment_optional& t_dataQuality_RawData::
@@ -17844,9 +17844,9 @@ sourceComment (const sourceComment_optional& x)
 }
 
 void t_dataQuality_RawData::
-sourceComment (::std::auto_ptr< sourceComment_type > x)
+sourceComment (::std::unique_ptr< sourceComment_type > x)
 {
-  this->sourceComment_.set (x);
+  this->sourceComment_.set (std::move (x));
 }
 
 const t_dataQuality_RawData::postProcessing_type& t_dataQuality_RawData::
@@ -17868,9 +17868,9 @@ postProcessing (const postProcessing_type& x)
 }
 
 void t_dataQuality_RawData::
-postProcessing (::std::auto_ptr< postProcessing_type > x)
+postProcessing (::std::unique_ptr< postProcessing_type > x)
 {
-  this->postProcessing_.set (x);
+  this->postProcessing_.set (std::move (x));
 }
 
 const t_dataQuality_RawData::postProcessingComment_optional& t_dataQuality_RawData::
@@ -17898,9 +17898,9 @@ postProcessingComment (const postProcessingComment_optional& x)
 }
 
 void t_dataQuality_RawData::
-postProcessingComment (::std::auto_ptr< postProcessingComment_type > x)
+postProcessingComment (::std::unique_ptr< postProcessingComment_type > x)
 {
-  this->postProcessingComment_.set (x);
+  this->postProcessingComment_.set (std::move (x));
 }
 
 
@@ -19078,9 +19078,9 @@ header (const header_type& x)
 }
 
 void OpenDRIVE::
-header (::std::auto_ptr< header_type > x)
+header (::std::unique_ptr< header_type > x)
 {
-  this->header_.set (x);
+  this->header_.set (std::move (x));
 }
 
 const OpenDRIVE::road_sequence& OpenDRIVE::
@@ -19234,9 +19234,9 @@ dataQuality (const dataQuality_optional& x)
 }
 
 void OpenDRIVE::
-dataQuality (::std::auto_ptr< dataQuality_type > x)
+dataQuality (::std::unique_ptr< dataQuality_type > x)
 {
-  this->dataQuality_.set (x);
+  this->dataQuality_.set (std::move (x));
 }
 
 
@@ -19864,12 +19864,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "geoReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< geoReference_type > r (
+      ::std::unique_ptr< geoReference_type > r (
         geoReference_traits::create (i, f, this));
 
       if (!this->geoReference_)
       {
-        this->geoReference_.set (r);
+        this->geoReference_.set (::std::move (r));
         continue;
       }
     }
@@ -19878,12 +19878,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "offset" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< offset_type > r (
+      ::std::unique_ptr< offset_type > r (
         offset_traits::create (i, f, this));
 
       if (!this->offset_)
       {
-        this->offset_.set (r);
+        this->offset_.set (::std::move (r));
         continue;
       }
     }
@@ -19892,10 +19892,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -19903,10 +19903,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -19914,12 +19914,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -20096,10 +20096,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20107,10 +20107,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20118,12 +20118,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -20226,10 +20226,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20237,10 +20237,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20248,12 +20248,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -20361,7 +20361,7 @@ t_road (const planView_type& planView,
         const id_type& id,
         const junction_type& junction)
 : ::xml_schema::type (),
-  lane_link_ (this),
+  link_ (this),
   type_ (this),
   planView_ (planView, this),
   elevationProfile_ (this),
@@ -20383,18 +20383,18 @@ t_road (const planView_type& planView,
 }
 
 t_road::
-t_road (::std::auto_ptr< planView_type > planView,
-        ::std::auto_ptr< lanes_type > lanes,
+t_road (::std::unique_ptr< planView_type > planView,
+        ::std::unique_ptr< lanes_type > lanes,
         const length_type& length,
         const id_type& id,
         const junction_type& junction)
 : ::xml_schema::type (),
-  lane_link_ (this),
+  link_ (this),
   type_ (this),
-  planView_ (planView, this),
+  planView_ (std::move (planView), this),
   elevationProfile_ (this),
   lateralProfile_ (this),
-  lanes_ (lanes, this),
+  lanes_ (std::move (lanes), this),
   objects_ (this),
   signals_ (this),
   surface_ (this),
@@ -20415,7 +20415,7 @@ t_road (const t_road& x,
         ::xml_schema::flags f,
         ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
-  lane_link_ (x.lane_link_, f, this),
+  link_ (x.link_, f, this),
   type_ (x.type_, f, this),
   planView_ (x.planView_, f, this),
   elevationProfile_ (x.elevationProfile_, f, this),
@@ -20441,7 +20441,7 @@ t_road (const ::xercesc::DOMElement& e,
         ::xml_schema::flags f,
         ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-  lane_link_ (this),
+  link_ (this),
   type_ (this),
   planView_ (this),
   elevationProfile_ (this),
@@ -20481,12 +20481,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "link" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< link_type > r (
+      ::std::unique_ptr< link_type > r (
         link_traits::create (i, f, this));
 
-      if (!this->lane_link_)
+      if (!this->link_)
       {
-        this->lane_link_.set (r);
+        this->link_.set (::std::move (r));
         continue;
       }
     }
@@ -20495,10 +20495,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "type" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< type_type > r (
+      ::std::unique_ptr< type_type > r (
         type_traits::create (i, f, this));
 
-      this->type_.push_back (r);
+      this->type_.push_back (::std::move (r));
       continue;
     }
 
@@ -20506,12 +20506,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "planView" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< planView_type > r (
+      ::std::unique_ptr< planView_type > r (
         planView_traits::create (i, f, this));
 
       if (!planView_.present ())
       {
-        this->planView_.set (r);
+        this->planView_.set (::std::move (r));
         continue;
       }
     }
@@ -20520,12 +20520,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "elevationProfile" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< elevationProfile_type > r (
+      ::std::unique_ptr< elevationProfile_type > r (
         elevationProfile_traits::create (i, f, this));
 
       if (!this->elevationProfile_)
       {
-        this->elevationProfile_.set (r);
+        this->elevationProfile_.set (::std::move (r));
         continue;
       }
     }
@@ -20534,12 +20534,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lateralProfile" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lateralProfile_type > r (
+      ::std::unique_ptr< lateralProfile_type > r (
         lateralProfile_traits::create (i, f, this));
 
       if (!this->lateralProfile_)
       {
-        this->lateralProfile_.set (r);
+        this->lateralProfile_.set (::std::move (r));
         continue;
       }
     }
@@ -20548,12 +20548,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lanes" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lanes_type > r (
+      ::std::unique_ptr< lanes_type > r (
         lanes_traits::create (i, f, this));
 
       if (!lanes_.present ())
       {
-        this->lanes_.set (r);
+        this->lanes_.set (::std::move (r));
         continue;
       }
     }
@@ -20562,12 +20562,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "objects" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< objects_type > r (
+      ::std::unique_ptr< objects_type > r (
         objects_traits::create (i, f, this));
 
       if (!this->objects_)
       {
-        this->objects_.set (r);
+        this->objects_.set (::std::move (r));
         continue;
       }
     }
@@ -20576,12 +20576,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "signals" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< signals_type > r (
+      ::std::unique_ptr< signals_type > r (
         signals_traits::create (i, f, this));
 
       if (!this->signals_)
       {
-        this->signals_.set (r);
+        this->signals_.set (::std::move (r));
         continue;
       }
     }
@@ -20590,12 +20590,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "surface" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< surface_type > r (
+      ::std::unique_ptr< surface_type > r (
         surface_traits::create (i, f, this));
 
       if (!this->surface_)
       {
-        this->surface_.set (r);
+        this->surface_.set (::std::move (r));
         continue;
       }
     }
@@ -20604,12 +20604,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "railroad" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< railroad_type > r (
+      ::std::unique_ptr< railroad_type > r (
         railroad_traits::create (i, f, this));
 
       if (!this->railroad_)
       {
-        this->railroad_.set (r);
+        this->railroad_.set (::std::move (r));
         continue;
       }
     }
@@ -20618,10 +20618,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20629,10 +20629,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20640,12 +20640,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -20739,7 +20739,7 @@ operator= (const t_road& x)
   if (this != &x)
   {
     static_cast< ::xml_schema::type& > (*this) = x;
-    this->lane_link_ = x.lane_link_;
+    this->link_ = x.link_;
     this->type_ = x.type_;
     this->planView_ = x.planView_;
     this->elevationProfile_ = x.elevationProfile_;
@@ -20899,12 +20899,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "predecessor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< predecessor_type > r (
+      ::std::unique_ptr< predecessor_type > r (
         predecessor_traits::create (i, f, this));
 
       if (!this->predecessor_)
       {
-        this->predecessor_.set (r);
+        this->predecessor_.set (::std::move (r));
         continue;
       }
     }
@@ -20913,12 +20913,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "successor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< successor_type > r (
+      ::std::unique_ptr< successor_type > r (
         successor_traits::create (i, f, this));
 
       if (!this->successor_)
       {
-        this->successor_.set (r);
+        this->successor_.set (::std::move (r));
         continue;
       }
     }
@@ -20927,10 +20927,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "neighbor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< neighbor_type > r (
+      ::std::unique_ptr< neighbor_type > r (
         neighbor_traits::create (i, f, this));
 
-      this->neighbor_.push_back (r);
+      this->neighbor_.push_back (::std::move (r));
       continue;
     }
 
@@ -20938,10 +20938,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20949,10 +20949,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20960,12 +20960,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -21072,10 +21072,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21083,10 +21083,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21094,12 +21094,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -21324,10 +21324,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21335,10 +21335,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21346,12 +21346,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -21571,12 +21571,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "speed" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< speed_type > r (
+      ::std::unique_ptr< speed_type > r (
         speed_traits::create (i, f, this));
 
       if (!this->speed_)
       {
-        this->speed_.set (r);
+        this->speed_.set (::std::move (r));
         continue;
       }
     }
@@ -21585,10 +21585,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21596,10 +21596,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21607,12 +21607,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -21694,12 +21694,12 @@ t_road_type::
 //
 
 t_road_type_speed::
-t_road_type_speed (const max_type& max)
+t_road_type_speed (const max_type& fmax)
 : ::xml_schema::type (),
   userData_ (this),
   include_ (this),
   dataQuality_ (this),
-  max_ (max, this),
+  fmax_ (fmax, this),
   unit_ (this)
 {
 }
@@ -21712,7 +21712,7 @@ t_road_type_speed (const t_road_type_speed& x,
   userData_ (x.userData_, f, this),
   include_ (x.include_, f, this),
   dataQuality_ (x.dataQuality_, f, this),
-  max_ (x.max_, f, this),
+  fmax_ (x.fmax_, f, this),
   unit_ (x.unit_, f, this)
 {
 }
@@ -21725,7 +21725,7 @@ t_road_type_speed (const ::xercesc::DOMElement& e,
   userData_ (this),
   include_ (this),
   dataQuality_ (this),
-  max_ (this),
+  fmax_ (this),
   unit_ (this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
@@ -21749,10 +21749,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21760,10 +21760,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21771,12 +21771,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -21792,7 +21792,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     if (n.name () == "max" && n.namespace_ ().empty ())
     {
-      this->max_.set (max_traits::create (i, f, this));
+      this->fmax_.set (max_traits::create (i, f, this));
       continue;
     }
 
@@ -21803,7 +21803,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     }
   }
 
-  if (!max_.present ())
+  if (!fmax_.present ())
   {
     throw ::xsd::cxx::tree::expected_attribute< char > (
       "max",
@@ -21827,7 +21827,7 @@ operator= (const t_road_type_speed& x)
     this->userData_ = x.userData_;
     this->include_ = x.include_;
     this->dataQuality_ = x.dataQuality_;
-    this->max_ = x.max_;
+    this->fmax_ = x.fmax_;
     this->unit_ = x.unit_;
   }
 
@@ -21895,10 +21895,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "geometry" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< geometry_type > r (
+      ::std::unique_ptr< geometry_type > r (
         geometry_traits::create (i, f, this));
 
-      this->geometry_.push_back (r);
+      this->geometry_.push_back (::std::move (r));
       continue;
     }
 
@@ -21906,10 +21906,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21917,10 +21917,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21928,12 +21928,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -22056,12 +22056,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "line" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< line_type > r (
+      ::std::unique_ptr< line_type > r (
         line_traits::create (i, f, this));
 
       if (!this->line_)
       {
-        this->line_.set (r);
+        this->line_.set (::std::move (r));
         continue;
       }
     }
@@ -22070,12 +22070,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "spiral" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< spiral_type > r (
+      ::std::unique_ptr< spiral_type > r (
         spiral_traits::create (i, f, this));
 
       if (!this->spiral_)
       {
-        this->spiral_.set (r);
+        this->spiral_.set (::std::move (r));
         continue;
       }
     }
@@ -22084,12 +22084,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "arc" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< arc_type > r (
+      ::std::unique_ptr< arc_type > r (
         arc_traits::create (i, f, this));
 
       if (!this->arc_)
       {
-        this->arc_.set (r);
+        this->arc_.set (::std::move (r));
         continue;
       }
     }
@@ -22098,12 +22098,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "poly3" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< poly3_type > r (
+      ::std::unique_ptr< poly3_type > r (
         poly3_traits::create (i, f, this));
 
       if (!this->poly3_)
       {
-        this->poly3_.set (r);
+        this->poly3_.set (::std::move (r));
         continue;
       }
     }
@@ -22112,12 +22112,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "paramPoly3" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< paramPoly3_type > r (
+      ::std::unique_ptr< paramPoly3_type > r (
         paramPoly3_traits::create (i, f, this));
 
       if (!this->paramPoly3_)
       {
-        this->paramPoly3_.set (r);
+        this->paramPoly3_.set (::std::move (r));
         continue;
       }
     }
@@ -22126,10 +22126,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22137,10 +22137,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22148,12 +22148,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -22323,10 +22323,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22334,10 +22334,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22345,12 +22345,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -22445,10 +22445,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22456,10 +22456,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22467,12 +22467,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -22598,10 +22598,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22609,10 +22609,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22620,12 +22620,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -22749,10 +22749,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22760,10 +22760,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22771,12 +22771,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -22962,10 +22962,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22973,10 +22973,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22984,12 +22984,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -23283,10 +23283,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "elevation" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< elevation_type > r (
+      ::std::unique_ptr< elevation_type > r (
         elevation_traits::create (i, f, this));
 
-      this->elevation_.push_back (r);
+      this->elevation_.push_back (::std::move (r));
       continue;
     }
 
@@ -23294,10 +23294,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23305,10 +23305,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23316,12 +23316,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -23429,10 +23429,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23440,10 +23440,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23451,12 +23451,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -23630,10 +23630,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "superelevation" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< superelevation_type > r (
+      ::std::unique_ptr< superelevation_type > r (
         superelevation_traits::create (i, f, this));
 
-      this->superelevation_.push_back (r);
+      this->superelevation_.push_back (::std::move (r));
       continue;
     }
 
@@ -23641,10 +23641,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "crossfall" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< crossfall_type > r (
+      ::std::unique_ptr< crossfall_type > r (
         crossfall_traits::create (i, f, this));
 
-      this->crossfall_.push_back (r);
+      this->crossfall_.push_back (::std::move (r));
       continue;
     }
 
@@ -23652,10 +23652,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "shape" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< shape_type > r (
+      ::std::unique_ptr< shape_type > r (
         shape_traits::create (i, f, this));
 
-      this->shape_.push_back (r);
+      this->shape_.push_back (::std::move (r));
       continue;
     }
 
@@ -23663,10 +23663,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23674,10 +23674,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23685,12 +23685,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -23800,10 +23800,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23811,10 +23811,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23822,12 +23822,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -24015,10 +24015,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24026,10 +24026,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24037,12 +24037,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -24316,10 +24316,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24327,10 +24327,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24338,12 +24338,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -24528,10 +24528,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "laneOffset" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< laneOffset_type > r (
+      ::std::unique_ptr< laneOffset_type > r (
         laneOffset_traits::create (i, f, this));
 
-      this->laneOffset_.push_back (r);
+      this->laneOffset_.push_back (::std::move (r));
       continue;
     }
 
@@ -24539,10 +24539,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "laneSection" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< laneSection_type > r (
+      ::std::unique_ptr< laneSection_type > r (
         laneSection_traits::create (i, f, this));
 
-      this->laneSection_.push_back (r);
+      this->laneSection_.push_back (::std::move (r));
       continue;
     }
 
@@ -24550,10 +24550,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24561,10 +24561,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24572,12 +24572,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -24686,10 +24686,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24697,10 +24697,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24708,12 +24708,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -24893,12 +24893,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "left" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< left_type > r (
+      ::std::unique_ptr< left_type > r (
         left_traits::create (i, f, this));
 
       if (!this->left_)
       {
-        this->left_.set (r);
+        this->left_.set (::std::move (r));
         continue;
       }
     }
@@ -24907,12 +24907,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "center" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< center_type > r (
+      ::std::unique_ptr< center_type > r (
         center_traits::create (i, f, this));
 
       if (!this->center_)
       {
-        this->center_.set (r);
+        this->center_.set (::std::move (r));
         continue;
       }
     }
@@ -24921,12 +24921,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "right" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< right_type > r (
+      ::std::unique_ptr< right_type > r (
         right_traits::create (i, f, this));
 
       if (!this->right_)
       {
-        this->right_.set (r);
+        this->right_.set (::std::move (r));
         continue;
       }
     }
@@ -24935,10 +24935,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24946,10 +24946,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24957,12 +24957,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -25084,10 +25084,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lane" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lane_type > r (
+      ::std::unique_ptr< lane_type > r (
         lane_traits::create (i, f, this));
 
-      this->lane_.push_back (r);
+      this->lane_.push_back (::std::move (r));
       continue;
     }
 
@@ -25095,10 +25095,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25106,10 +25106,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25117,12 +25117,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -25214,10 +25214,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lane" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lane_type > r (
+      ::std::unique_ptr< lane_type > r (
         lane_traits::create (i, f, this));
 
-      this->lane_.push_back (r);
+      this->lane_.push_back (::std::move (r));
       continue;
     }
 
@@ -25225,10 +25225,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25236,10 +25236,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25247,12 +25247,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -25344,10 +25344,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lane" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lane_type > r (
+      ::std::unique_ptr< lane_type > r (
         lane_traits::create (i, f, this));
 
-      this->lane_.push_back (r);
+      this->lane_.push_back (::std::move (r));
       continue;
     }
 
@@ -25355,10 +25355,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25366,10 +25366,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25377,12 +25377,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -25424,7 +25424,7 @@ t_road_lanes_laneSection_right::
 t_road_lanes_laneSection_center_lane::
 t_road_lanes_laneSection_center_lane (const type_type& type)
 : ::xml_schema::type (),
-  lane_link_ (this),
+  link_ (this),
   roadMark_ (this),
   userData_ (this),
   include_ (this),
@@ -25440,7 +25440,7 @@ t_road_lanes_laneSection_center_lane (const t_road_lanes_laneSection_center_lane
                                       ::xml_schema::flags f,
                                       ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
-  lane_link_ (x.lane_link_, f, this),
+  link_ (x.link_, f, this),
   roadMark_ (x.roadMark_, f, this),
   userData_ (x.userData_, f, this),
   include_ (x.include_, f, this),
@@ -25456,7 +25456,7 @@ t_road_lanes_laneSection_center_lane (const ::xercesc::DOMElement& e,
                                       ::xml_schema::flags f,
                                       ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-  lane_link_ (this),
+  link_ (this),
   roadMark_ (this),
   userData_ (this),
   include_ (this),
@@ -25486,12 +25486,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "link" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< link_type > r (
+      ::std::unique_ptr< link_type > r (
         link_traits::create (i, f, this));
 
-      if (!this->lane_link_)
+      if (!this->link_)
       {
-        this->lane_link_.set (r);
+        this->link_.set (::std::move (r));
         continue;
       }
     }
@@ -25500,10 +25500,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "roadMark" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< roadMark_type > r (
+      ::std::unique_ptr< roadMark_type > r (
         roadMark_traits::create (i, f, this));
 
-      this->roadMark_.push_back (r);
+      this->roadMark_.push_back (::std::move (r));
       continue;
     }
 
@@ -25511,10 +25511,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25522,10 +25522,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25533,12 +25533,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -25597,7 +25597,7 @@ operator= (const t_road_lanes_laneSection_center_lane& x)
   if (this != &x)
   {
     static_cast< ::xml_schema::type& > (*this) = x;
-    this->lane_link_ = x.lane_link_;
+    this->link_ = x.link_;
     this->roadMark_ = x.roadMark_;
     this->userData_ = x.userData_;
     this->include_ = x.include_;
@@ -25621,14 +25621,14 @@ t_road_lanes_laneSection_center_lane::
 t_road_lanes_laneSection_lr_lane::
 t_road_lanes_laneSection_lr_lane (const type_type& type)
 : ::xml_schema::type (),
-  lane_link_ (this),
+  link_ (this),
   width_ (this),
   border_ (this),
   roadMark_ (this),
   material_ (this),
   visibility_ (this),
   speed_ (this),
-  parkingSpace_access_ (this),
+  access_ (this),
   height_ (this),
   rule_ (this),
   userData_ (this),
@@ -25644,14 +25644,14 @@ t_road_lanes_laneSection_lr_lane (const t_road_lanes_laneSection_lr_lane& x,
                                   ::xml_schema::flags f,
                                   ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
-  lane_link_ (x.lane_link_, f, this),
+  link_ (x.link_, f, this),
   width_ (x.width_, f, this),
   border_ (x.border_, f, this),
   roadMark_ (x.roadMark_, f, this),
   material_ (x.material_, f, this),
   visibility_ (x.visibility_, f, this),
   speed_ (x.speed_, f, this),
-  parkingSpace_access_ (x.parkingSpace_access_, f, this),
+  access_ (x.access_, f, this),
   height_ (x.height_, f, this),
   rule_ (x.rule_, f, this),
   userData_ (x.userData_, f, this),
@@ -25667,14 +25667,14 @@ t_road_lanes_laneSection_lr_lane (const ::xercesc::DOMElement& e,
                                   ::xml_schema::flags f,
                                   ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-  lane_link_ (this),
+  link_ (this),
   width_ (this),
   border_ (this),
   roadMark_ (this),
   material_ (this),
   visibility_ (this),
   speed_ (this),
-  parkingSpace_access_ (this),
+  access_ (this),
   height_ (this),
   rule_ (this),
   userData_ (this),
@@ -25704,12 +25704,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "link" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< link_type > r (
+      ::std::unique_ptr< link_type > r (
         link_traits::create (i, f, this));
 
-      if (!this->lane_link_)
+      if (!this->link_)
       {
-        this->lane_link_.set (r);
+        this->link_.set (::std::move (r));
         continue;
       }
     }
@@ -25718,10 +25718,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "width" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< width_type > r (
+      ::std::unique_ptr< width_type > r (
         width_traits::create (i, f, this));
 
-      this->width_.push_back (r);
+      this->width_.push_back (::std::move (r));
       continue;
     }
 
@@ -25729,10 +25729,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "border" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< border_type > r (
+      ::std::unique_ptr< border_type > r (
         border_traits::create (i, f, this));
 
-      this->border_.push_back (r);
+      this->border_.push_back (::std::move (r));
       continue;
     }
 
@@ -25740,10 +25740,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "roadMark" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< roadMark_type > r (
+      ::std::unique_ptr< roadMark_type > r (
         roadMark_traits::create (i, f, this));
 
-      this->roadMark_.push_back (r);
+      this->roadMark_.push_back (::std::move (r));
       continue;
     }
 
@@ -25751,10 +25751,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "material" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< material_type > r (
+      ::std::unique_ptr< material_type > r (
         material_traits::create (i, f, this));
 
-      this->material_.push_back (r);
+      this->material_.push_back (::std::move (r));
       continue;
     }
 
@@ -25762,10 +25762,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "visibility" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< visibility_type > r (
+      ::std::unique_ptr< visibility_type > r (
         visibility_traits::create (i, f, this));
 
-      this->visibility_.push_back (r);
+      this->visibility_.push_back (::std::move (r));
       continue;
     }
 
@@ -25773,10 +25773,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "speed" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< speed_type > r (
+      ::std::unique_ptr< speed_type > r (
         speed_traits::create (i, f, this));
 
-      this->speed_.push_back (r);
+      this->speed_.push_back (::std::move (r));
       continue;
     }
 
@@ -25784,10 +25784,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "access" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< access_type > r (
+      ::std::unique_ptr< access_type > r (
         access_traits::create (i, f, this));
 
-      this->parkingSpace_access_.push_back (r);
+      this->access_.push_back (::std::move (r));
       continue;
     }
 
@@ -25795,10 +25795,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "height" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< height_type > r (
+      ::std::unique_ptr< height_type > r (
         height_traits::create (i, f, this));
 
-      this->height_.push_back (r);
+      this->height_.push_back (::std::move (r));
       continue;
     }
 
@@ -25806,10 +25806,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "rule" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< rule_type > r (
+      ::std::unique_ptr< rule_type > r (
         rule_traits::create (i, f, this));
 
-      this->rule_.push_back (r);
+      this->rule_.push_back (::std::move (r));
       continue;
     }
 
@@ -25817,10 +25817,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25828,10 +25828,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25839,12 +25839,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -25892,14 +25892,14 @@ operator= (const t_road_lanes_laneSection_lr_lane& x)
   if (this != &x)
   {
     static_cast< ::xml_schema::type& > (*this) = x;
-    this->lane_link_ = x.lane_link_;
+    this->link_ = x.link_;
     this->width_ = x.width_;
     this->border_ = x.border_;
     this->roadMark_ = x.roadMark_;
     this->material_ = x.material_;
     this->visibility_ = x.visibility_;
     this->speed_ = x.speed_;
-    this->parkingSpace_access_ = x.parkingSpace_access_;
+    this->access_ = x.access_;
     this->height_ = x.height_;
     this->rule_ = x.rule_;
     this->userData_ = x.userData_;
@@ -26150,10 +26150,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "predecessor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< predecessor_type > r (
+      ::std::unique_ptr< predecessor_type > r (
         predecessor_traits::create (i, f, this));
 
-      this->predecessor_.push_back (r);
+      this->predecessor_.push_back (::std::move (r));
       continue;
     }
 
@@ -26161,10 +26161,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "successor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< successor_type > r (
+      ::std::unique_ptr< successor_type > r (
         successor_traits::create (i, f, this));
 
-      this->successor_.push_back (r);
+      this->successor_.push_back (::std::move (r));
       continue;
     }
 
@@ -26172,10 +26172,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26183,10 +26183,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26194,12 +26194,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -26292,10 +26292,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26303,10 +26303,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26314,12 +26314,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -26447,10 +26447,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26458,10 +26458,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26469,12 +26469,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -26658,10 +26658,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26669,10 +26669,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26680,12 +26680,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -26885,10 +26885,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "sway" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< sway_type > r (
+      ::std::unique_ptr< sway_type > r (
         sway_traits::create (i, f, this));
 
-      this->sway_.push_back (r);
+      this->sway_.push_back (::std::move (r));
       continue;
     }
 
@@ -26896,12 +26896,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "type" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< type_type > r (
+      ::std::unique_ptr< type_type > r (
         type_traits::create (i, f, this));
 
       if (!this->type_)
       {
-        this->type_.set (r);
+        this->type_.set (::std::move (r));
         continue;
       }
     }
@@ -26910,12 +26910,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "explicit" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< explicit_type > r (
+      ::std::unique_ptr< explicit_type > r (
         explicit_traits::create (i, f, this));
 
       if (!this->explicit__)
       {
-        this->explicit__.set (r);
+        this->explicit__.set (::std::move (r));
         continue;
       }
     }
@@ -26924,10 +26924,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26935,10 +26935,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26946,12 +26946,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -27219,10 +27219,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27230,10 +27230,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27241,12 +27241,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -27421,10 +27421,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "line" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< line_type > r (
+      ::std::unique_ptr< line_type > r (
         line_traits::create (i, f, this));
 
-      this->line_.push_back (r);
+      this->line_.push_back (::std::move (r));
       continue;
     }
 
@@ -27432,10 +27432,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27443,10 +27443,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27454,12 +27454,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -27608,10 +27608,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27619,10 +27619,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27630,12 +27630,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -27817,10 +27817,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "line" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< line_type > r (
+      ::std::unique_ptr< line_type > r (
         line_traits::create (i, f, this));
 
-      this->line_.push_back (r);
+      this->line_.push_back (::std::move (r));
       continue;
     }
 
@@ -27828,10 +27828,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27839,10 +27839,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27850,12 +27850,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -27962,10 +27962,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27973,10 +27973,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27984,12 +27984,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -28160,10 +28160,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28171,10 +28171,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28182,12 +28182,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -28343,10 +28343,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28354,10 +28354,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28365,12 +28365,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -28487,13 +28487,13 @@ t_road_lanes_laneSection_lr_lane_visibility::
 
 t_road_lanes_laneSection_lr_lane_speed::
 t_road_lanes_laneSection_lr_lane_speed (const sOffset_type& sOffset,
-                                        const max_type& max)
+                                        const max_type& fmax)
 : ::xml_schema::type (),
   userData_ (this),
   include_ (this),
   dataQuality_ (this),
   sOffset_ (sOffset, this),
-  max_ (max, this),
+  fmax_ (fmax, this),
   unit_ (this)
 {
 }
@@ -28507,7 +28507,7 @@ t_road_lanes_laneSection_lr_lane_speed (const t_road_lanes_laneSection_lr_lane_s
   include_ (x.include_, f, this),
   dataQuality_ (x.dataQuality_, f, this),
   sOffset_ (x.sOffset_, f, this),
-  max_ (x.max_, f, this),
+  fmax_ (x.fmax_, f, this),
   unit_ (x.unit_, f, this)
 {
 }
@@ -28521,7 +28521,7 @@ t_road_lanes_laneSection_lr_lane_speed (const ::xercesc::DOMElement& e,
   include_ (this),
   dataQuality_ (this),
   sOffset_ (this),
-  max_ (this),
+  fmax_ (this),
   unit_ (this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
@@ -28545,10 +28545,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28556,10 +28556,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28567,12 +28567,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -28594,7 +28594,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     if (n.name () == "max" && n.namespace_ ().empty ())
     {
-      this->max_.set (max_traits::create (i, f, this));
+      this->fmax_.set (max_traits::create (i, f, this));
       continue;
     }
 
@@ -28612,7 +28612,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
       "");
   }
 
-  if (!max_.present ())
+  if (!fmax_.present ())
   {
     throw ::xsd::cxx::tree::expected_attribute< char > (
       "max",
@@ -28637,7 +28637,7 @@ operator= (const t_road_lanes_laneSection_lr_lane_speed& x)
     this->include_ = x.include_;
     this->dataQuality_ = x.dataQuality_;
     this->sOffset_ = x.sOffset_;
-    this->max_ = x.max_;
+    this->fmax_ = x.fmax_;
     this->unit_ = x.unit_;
   }
 
@@ -28713,10 +28713,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28724,10 +28724,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28735,12 +28735,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -28958,10 +28958,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28969,10 +28969,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28980,12 +28980,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -29129,10 +29129,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -29140,10 +29140,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -29151,12 +29151,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -29291,10 +29291,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "object" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< object_type > r (
+      ::std::unique_ptr< object_type > r (
         object_traits::create (i, f, this));
 
-      this->object_.push_back (r);
+      this->object_.push_back (::std::move (r));
       continue;
     }
 
@@ -29302,10 +29302,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "objectReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< objectReference_type > r (
+      ::std::unique_ptr< objectReference_type > r (
         objectReference_traits::create (i, f, this));
 
-      this->objectReference_.push_back (r);
+      this->objectReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -29313,10 +29313,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "tunnel" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< tunnel_type > r (
+      ::std::unique_ptr< tunnel_type > r (
         tunnel_traits::create (i, f, this));
 
-      this->tunnel_.push_back (r);
+      this->tunnel_.push_back (::std::move (r));
       continue;
     }
 
@@ -29324,10 +29324,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "bridge" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< bridge_type > r (
+      ::std::unique_ptr< bridge_type > r (
         bridge_traits::create (i, f, this));
 
-      this->bridge_.push_back (r);
+      this->bridge_.push_back (::std::move (r));
       continue;
     }
 
@@ -29335,10 +29335,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -29346,10 +29346,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -29357,12 +29357,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -29539,12 +29539,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "repeat" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< repeat_type > r (
+      ::std::unique_ptr< repeat_type > r (
         repeat_traits::create (i, f, this));
 
       if (!this->repeat_)
       {
-        this->repeat_.set (r);
+        this->repeat_.set (::std::move (r));
         continue;
       }
     }
@@ -29553,12 +29553,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "outline" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< outline_type > r (
+      ::std::unique_ptr< outline_type > r (
         outline_traits::create (i, f, this));
 
       if (!this->outline_)
       {
-        this->outline_.set (r);
+        this->outline_.set (::std::move (r));
         continue;
       }
     }
@@ -29567,12 +29567,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "outlines" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< outlines_type > r (
+      ::std::unique_ptr< outlines_type > r (
         outlines_traits::create (i, f, this));
 
       if (!this->outlines_)
       {
-        this->outlines_.set (r);
+        this->outlines_.set (::std::move (r));
         continue;
       }
     }
@@ -29581,10 +29581,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "material" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< material_type > r (
+      ::std::unique_ptr< material_type > r (
         material_traits::create (i, f, this));
 
-      this->material_.push_back (r);
+      this->material_.push_back (::std::move (r));
       continue;
     }
 
@@ -29592,10 +29592,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -29603,12 +29603,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "parkingSpace" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< parkingSpace_type > r (
+      ::std::unique_ptr< parkingSpace_type > r (
         parkingSpace_traits::create (i, f, this));
 
       if (!this->parkingSpace_)
       {
-        this->parkingSpace_.set (r);
+        this->parkingSpace_.set (::std::move (r));
         continue;
       }
     }
@@ -29617,12 +29617,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "markings" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< markings_type > r (
+      ::std::unique_ptr< markings_type > r (
         markings_traits::create (i, f, this));
 
       if (!this->markings_)
       {
-        this->markings_.set (r);
+        this->markings_.set (::std::move (r));
         continue;
       }
     }
@@ -29631,12 +29631,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "borders" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< borders_type > r (
+      ::std::unique_ptr< borders_type > r (
         borders_traits::create (i, f, this));
 
       if (!this->borders_)
       {
-        this->borders_.set (r);
+        this->borders_.set (::std::move (r));
         continue;
       }
     }
@@ -29645,10 +29645,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -29656,10 +29656,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -29667,12 +29667,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -30026,10 +30026,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -30037,10 +30037,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -30048,12 +30048,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -30333,10 +30333,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "outline" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< outline_type > r (
+      ::std::unique_ptr< outline_type > r (
         outline_traits::create (i, f, this));
 
-      this->outline_.push_back (r);
+      this->outline_.push_back (::std::move (r));
       continue;
     }
 
@@ -30344,10 +30344,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -30355,10 +30355,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -30366,12 +30366,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -30485,10 +30485,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "cornerRoad" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< cornerRoad_type > r (
+      ::std::unique_ptr< cornerRoad_type > r (
         cornerRoad_traits::create (i, f, this));
 
-      this->cornerRoad_.push_back (r);
+      this->cornerRoad_.push_back (::std::move (r));
       continue;
     }
 
@@ -30496,10 +30496,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "cornerLocal" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< cornerLocal_type > r (
+      ::std::unique_ptr< cornerLocal_type > r (
         cornerLocal_traits::create (i, f, this));
 
-      this->cornerLocal_.push_back (r);
+      this->cornerLocal_.push_back (::std::move (r));
       continue;
     }
 
@@ -30507,10 +30507,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -30518,10 +30518,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -30529,12 +30529,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -30720,10 +30720,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -30731,10 +30731,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -30742,12 +30742,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -30931,10 +30931,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -30942,10 +30942,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -30953,12 +30953,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -31132,10 +31132,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -31143,10 +31143,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -31154,12 +31154,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -31282,10 +31282,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -31293,10 +31293,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -31304,12 +31304,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -31383,12 +31383,12 @@ t_road_objects_object_laneValidity::
 //
 
 t_road_objects_object_parkingSpace::
-t_road_objects_object_parkingSpace (const access_type& parkingSpace_access)
+t_road_objects_object_parkingSpace (const access_type& access)
 : ::xml_schema::type (),
   userData_ (this),
   include_ (this),
   dataQuality_ (this),
-  parkingSpace_access_ (parkingSpace_access, this),
+  access_ (access, this),
   restrictions_ (this)
 {
 }
@@ -31401,7 +31401,7 @@ t_road_objects_object_parkingSpace (const t_road_objects_object_parkingSpace& x,
   userData_ (x.userData_, f, this),
   include_ (x.include_, f, this),
   dataQuality_ (x.dataQuality_, f, this),
-  parkingSpace_access_ (x.parkingSpace_access_, f, this),
+  access_ (x.access_, f, this),
   restrictions_ (x.restrictions_, f, this)
 {
 }
@@ -31414,7 +31414,7 @@ t_road_objects_object_parkingSpace (const ::xercesc::DOMElement& e,
   userData_ (this),
   include_ (this),
   dataQuality_ (this),
-  parkingSpace_access_ (this),
+  access_ (this),
   restrictions_ (this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
@@ -31438,10 +31438,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -31449,10 +31449,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -31460,12 +31460,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -31481,7 +31481,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     if (n.name () == "access" && n.namespace_ ().empty ())
     {
-      this->parkingSpace_access_.set (access_traits::create (i, f, this));
+      this->access_.set (access_traits::create (i, f, this));
       continue;
     }
 
@@ -31492,7 +31492,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     }
   }
 
-  if (!parkingSpace_access_.present ())
+  if (!access_.present ())
   {
     throw ::xsd::cxx::tree::expected_attribute< char > (
       "access",
@@ -31516,7 +31516,7 @@ operator= (const t_road_objects_object_parkingSpace& x)
     this->userData_ = x.userData_;
     this->include_ = x.include_;
     this->dataQuality_ = x.dataQuality_;
-    this->parkingSpace_access_ = x.parkingSpace_access_;
+    this->access_ = x.access_;
     this->restrictions_ = x.restrictions_;
   }
 
@@ -31666,10 +31666,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "marking" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< marking_type > r (
+      ::std::unique_ptr< marking_type > r (
         marking_traits::create (i, f, this));
 
-      this->marking_.push_back (r);
+      this->marking_.push_back (::std::move (r));
       continue;
     }
 
@@ -31677,10 +31677,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -31688,10 +31688,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -31699,12 +31699,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -31829,10 +31829,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "cornerReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< cornerReference_type > r (
+      ::std::unique_ptr< cornerReference_type > r (
         cornerReference_traits::create (i, f, this));
 
-      this->cornerReference_.push_back (r);
+      this->cornerReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -31840,10 +31840,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -31851,10 +31851,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -31862,12 +31862,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -32078,10 +32078,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -32089,10 +32089,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -32100,12 +32100,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -32217,10 +32217,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "border" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< border_type > r (
+      ::std::unique_ptr< border_type > r (
         border_traits::create (i, f, this));
 
-      this->border_.push_back (r);
+      this->border_.push_back (::std::move (r));
       continue;
     }
 
@@ -32228,10 +32228,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -32239,10 +32239,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -32250,12 +32250,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -32361,10 +32361,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "cornerReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< cornerReference_type > r (
+      ::std::unique_ptr< cornerReference_type > r (
         cornerReference_traits::create (i, f, this));
 
-      this->cornerReference_.push_back (r);
+      this->cornerReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -32372,10 +32372,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -32383,10 +32383,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -32394,12 +32394,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -32570,10 +32570,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -32581,10 +32581,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -32592,10 +32592,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -32603,12 +32603,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -32815,10 +32815,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -32826,10 +32826,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -32837,10 +32837,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -32848,12 +32848,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -33047,10 +33047,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -33058,10 +33058,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -33069,10 +33069,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -33080,12 +33080,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -33250,10 +33250,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "signal" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< signal_type > r (
+      ::std::unique_ptr< signal_type > r (
         signal_traits::create (i, f, this));
 
-      this->signal_.push_back (r);
+      this->signal_.push_back (::std::move (r));
       continue;
     }
 
@@ -33261,10 +33261,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "signalReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< signalReference_type > r (
+      ::std::unique_ptr< signalReference_type > r (
         signalReference_traits::create (i, f, this));
 
-      this->signalReference_.push_back (r);
+      this->signalReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -33272,10 +33272,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -33283,10 +33283,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -33294,12 +33294,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -33470,10 +33470,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -33481,10 +33481,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dependency" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dependency_type > r (
+      ::std::unique_ptr< dependency_type > r (
         dependency_traits::create (i, f, this));
 
-      this->dependency_.push_back (r);
+      this->dependency_.push_back (::std::move (r));
       continue;
     }
 
@@ -33492,10 +33492,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "reference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< reference_type > r (
+      ::std::unique_ptr< reference_type > r (
         reference_traits::create (i, f, this));
 
-      this->reference_.push_back (r);
+      this->reference_.push_back (::std::move (r));
       continue;
     }
 
@@ -33503,12 +33503,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "positionRoad" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< positionRoad_type > r (
+      ::std::unique_ptr< positionRoad_type > r (
         positionRoad_traits::create (i, f, this));
 
       if (!this->positionRoad_)
       {
-        this->positionRoad_.set (r);
+        this->positionRoad_.set (::std::move (r));
         continue;
       }
     }
@@ -33517,12 +33517,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "positionInertial" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< positionInertial_type > r (
+      ::std::unique_ptr< positionInertial_type > r (
         positionInertial_traits::create (i, f, this));
 
       if (!this->positionInertial_)
       {
-        this->positionInertial_.set (r);
+        this->positionInertial_.set (::std::move (r));
         continue;
       }
     }
@@ -33531,10 +33531,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -33542,10 +33542,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -33553,12 +33553,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -33867,10 +33867,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -33878,10 +33878,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -33889,12 +33889,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -34020,10 +34020,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -34031,10 +34031,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -34042,12 +34042,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -34272,10 +34272,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -34283,10 +34283,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -34294,12 +34294,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -34499,10 +34499,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -34510,10 +34510,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -34521,12 +34521,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -34709,10 +34709,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -34720,10 +34720,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -34731,10 +34731,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -34742,12 +34742,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -34902,10 +34902,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "CRG" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< CRG_type > r (
+      ::std::unique_ptr< CRG_type > r (
         CRG_traits::create (i, f, this));
 
-      this->CRG_.push_back (r);
+      this->CRG_.push_back (::std::move (r));
       continue;
     }
 
@@ -34913,10 +34913,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -34924,10 +34924,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -34935,12 +34935,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -35066,10 +35066,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -35077,10 +35077,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -35088,12 +35088,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -35447,10 +35447,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "switch" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< switch_type > r (
+      ::std::unique_ptr< switch_type > r (
         switch_traits::create (i, f, this));
 
-      this->switch__.push_back (r);
+      this->switch__.push_back (::std::move (r));
       continue;
     }
 
@@ -35458,10 +35458,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -35469,10 +35469,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -35480,12 +35480,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -35544,14 +35544,14 @@ t_road_railroad_switch (const mainTrack_type& mainTrack,
 }
 
 t_road_railroad_switch::
-t_road_railroad_switch (::std::auto_ptr< mainTrack_type > mainTrack,
-                        ::std::auto_ptr< sideTrack_type > sideTrack,
+t_road_railroad_switch (::std::unique_ptr< mainTrack_type > mainTrack,
+                        ::std::unique_ptr< sideTrack_type > sideTrack,
                         const name_type& name,
                         const id_type& id,
                         const position_type& position)
 : ::xml_schema::type (),
-  mainTrack_ (mainTrack, this),
-  sideTrack_ (sideTrack, this),
+  mainTrack_ (std::move (mainTrack), this),
+  sideTrack_ (std::move (sideTrack), this),
   partner_ (this),
   userData_ (this),
   include_ (this),
@@ -35615,12 +35615,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "mainTrack" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< mainTrack_type > r (
+      ::std::unique_ptr< mainTrack_type > r (
         mainTrack_traits::create (i, f, this));
 
       if (!mainTrack_.present ())
       {
-        this->mainTrack_.set (r);
+        this->mainTrack_.set (::std::move (r));
         continue;
       }
     }
@@ -35629,12 +35629,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "sideTrack" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< sideTrack_type > r (
+      ::std::unique_ptr< sideTrack_type > r (
         sideTrack_traits::create (i, f, this));
 
       if (!sideTrack_.present ())
       {
-        this->sideTrack_.set (r);
+        this->sideTrack_.set (::std::move (r));
         continue;
       }
     }
@@ -35643,12 +35643,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "partner" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< partner_type > r (
+      ::std::unique_ptr< partner_type > r (
         partner_traits::create (i, f, this));
 
       if (!this->partner_)
       {
-        this->partner_.set (r);
+        this->partner_.set (::std::move (r));
         continue;
       }
     }
@@ -35657,10 +35657,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -35668,10 +35668,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -35679,12 +35679,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -35921,10 +35921,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -35932,10 +35932,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -35943,12 +35943,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -36096,10 +36096,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -36107,10 +36107,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -36118,12 +36118,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -36266,10 +36266,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -36277,10 +36277,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -36288,12 +36288,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -36421,10 +36421,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "control" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< control_type > r (
+      ::std::unique_ptr< control_type > r (
         control_traits::create (i, f, this));
 
-      this->control_.push_back (r);
+      this->control_.push_back (::std::move (r));
       continue;
     }
 
@@ -36432,10 +36432,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -36443,10 +36443,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -36454,12 +36454,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -36589,10 +36589,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -36600,10 +36600,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -36611,12 +36611,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -36753,10 +36753,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "connection" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< connection_type > r (
+      ::std::unique_ptr< connection_type > r (
         connection_traits::create (i, f, this));
 
-      this->connection_.push_back (r);
+      this->connection_.push_back (::std::move (r));
       continue;
     }
 
@@ -36764,10 +36764,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "priority" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< priority_type > r (
+      ::std::unique_ptr< priority_type > r (
         priority_traits::create (i, f, this));
 
-      this->priority_.push_back (r);
+      this->priority_.push_back (::std::move (r));
       continue;
     }
 
@@ -36775,10 +36775,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "controller" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< controller_type > r (
+      ::std::unique_ptr< controller_type > r (
         controller_traits::create (i, f, this));
 
-      this->controller_.push_back (r);
+      this->controller_.push_back (::std::move (r));
       continue;
     }
 
@@ -36786,12 +36786,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "surface" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< surface_type > r (
+      ::std::unique_ptr< surface_type > r (
         surface_traits::create (i, f, this));
 
       if (!this->surface_)
       {
-        this->surface_.set (r);
+        this->surface_.set (::std::move (r));
         continue;
       }
     }
@@ -36800,10 +36800,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -36811,10 +36811,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -36822,12 +36822,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -37054,12 +37054,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "predecessor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< predecessor_type > r (
+      ::std::unique_ptr< predecessor_type > r (
         predecessor_traits::create (i, f, this));
 
       if (!this->predecessor_)
       {
-        this->predecessor_.set (r);
+        this->predecessor_.set (::std::move (r));
         continue;
       }
     }
@@ -37068,12 +37068,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "successor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< successor_type > r (
+      ::std::unique_ptr< successor_type > r (
         successor_traits::create (i, f, this));
 
       if (!this->successor_)
       {
-        this->successor_.set (r);
+        this->successor_.set (::std::move (r));
         continue;
       }
     }
@@ -37082,10 +37082,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "laneLink" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< laneLink_type > r (
+      ::std::unique_ptr< laneLink_type > r (
         laneLink_traits::create (i, f, this));
 
-      this->laneLink_.push_back (r);
+      this->laneLink_.push_back (::std::move (r));
       continue;
     }
 
@@ -37093,10 +37093,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -37104,10 +37104,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -37115,12 +37115,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -37305,10 +37305,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -37316,10 +37316,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -37327,12 +37327,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -37488,10 +37488,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -37499,10 +37499,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -37510,12 +37510,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -37644,10 +37644,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -37655,10 +37655,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -37666,12 +37666,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -37789,10 +37789,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -37800,10 +37800,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -37811,12 +37811,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -37942,10 +37942,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "CRG" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< CRG_type > r (
+      ::std::unique_ptr< CRG_type > r (
         CRG_traits::create (i, f, this));
 
-      this->CRG_.push_back (r);
+      this->CRG_.push_back (::std::move (r));
       continue;
     }
 
@@ -37953,10 +37953,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -37964,10 +37964,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -37975,12 +37975,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -38087,10 +38087,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -38098,10 +38098,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -38109,12 +38109,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -38269,10 +38269,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "junctionReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< junctionReference_type > r (
+      ::std::unique_ptr< junctionReference_type > r (
         junctionReference_traits::create (i, f, this));
 
-      this->junctionReference_.push_back (r);
+      this->junctionReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -38280,10 +38280,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -38291,10 +38291,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -38302,12 +38302,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -38511,10 +38511,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -38522,10 +38522,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -38533,12 +38533,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -38660,10 +38660,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "platform" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< platform_type > r (
+      ::std::unique_ptr< platform_type > r (
         platform_traits::create (i, f, this));
 
-      this->platform_.push_back (r);
+      this->platform_.push_back (::std::move (r));
       continue;
     }
 
@@ -38671,10 +38671,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -38682,10 +38682,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -38693,12 +38693,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -38845,7 +38845,7 @@ _xsd_e_station_type_indexes_[3] =
 {
   ::e_station_type::large,
   ::e_station_type::medium,
-  ::e_station_type::small
+  ::e_station_type::smaller
 };
 
 // t_station_platform
@@ -38910,10 +38910,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "segment" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< segment_type > r (
+      ::std::unique_ptr< segment_type > r (
         segment_traits::create (i, f, this));
 
-      this->segment_.push_back (r);
+      this->segment_.push_back (::std::move (r));
       continue;
     }
 
@@ -38921,10 +38921,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -38932,10 +38932,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -38943,12 +38943,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -39080,10 +39080,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -39091,10 +39091,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -39102,12 +39102,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -39516,12 +39516,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "error" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< error_type > r (
+      ::std::unique_ptr< error_type > r (
         error_traits::create (i, f, this));
 
       if (!this->error_)
       {
-        this->error_.set (r);
+        this->error_.set (::std::move (r));
         continue;
       }
     }
@@ -39530,12 +39530,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "rawData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< rawData_type > r (
+      ::std::unique_ptr< rawData_type > r (
         rawData_traits::create (i, f, this));
 
       if (!this->rawData_)
       {
-        this->rawData_.set (r);
+        this->rawData_.set (::std::move (r));
         continue;
       }
     }
@@ -41955,9 +41955,9 @@ OpenDRIVE (const header_type& header)
 }
 
 OpenDRIVE::
-OpenDRIVE (::std::auto_ptr< header_type > header)
+OpenDRIVE (::std::unique_ptr< header_type > header)
 : ::xml_schema::type (),
-  header_ (header, this),
+  header_ (std::move (header), this),
   road_ (this),
   controller_ (this),
   junction_ (this),
@@ -42022,12 +42022,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "header" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< header_type > r (
+      ::std::unique_ptr< header_type > r (
         header_traits::create (i, f, this));
 
       if (!header_.present ())
       {
-        this->header_.set (r);
+        this->header_.set (::std::move (r));
         continue;
       }
     }
@@ -42036,10 +42036,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "road" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< road_type > r (
+      ::std::unique_ptr< road_type > r (
         road_traits::create (i, f, this));
 
-      this->road_.push_back (r);
+      this->road_.push_back (::std::move (r));
       continue;
     }
 
@@ -42047,10 +42047,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "controller" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< controller_type > r (
+      ::std::unique_ptr< controller_type > r (
         controller_traits::create (i, f, this));
 
-      this->controller_.push_back (r);
+      this->controller_.push_back (::std::move (r));
       continue;
     }
 
@@ -42058,10 +42058,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "junction" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< junction_type > r (
+      ::std::unique_ptr< junction_type > r (
         junction_traits::create (i, f, this));
 
-      this->junction_.push_back (r);
+      this->junction_.push_back (::std::move (r));
       continue;
     }
 
@@ -42069,10 +42069,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "junctionGroup" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< junctionGroup_type > r (
+      ::std::unique_ptr< junctionGroup_type > r (
         junctionGroup_traits::create (i, f, this));
 
-      this->junctionGroup_.push_back (r);
+      this->junctionGroup_.push_back (::std::move (r));
       continue;
     }
 
@@ -42080,10 +42080,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "station" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< station_type > r (
+      ::std::unique_ptr< station_type > r (
         station_traits::create (i, f, this));
 
-      this->station_.push_back (r);
+      this->station_.push_back (::std::move (r));
       continue;
     }
 
@@ -42091,10 +42091,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -42102,10 +42102,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -42113,12 +42113,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dataQuality" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dataQuality_type > r (
+      ::std::unique_ptr< dataQuality_type > r (
         dataQuality_traits::create (i, f, this));
 
       if (!this->dataQuality_)
       {
-        this->dataQuality_.set (r);
+        this->dataQuality_.set (::std::move (r));
         continue;
       }
     }
@@ -42170,7 +42170,7 @@ OpenDRIVE::
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& u,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
@@ -42181,18 +42181,18 @@ OpenDRIVE_ (const ::std::string& u,
 
   ::xsd::cxx::tree::error_handler< char > h;
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& u,
             ::xml_schema::error_handler& h,
             ::xml_schema::flags f,
@@ -42202,37 +42202,37 @@ OpenDRIVE_ (const ::std::string& u,
     (f & ::xml_schema::flags::dont_initialize) == 0,
     (f & ::xml_schema::flags::keep_dom) == 0);
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& u,
             ::xercesc::DOMErrorHandler& h,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
@@ -42245,7 +42245,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::error_handler& h,
             ::xml_schema::flags f,
@@ -42259,7 +42259,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xercesc::DOMErrorHandler& h,
             ::xml_schema::flags f,
@@ -42269,7 +42269,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& sid,
             ::xml_schema::flags f,
@@ -42283,7 +42283,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& sid,
             ::xml_schema::error_handler& h,
@@ -42298,7 +42298,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& sid,
             ::xercesc::DOMErrorHandler& h,
@@ -42309,73 +42309,73 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& i,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
   ::xsd::cxx::tree::error_handler< char > h;
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& i,
             ::xml_schema::error_handler& h,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& i,
             ::xercesc::DOMErrorHandler& h,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::xercesc::DOMDocument& doc,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
   if (f & ::xml_schema::flags::keep_dom)
   {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
       static_cast< ::xercesc::DOMDocument* > (doc.cloneNode (true)));
 
-    return ::std::auto_ptr< ::OpenDRIVE > (
+    return ::std::unique_ptr< ::OpenDRIVE > (
       ::OpenDRIVE_ (
-        d, f | ::xml_schema::flags::own_dom, p));
+        std::move (d), f | ::xml_schema::flags::own_dom, p));
   }
 
   const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
@@ -42385,7 +42385,7 @@ OpenDRIVE_ (const ::xercesc::DOMDocument& doc,
   if (n.name () == "OpenDRIVE" &&
       n.namespace_ () == "")
   {
-    ::std::auto_ptr< ::OpenDRIVE > r (
+    ::std::unique_ptr< ::OpenDRIVE > r (
       ::xsd::cxx::tree::traits< ::OpenDRIVE, char >::create (
         e, f, 0));
     return r;
@@ -42398,12 +42398,12 @@ OpenDRIVE_ (const ::xercesc::DOMDocument& doc,
     "");
 }
 
-::std::auto_ptr< ::OpenDRIVE >
-OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
+::std::unique_ptr< ::OpenDRIVE >
+OpenDRIVE_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
             ::xml_schema::flags f,
             const ::xml_schema::properties&)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > c (
     ((f & ::xml_schema::flags::keep_dom) &&
      !(f & ::xml_schema::flags::own_dom))
     ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
@@ -42423,7 +42423,7 @@ OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
   if (n.name () == "OpenDRIVE" &&
       n.namespace_ () == "")
   {
-    ::std::auto_ptr< ::OpenDRIVE > r (
+    ::std::unique_ptr< ::OpenDRIVE > r (
       ::xsd::cxx::tree::traits< ::OpenDRIVE, char >::create (
         e, f, 0));
     return r;
@@ -42434,6 +42434,10885 @@ OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
     n.namespace_ (),
     "OpenDRIVE",
     "");
+}
+
+#include <ostream>
+#include <xsd/cxx/tree/error-handler.hxx>
+#include <xsd/cxx/xml/dom/serialization-source.hxx>
+
+void
+operator<< (::xercesc::DOMElement& e, const t_grEqZero& i)
+{
+  e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_grEqZero& i)
+{
+  a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_grEqZero& i)
+{
+  l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_grZero& i)
+{
+  e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_grZero& i)
+{
+  a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_grZero& i)
+{
+  l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_zeroOne& i)
+{
+  e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_zeroOne& i)
+{
+  a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_zeroOne& i)
+{
+  l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_bool& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_bool& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_bool& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_yesNo& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_yesNo& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_yesNo& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_header_Version& i)
+{
+  e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_header_Version& i)
+{
+  a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type >& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_header_Version& i)
+{
+  l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type >& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_maxSpeed& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_maxSpeed& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_maxSpeed& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_maxSpeedString& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_maxSpeedString& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_maxSpeedString& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_id& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const t_junction_id& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const t_junction_id& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+OpenDRIVE_ (::std::ostream& o,
+            const ::OpenDRIVE& s,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::OpenDRIVE_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+OpenDRIVE_ (::std::ostream& o,
+            const ::OpenDRIVE& s,
+            ::xml_schema::error_handler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::OpenDRIVE_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+OpenDRIVE_ (::std::ostream& o,
+            const ::OpenDRIVE& s,
+            ::xercesc::DOMErrorHandler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::OpenDRIVE_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+OpenDRIVE_ (::xercesc::XMLFormatTarget& t,
+            const ::OpenDRIVE& s,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::OpenDRIVE_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+OpenDRIVE_ (::xercesc::XMLFormatTarget& t,
+            const ::OpenDRIVE& s,
+            ::xml_schema::error_handler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::OpenDRIVE_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+OpenDRIVE_ (::xercesc::XMLFormatTarget& t,
+            const ::OpenDRIVE& s,
+            ::xercesc::DOMErrorHandler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::OpenDRIVE_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+OpenDRIVE_ (::xercesc::DOMDocument& d,
+            const ::OpenDRIVE& s,
+            ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (n.name () == "OpenDRIVE" &&
+      n.namespace_ () == "")
+  {
+    e << s;
+  }
+  else
+  {
+    throw ::xsd::cxx::tree::unexpected_element < char > (
+      n.name (),
+      n.namespace_ (),
+      "OpenDRIVE",
+      "");
+  }
+}
+
+::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+OpenDRIVE_ (const ::OpenDRIVE& s,
+            const ::xml_schema::namespace_infomap& m,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::serialize< char > (
+      "OpenDRIVE",
+      "",
+      m, f));
+
+  ::OpenDRIVE_ (*d, s, f);
+  return d;
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_header& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // geoReference
+  //
+  if (i.geoReference ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "geoReference",
+        e));
+
+    s << *i.geoReference ();
+  }
+
+  // offset
+  //
+  if (i.offset ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "offset",
+        e));
+
+    s << *i.offset ();
+  }
+
+  // userData
+  //
+  for (t_header::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_header::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // revMajor
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "revMajor",
+        e));
+
+    a << i.revMajor ();
+  }
+
+  // revMinor
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "revMinor",
+        e));
+
+    a << i.revMinor ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // version
+  //
+  if (i.version ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "version",
+        e));
+
+    a << *i.version ();
+  }
+
+  // date
+  //
+  if (i.date ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "date",
+        e));
+
+    a << *i.date ();
+  }
+
+  // north
+  //
+  if (i.north ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "north",
+        e));
+
+    a << ::xml_schema::as_double(*i.north ());
+  }
+
+  // south
+  //
+  if (i.south ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "south",
+        e));
+
+    a << ::xml_schema::as_double(*i.south ());
+  }
+
+  // east
+  //
+  if (i.east ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "east",
+        e));
+
+    a << ::xml_schema::as_double(*i.east ());
+  }
+
+  // west
+  //
+  if (i.west ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "west",
+        e));
+
+    a << ::xml_schema::as_double(*i.west ());
+  }
+
+  // vendor
+  //
+  if (i.vendor ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "vendor",
+        e));
+
+    a << *i.vendor ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_header_GeoReference& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_header_GeoReference::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_header_GeoReference::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_header_Offset& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_header_Offset::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_header_Offset::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // x
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "x",
+        e));
+
+    a << ::xml_schema::as_double(i.x ());
+  }
+
+  // y
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "y",
+        e));
+
+    a << ::xml_schema::as_double(i.y ());
+  }
+
+  // z
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "z",
+        e));
+
+    a << ::xml_schema::as_double(i.z ());
+  }
+
+  // hdg
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hdg",
+        e));
+
+    a << i.hdg ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // link
+  //
+  if (i.link ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "link",
+        e));
+
+    s << *i.link ();
+  }
+
+  // type
+  //
+  for (t_road::type_const_iterator
+       b (i.type ().begin ()), n (i.type ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "type",
+        e));
+
+    s << *b;
+  }
+
+  // planView
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "planView",
+        e));
+
+    s << i.planView ();
+  }
+
+  // elevationProfile
+  //
+  if (i.elevationProfile ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "elevationProfile",
+        e));
+
+    s << *i.elevationProfile ();
+  }
+
+  // lateralProfile
+  //
+  if (i.lateralProfile ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "lateralProfile",
+        e));
+
+    s << *i.lateralProfile ();
+  }
+
+  // lanes
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "lanes",
+        e));
+
+    s << i.lanes ();
+  }
+
+  // objects
+  //
+  if (i.objects ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "objects",
+        e));
+
+    s << *i.objects ();
+  }
+
+  // signals
+  //
+  if (i.signals ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "signals",
+        e));
+
+    s << *i.signals ();
+  }
+
+  // surface
+  //
+  if (i.surface ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "surface",
+        e));
+
+    s << *i.surface ();
+  }
+
+  // railroad
+  //
+  if (i.railroad ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "railroad",
+        e));
+
+    s << *i.railroad ();
+  }
+
+  // userData
+  //
+  for (t_road::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // junction
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "junction",
+        e));
+
+    a << i.junction ();
+  }
+
+  // rule
+  //
+  if (i.rule ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "rule",
+        e));
+
+    a << *i.rule ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_trafficRule& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_trafficRule& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_trafficRule& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_link& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // predecessor
+  //
+  if (i.predecessor ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "predecessor",
+        e));
+
+    s << *i.predecessor ();
+  }
+
+  // successor
+  //
+  if (i.successor ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "successor",
+        e));
+
+    s << *i.successor ();
+  }
+
+  // neighbor
+  //
+  for (t_road_link::neighbor_const_iterator
+       b (i.neighbor ().begin ()), n (i.neighbor ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "neighbor",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_link::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_link::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_link_predecessorSuccessor& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_link_predecessorSuccessor::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_link_predecessorSuccessor::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // elementType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementType",
+        e));
+
+    a << i.elementType ();
+  }
+
+  // elementId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementId",
+        e));
+
+    a << i.elementId ();
+  }
+
+  // contactPoint
+  //
+  if (i.contactPoint ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "contactPoint",
+        e));
+
+    a << *i.contactPoint ();
+  }
+
+  // elementS
+  //
+  if (i.elementS ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementS",
+        e));
+
+    a << *i.elementS ();
+  }
+
+  // elementDir
+  //
+  if (i.elementDir ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementDir",
+        e));
+
+    a << *i.elementDir ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_link_elementType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_link_elementType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_link_elementType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_link_neighbor& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_link_neighbor::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_link_neighbor::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // side
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "side",
+        e));
+
+    a << i.side ();
+  }
+
+  // elementId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementId",
+        e));
+
+    a << i.elementId ();
+  }
+
+  // direction
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "direction",
+        e));
+
+    a << i.direction ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_link_neighbor_side& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_link_neighbor_side& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_link_neighbor_side& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // speed
+  //
+  if (i.speed ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "speed",
+        e));
+
+    s << *i.speed ();
+  }
+
+  // userData
+  //
+  for (t_road_type::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_type::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+
+  // country
+  //
+  if (i.country ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "country",
+        e));
+
+    a << *i.country ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_type_speed& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_type_speed::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_type_speed::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // max
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "max",
+        e));
+
+    a << i.fmax ();
+  }
+
+  // unit
+  //
+  if (i.unit ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "unit",
+        e));
+
+    a << *i.unit ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // geometry
+  //
+  for (t_road_planView::geometry_const_iterator
+       b (i.geometry ().begin ()), n (i.geometry ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "geometry",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_planView::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView_geometry& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // line
+  //
+  if (i.line ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "line",
+        e));
+
+    s << *i.line ();
+  }
+
+  // spiral
+  //
+  if (i.spiral ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "spiral",
+        e));
+
+    s << *i.spiral ();
+  }
+
+  // arc
+  //
+  if (i.arc ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "arc",
+        e));
+
+    s << *i.arc ();
+  }
+
+  // poly3
+  //
+  if (i.poly3 ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "poly3",
+        e));
+
+    s << *i.poly3 ();
+  }
+
+  // paramPoly3
+  //
+  if (i.paramPoly3 ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "paramPoly3",
+        e));
+
+    s << *i.paramPoly3 ();
+  }
+
+  // userData
+  //
+  for (t_road_planView_geometry::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView_geometry::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // x
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "x",
+        e));
+
+    a << ::xml_schema::as_double(i.x ());
+  }
+
+  // y
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "y",
+        e));
+
+    a << ::xml_schema::as_double(i.y ());
+  }
+
+  // hdg
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hdg",
+        e));
+
+    a << ::xml_schema::as_double(i.hdg ());
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView_geometry_line& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_planView_geometry_line::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView_geometry_line::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView_geometry_spiral& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_planView_geometry_spiral::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView_geometry_spiral::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // curvStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "curvStart",
+        e));
+
+    a << ::xml_schema::as_double(i.curvStart ());
+  }
+
+  // curvEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "curvEnd",
+        e));
+
+    a << ::xml_schema::as_double(i.curvEnd ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView_geometry_arc& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_planView_geometry_arc::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView_geometry_arc::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // curvature
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "curvature",
+        e));
+
+    a << ::xml_schema::as_double(i.curvature ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView_geometry_poly3& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_planView_geometry_poly3::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView_geometry_poly3::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_planView_geometry_paramPoly3& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_planView_geometry_paramPoly3::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_planView_geometry_paramPoly3::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // aU
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "aU",
+        e));
+
+    a << ::xml_schema::as_double(i.aU ());
+  }
+
+  // bU
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "bU",
+        e));
+
+    a << ::xml_schema::as_double(i.bU ());
+  }
+
+  // cU
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "cU",
+        e));
+
+    a << ::xml_schema::as_double(i.cU ());
+  }
+
+  // dU
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dU",
+        e));
+
+    a << ::xml_schema::as_double(i.dU ());
+  }
+
+  // aV
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "aV",
+        e));
+
+    a << ::xml_schema::as_double(i.aV ());
+  }
+
+  // bV
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "bV",
+        e));
+
+    a << ::xml_schema::as_double(i.bV ());
+  }
+
+  // cV
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "cV",
+        e));
+
+    a << ::xml_schema::as_double(i.cV ());
+  }
+
+  // dV
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dV",
+        e));
+
+    a << ::xml_schema::as_double(i.dV ());
+  }
+
+  // pRange
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "pRange",
+        e));
+
+    a << i.pRange ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_paramPoly3_pRange& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_paramPoly3_pRange& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_paramPoly3_pRange& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_elevationProfile& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // elevation
+  //
+  for (t_road_elevationProfile::elevation_const_iterator
+       b (i.elevation ().begin ()), n (i.elevation ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "elevation",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_elevationProfile::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_elevationProfile::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_elevationProfile_elevation& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_elevationProfile_elevation::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_elevationProfile_elevation::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lateralProfile& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // superelevation
+  //
+  for (t_road_lateralProfile::superelevation_const_iterator
+       b (i.superelevation ().begin ()), n (i.superelevation ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "superelevation",
+        e));
+
+    s << *b;
+  }
+
+  // crossfall
+  //
+  for (t_road_lateralProfile::crossfall_const_iterator
+       b (i.crossfall ().begin ()), n (i.crossfall ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "crossfall",
+        e));
+
+    s << *b;
+  }
+
+  // shape
+  //
+  for (t_road_lateralProfile::shape_const_iterator
+       b (i.shape ().begin ()), n (i.shape ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "shape",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lateralProfile::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lateralProfile::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lateralProfile_superelevation& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lateralProfile_superelevation::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lateralProfile_superelevation::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lateralProfile_crossfall& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lateralProfile_crossfall::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lateralProfile_crossfall::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // side
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "side",
+        e));
+
+    a << i.side ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_lateralProfile_crossfall_side& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_lateralProfile_crossfall_side& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_lateralProfile_crossfall_side& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lateralProfile_shape& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lateralProfile_shape::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lateralProfile_shape::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // laneOffset
+  //
+  for (t_road_lanes::laneOffset_const_iterator
+       b (i.laneOffset ().begin ()), n (i.laneOffset ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "laneOffset",
+        e));
+
+    s << *b;
+  }
+
+  // laneSection
+  //
+  for (t_road_lanes::laneSection_const_iterator
+       b (i.laneSection ().begin ()), n (i.laneSection ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "laneSection",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneOffset& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneOffset::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneOffset::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // left
+  //
+  if (i.left ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "left",
+        e));
+
+    s << *i.left ();
+  }
+
+  // center
+  //
+  if (i.center ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "center",
+        e));
+
+    s << *i.center ();
+  }
+
+  // right
+  //
+  if (i.right ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "right",
+        e));
+
+    s << *i.right ();
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // singleSide
+  //
+  if (i.singleSide ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "singleSide",
+        e));
+
+    a << *i.singleSide ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_left& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // lane
+  //
+  for (t_road_lanes_laneSection_left::lane_const_iterator
+       b (i.lane ().begin ()), n (i.lane ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "lane",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_left::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_left::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_center& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // lane
+  //
+  for (t_road_lanes_laneSection_center::lane_const_iterator
+       b (i.lane ().begin ()), n (i.lane ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "lane",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_center::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_center::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_right& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // lane
+  //
+  for (t_road_lanes_laneSection_right::lane_const_iterator
+       b (i.lane ().begin ()), n (i.lane ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "lane",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_right::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_right::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_center_lane& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // link
+  //
+  if (i.link ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "link",
+        e));
+
+    s << *i.link ();
+  }
+
+  // roadMark
+  //
+  for (t_road_lanes_laneSection_center_lane::roadMark_const_iterator
+       b (i.roadMark ().begin ()), n (i.roadMark ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "roadMark",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_center_lane::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_center_lane::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+
+  // level
+  //
+  if (i.level ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "level",
+        e));
+
+    a << *i.level ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // link
+  //
+  if (i.link ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "link",
+        e));
+
+    s << *i.link ();
+  }
+
+  // width
+  //
+  for (t_road_lanes_laneSection_lr_lane::width_const_iterator
+       b (i.width ().begin ()), n (i.width ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "width",
+        e));
+
+    s << *b;
+  }
+
+  // border
+  //
+  for (t_road_lanes_laneSection_lr_lane::border_const_iterator
+       b (i.border ().begin ()), n (i.border ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "border",
+        e));
+
+    s << *b;
+  }
+
+  // roadMark
+  //
+  for (t_road_lanes_laneSection_lr_lane::roadMark_const_iterator
+       b (i.roadMark ().begin ()), n (i.roadMark ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "roadMark",
+        e));
+
+    s << *b;
+  }
+
+  // material
+  //
+  for (t_road_lanes_laneSection_lr_lane::material_const_iterator
+       b (i.material ().begin ()), n (i.material ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "material",
+        e));
+
+    s << *b;
+  }
+
+  // visibility
+  //
+  for (t_road_lanes_laneSection_lr_lane::visibility_const_iterator
+       b (i.visibility ().begin ()), n (i.visibility ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "visibility",
+        e));
+
+    s << *b;
+  }
+
+  // speed
+  //
+  for (t_road_lanes_laneSection_lr_lane::speed_const_iterator
+       b (i.speed ().begin ()), n (i.speed ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "speed",
+        e));
+
+    s << *b;
+  }
+
+  // access
+  //
+  for (t_road_lanes_laneSection_lr_lane::access_const_iterator
+       b (i.access ().begin ()), n (i.access ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "access",
+        e));
+
+    s << *b;
+  }
+
+  // height
+  //
+  for (t_road_lanes_laneSection_lr_lane::height_const_iterator
+       b (i.height ().begin ()), n (i.height ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "height",
+        e));
+
+    s << *b;
+  }
+
+  // rule
+  //
+  for (t_road_lanes_laneSection_lr_lane::rule_const_iterator
+       b (i.rule ().begin ()), n (i.rule ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "rule",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+
+  // level
+  //
+  if (i.level ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "level",
+        e));
+
+    a << *i.level ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_left_lane& i)
+{
+  e << static_cast< const ::t_road_lanes_laneSection_lr_lane& > (i);
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_right_lane& i)
+{
+  e << static_cast< const ::t_road_lanes_laneSection_lr_lane& > (i);
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_link& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // predecessor
+  //
+  for (t_road_lanes_laneSection_lcr_lane_link::predecessor_const_iterator
+       b (i.predecessor ().begin ()), n (i.predecessor ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "predecessor",
+        e));
+
+    s << *b;
+  }
+
+  // successor
+  //
+  for (t_road_lanes_laneSection_lcr_lane_link::successor_const_iterator
+       b (i.successor ().begin ()), n (i.successor ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "successor",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_link::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_link::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_link_predecessorSuccessor::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_width& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_width::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_width::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_border& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_border::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_border::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_roadMark& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // sway
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark::sway_const_iterator
+       b (i.sway ().begin ()), n (i.sway ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "sway",
+        e));
+
+    s << *b;
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "type",
+        e));
+
+    s << *i.type ();
+  }
+
+  // explicit
+  //
+  if (i.explicit_ ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "explicit",
+        e));
+
+    s << *i.explicit_ ();
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type1 ();
+  }
+
+  // weight
+  //
+  if (i.weight ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "weight",
+        e));
+
+    a << *i.weight ();
+  }
+
+  // color
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "color",
+        e));
+
+    a << i.color ();
+  }
+
+  // material
+  //
+  if (i.material ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "material",
+        e));
+
+    a << *i.material ();
+  }
+
+  // width
+  //
+  if (i.width ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << *i.width ();
+  }
+
+  // laneChange
+  //
+  if (i.laneChange ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "laneChange",
+        e));
+
+    a << *i.laneChange ();
+  }
+
+  // height
+  //
+  if (i.height ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "height",
+        e));
+
+    a << ::xml_schema::as_double(*i.height ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_lanes_laneSection_lcr_lane_roadMark_laneChange& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_lanes_laneSection_lcr_lane_roadMark_laneChange& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_lanes_laneSection_lcr_lane_roadMark_laneChange& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_roadMark_sway& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_sway::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_sway::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // ds
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "ds",
+        e));
+
+    a << i.ds ();
+  }
+
+  // a
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "a",
+        e));
+
+    a << ::xml_schema::as_double(i.a ());
+  }
+
+  // b
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "b",
+        e));
+
+    a << ::xml_schema::as_double(i.b ());
+  }
+
+  // c
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "c",
+        e));
+
+    a << ::xml_schema::as_double(i.c ());
+  }
+
+  // d
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "d",
+        e));
+
+    a << ::xml_schema::as_double(i.d ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_roadMark_type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // line
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_type::line_const_iterator
+       b (i.line ().begin ()), n (i.line ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "line",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_type::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_type::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+
+  // width
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << i.width ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_roadMark_type_line& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_type_line::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_type_line::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+
+  // space
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "space",
+        e));
+
+    a << i.space ();
+  }
+
+  // tOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "tOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.tOffset ());
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // rule
+  //
+  if (i.rule ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "rule",
+        e));
+
+    a << *i.rule ();
+  }
+
+  // width
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << i.width ();
+  }
+
+  // color
+  //
+  if (i.color ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "color",
+        e));
+
+    a << *i.color ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_roadMark_explicit& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // line
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_explicit::line_const_iterator
+       b (i.line ().begin ()), n (i.line ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "line",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_explicit::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_explicit::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lcr_lane_roadMark_explicit_line::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+
+  // tOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "tOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.tOffset ());
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // rule
+  //
+  if (i.rule ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "rule",
+        e));
+
+    a << *i.rule ();
+  }
+
+  // width
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << i.width ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_material& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_material::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_material::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // surface
+  //
+  if (i.surface ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "surface",
+        e));
+
+    a << *i.surface ();
+  }
+
+  // friction
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "friction",
+        e));
+
+    a << i.friction ();
+  }
+
+  // roughness
+  //
+  if (i.roughness ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roughness",
+        e));
+
+    a << *i.roughness ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_visibility& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_visibility::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_visibility::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // forward
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "forward",
+        e));
+
+    a << i.forward ();
+  }
+
+  // back
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "back",
+        e));
+
+    a << i.back ();
+  }
+
+  // left
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "left",
+        e));
+
+    a << i.left ();
+  }
+
+  // right
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "right",
+        e));
+
+    a << i.right ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_speed& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_speed::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_speed::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // max
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "max",
+        e));
+
+    a << i.fmax ();
+  }
+
+  // unit
+  //
+  if (i.unit ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "unit",
+        e));
+
+    a << *i.unit ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_access& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_access::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_access::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // rule
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "rule",
+        e));
+
+    a << i.rule ();
+  }
+
+  // restriction
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "restriction",
+        e));
+
+    a << i.restriction ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_lanes_laneSection_lr_lane_access_rule& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_lanes_laneSection_lr_lane_access_rule& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_lanes_laneSection_lr_lane_access_rule& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_height& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_height::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_height::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // inner
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "inner",
+        e));
+
+    a << ::xml_schema::as_double(i.inner ());
+  }
+
+  // outer
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "outer",
+        e));
+
+    a << ::xml_schema::as_double(i.outer ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_lanes_laneSection_lr_lane_rule& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_lanes_laneSection_lr_lane_rule::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_lanes_laneSection_lr_lane_rule::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // sOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << i.sOffset ();
+  }
+
+  // value
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "value",
+        e));
+
+    a << i.value ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // object
+  //
+  for (t_road_objects::object_const_iterator
+       b (i.object ().begin ()), n (i.object ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "object",
+        e));
+
+    s << *b;
+  }
+
+  // objectReference
+  //
+  for (t_road_objects::objectReference_const_iterator
+       b (i.objectReference ().begin ()), n (i.objectReference ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "objectReference",
+        e));
+
+    s << *b;
+  }
+
+  // tunnel
+  //
+  for (t_road_objects::tunnel_const_iterator
+       b (i.tunnel ().begin ()), n (i.tunnel ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "tunnel",
+        e));
+
+    s << *b;
+  }
+
+  // bridge
+  //
+  for (t_road_objects::bridge_const_iterator
+       b (i.bridge ().begin ()), n (i.bridge ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "bridge",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // repeat
+  //
+  if (i.repeat ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "repeat",
+        e));
+
+    s << *i.repeat ();
+  }
+
+  // outline
+  //
+  if (i.outline ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "outline",
+        e));
+
+    s << *i.outline ();
+  }
+
+  // outlines
+  //
+  if (i.outlines ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "outlines",
+        e));
+
+    s << *i.outlines ();
+  }
+
+  // material
+  //
+  for (t_road_objects_object::material_const_iterator
+       b (i.material ().begin ()), n (i.material ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "material",
+        e));
+
+    s << *b;
+  }
+
+  // validity
+  //
+  for (t_road_objects_object::validity_const_iterator
+       b (i.validity ().begin ()), n (i.validity ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "validity",
+        e));
+
+    s << *b;
+  }
+
+  // parkingSpace
+  //
+  if (i.parkingSpace ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "parkingSpace",
+        e));
+
+    s << *i.parkingSpace ();
+  }
+
+  // markings
+  //
+  if (i.markings ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "markings",
+        e));
+
+    s << *i.markings ();
+  }
+
+  // borders
+  //
+  if (i.borders ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "borders",
+        e));
+
+    s << *i.borders ();
+  }
+
+  // userData
+  //
+  for (t_road_objects_object::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+
+  // subtype
+  //
+  if (i.subtype ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "subtype",
+        e));
+
+    a << *i.subtype ();
+  }
+
+  // dynamic
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dynamic",
+        e));
+
+    a << i.dynamic ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // zOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.zOffset ());
+  }
+
+  // validLength
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "validLength",
+        e));
+
+    a << i.validLength ();
+  }
+
+  // orientation
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "orientation",
+        e));
+
+    a << i.orientation ();
+  }
+
+  // hdg
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hdg",
+        e));
+
+    a << ::xml_schema::as_double(i.hdg ());
+  }
+
+  // pitch
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "pitch",
+        e));
+
+    a << ::xml_schema::as_double(i.pitch ());
+  }
+
+  // roll
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roll",
+        e));
+
+    a << ::xml_schema::as_double(i.roll ());
+  }
+
+  // height
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "height",
+        e));
+
+    a << ::xml_schema::as_double(i.height ());
+  }
+
+  // length
+  //
+  if (i.length ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << ::xml_schema::as_double(*i.length ());
+  }
+
+  // width
+  //
+  if (i.width ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << ::xml_schema::as_double(*i.width ());
+  }
+
+  // radius
+  //
+  if (i.radius ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "radius",
+        e));
+
+    a << ::xml_schema::as_double(*i.radius ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_repeat& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_repeat::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_repeat::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+
+  // distance
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "distance",
+        e));
+
+    a << i.distance ();
+  }
+
+  // tStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "tStart",
+        e));
+
+    a << ::xml_schema::as_double(i.tStart ());
+  }
+
+  // tEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "tEnd",
+        e));
+
+    a << ::xml_schema::as_double(i.tEnd ());
+  }
+
+  // heightStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "heightStart",
+        e));
+
+    a << ::xml_schema::as_double(i.heightStart ());
+  }
+
+  // heightEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "heightEnd",
+        e));
+
+    a << ::xml_schema::as_double(i.heightEnd ());
+  }
+
+  // zOffsetStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffsetStart",
+        e));
+
+    a << ::xml_schema::as_double(i.zOffsetStart ());
+  }
+
+  // zOffsetEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffsetEnd",
+        e));
+
+    a << ::xml_schema::as_double(i.zOffsetEnd ());
+  }
+
+  // widthStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "widthStart",
+        e));
+
+    a << i.widthStart ();
+  }
+
+  // widthEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "widthEnd",
+        e));
+
+    a << i.widthEnd ();
+  }
+
+  // lengthStart
+  //
+  if (i.lengthStart ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "lengthStart",
+        e));
+
+    a << *i.lengthStart ();
+  }
+
+  // lengthEnd
+  //
+  if (i.lengthEnd ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "lengthEnd",
+        e));
+
+    a << *i.lengthEnd ();
+  }
+
+  // radiusStart
+  //
+  if (i.radiusStart ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "radiusStart",
+        e));
+
+    a << *i.radiusStart ();
+  }
+
+  // radiusEnd
+  //
+  if (i.radiusEnd ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "radiusEnd",
+        e));
+
+    a << *i.radiusEnd ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_outlines& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // outline
+  //
+  for (t_road_objects_object_outlines::outline_const_iterator
+       b (i.outline ().begin ()), n (i.outline ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "outline",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_object_outlines::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_outlines::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_outlines_outline& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // cornerRoad
+  //
+  for (t_road_objects_object_outlines_outline::cornerRoad_const_iterator
+       b (i.cornerRoad ().begin ()), n (i.cornerRoad ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "cornerRoad",
+        e));
+
+    s << *b;
+  }
+
+  // cornerLocal
+  //
+  for (t_road_objects_object_outlines_outline::cornerLocal_const_iterator
+       b (i.cornerLocal ().begin ()), n (i.cornerLocal ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "cornerLocal",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_object_outlines_outline::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_outlines_outline::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // fillType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "fillType",
+        e));
+
+    a << i.fillType ();
+  }
+
+  // outer
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "outer",
+        e));
+
+    a << i.outer ();
+  }
+
+  // closed
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "closed",
+        e));
+
+    a << i.closed ();
+  }
+
+  // laneType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "laneType",
+        e));
+
+    a << i.laneType ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_outlines_outline_cornerRoad& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_outlines_outline_cornerRoad::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_outlines_outline_cornerRoad::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // dz
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dz",
+        e));
+
+    a << ::xml_schema::as_double(i.dz ());
+  }
+
+  // height
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "height",
+        e));
+
+    a << ::xml_schema::as_double(i.height ());
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_outlines_outline_cornerLocal& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_outlines_outline_cornerLocal::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_outlines_outline_cornerLocal::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // u
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "u",
+        e));
+
+    a << ::xml_schema::as_double(i.u ());
+  }
+
+  // v
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "v",
+        e));
+
+    a << ::xml_schema::as_double(i.v ());
+  }
+
+  // z
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "z",
+        e));
+
+    a << ::xml_schema::as_double(i.z ());
+  }
+
+  // height
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "height",
+        e));
+
+    a << ::xml_schema::as_double(i.height ());
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_material& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_material::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_material::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // surface
+  //
+  if (i.surface ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "surface",
+        e));
+
+    a << *i.surface ();
+  }
+
+  // friction
+  //
+  if (i.friction ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "friction",
+        e));
+
+    a << *i.friction ();
+  }
+
+  // roughness
+  //
+  if (i.roughness ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roughness",
+        e));
+
+    a << *i.roughness ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_laneValidity& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_laneValidity::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_laneValidity::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // fromLane
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "fromLane",
+        e));
+
+    a << i.fromLane ();
+  }
+
+  // toLane
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "toLane",
+        e));
+
+    a << i.toLane ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_parkingSpace& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_parkingSpace::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_parkingSpace::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // access
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "access",
+        e));
+
+    a << i.access ();
+  }
+
+  // restrictions
+  //
+  if (i.restrictions ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "restrictions",
+        e));
+
+    a << *i.restrictions ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_objects_object_parkingSpace_access& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_objects_object_parkingSpace_access& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_objects_object_parkingSpace_access& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_markings& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // marking
+  //
+  for (t_road_objects_object_markings::marking_const_iterator
+       b (i.marking ().begin ()), n (i.marking ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "marking",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_object_markings::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_markings::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_markings_marking& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // cornerReference
+  //
+  for (t_road_objects_object_markings_marking::cornerReference_const_iterator
+       b (i.cornerReference ().begin ()), n (i.cornerReference ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "cornerReference",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_object_markings_marking::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_markings_marking::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // side
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "side",
+        e));
+
+    a << i.side ();
+  }
+
+  // weight
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "weight",
+        e));
+
+    a << i.weight ();
+  }
+
+  // width
+  //
+  if (i.width ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << *i.width ();
+  }
+
+  // color
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "color",
+        e));
+
+    a << i.color ();
+  }
+
+  // zOffset
+  //
+  if (i.zOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << *i.zOffset ();
+  }
+
+  // spaceLength
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "spaceLength",
+        e));
+
+    a << i.spaceLength ();
+  }
+
+  // lineLength
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "lineLength",
+        e));
+
+    a << i.lineLength ();
+  }
+
+  // startOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "startOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.startOffset ());
+  }
+
+  // stopOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "stopOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.stopOffset ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_markings_marking_cornerReference& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_objects_object_markings_marking_cornerReference::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_markings_marking_cornerReference::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_borders& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // border
+  //
+  for (t_road_objects_object_borders::border_const_iterator
+       b (i.border ().begin ()), n (i.border ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "border",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_object_borders::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_borders::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_object_borders_border& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // cornerReference
+  //
+  for (t_road_objects_object_borders_border::cornerReference_const_iterator
+       b (i.cornerReference ().begin ()), n (i.cornerReference ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "cornerReference",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_object_borders_border::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_object_borders_border::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // width
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << i.width ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+
+  // outlineId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "outlineId",
+        e));
+
+    a << i.outlineId ();
+  }
+
+  // useCompleteOutline
+  //
+  if (i.useCompleteOutline ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "useCompleteOutline",
+        e));
+
+    a << *i.useCompleteOutline ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_objectReference& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // validity
+  //
+  for (t_road_objects_objectReference::validity_const_iterator
+       b (i.validity ().begin ()), n (i.validity ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "validity",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_objectReference::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_objectReference::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // zOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.zOffset ());
+  }
+
+  // validLength
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "validLength",
+        e));
+
+    a << i.validLength ();
+  }
+
+  // orientation
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "orientation",
+        e));
+
+    a << i.orientation ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_tunnel& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // validity
+  //
+  for (t_road_objects_tunnel::validity_const_iterator
+       b (i.validity ().begin ()), n (i.validity ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "validity",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_tunnel::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_tunnel::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+
+  // lighting
+  //
+  if (i.lighting ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "lighting",
+        e));
+
+    a << *i.lighting ();
+  }
+
+  // daylight
+  //
+  if (i.daylight ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "daylight",
+        e));
+
+    a << *i.daylight ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_objects_bridge& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // validity
+  //
+  for (t_road_objects_bridge::validity_const_iterator
+       b (i.validity ().begin ()), n (i.validity ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "validity",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_objects_bridge::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_objects_bridge::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // length
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "length",
+        e));
+
+    a << i.length ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // signal
+  //
+  for (t_road_signals::signal_const_iterator
+       b (i.signal ().begin ()), n (i.signal ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "signal",
+        e));
+
+    s << *b;
+  }
+
+  // signalReference
+  //
+  for (t_road_signals::signalReference_const_iterator
+       b (i.signalReference ().begin ()), n (i.signalReference ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "signalReference",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_signals::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals_signal& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // validity
+  //
+  for (t_road_signals_signal::validity_const_iterator
+       b (i.validity ().begin ()), n (i.validity ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "validity",
+        e));
+
+    s << *b;
+  }
+
+  // dependency
+  //
+  for (t_road_signals_signal::dependency_const_iterator
+       b (i.dependency ().begin ()), n (i.dependency ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dependency",
+        e));
+
+    s << *b;
+  }
+
+  // reference
+  //
+  for (t_road_signals_signal::reference_const_iterator
+       b (i.reference ().begin ()), n (i.reference ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "reference",
+        e));
+
+    s << *b;
+  }
+
+  // positionRoad
+  //
+  if (i.positionRoad ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "positionRoad",
+        e));
+
+    s << *i.positionRoad ();
+  }
+
+  // positionInertial
+  //
+  if (i.positionInertial ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "positionInertial",
+        e));
+
+    s << *i.positionInertial ();
+  }
+
+  // userData
+  //
+  for (t_road_signals_signal::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals_signal::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // dynamic
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dynamic",
+        e));
+
+    a << i.dynamic ();
+  }
+
+  // orientation
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "orientation",
+        e));
+
+    a << i.orientation ();
+  }
+
+  // zOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.zOffset ());
+  }
+
+  // country
+  //
+  if (i.country ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "country",
+        e));
+
+    a << *i.country ();
+  }
+
+  // countryRevision
+  //
+  if (i.countryRevision ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "countryRevision",
+        e));
+
+    a << *i.countryRevision ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+
+  // subtype
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "subtype",
+        e));
+
+    a << i.subtype ();
+  }
+
+  // value
+  //
+  if (i.value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "value",
+        e));
+
+    a << ::xml_schema::as_double(*i.value ());
+  }
+
+  // unit
+  //
+  if (i.unit ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "unit",
+        e));
+
+    a << *i.unit ();
+  }
+
+  // height
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "height",
+        e));
+
+    a << i.height ();
+  }
+
+  // width
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "width",
+        e));
+
+    a << i.width ();
+  }
+
+  // text
+  //
+  if (i.text ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "text",
+        e));
+
+    a << *i.text ();
+  }
+
+  // hOffset
+  //
+  if (i.hOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hOffset",
+        e));
+
+    a << ::xml_schema::as_double(*i.hOffset ());
+  }
+
+  // pitch
+  //
+  if (i.pitch ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "pitch",
+        e));
+
+    a << ::xml_schema::as_double(*i.pitch ());
+  }
+
+  // roll
+  //
+  if (i.roll ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roll",
+        e));
+
+    a << ::xml_schema::as_double(*i.roll ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals_signal_dependency& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_signals_signal_dependency::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals_signal_dependency::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals_signal_reference& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_signals_signal_reference::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals_signal_reference::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // elementType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementType",
+        e));
+
+    a << i.elementType ();
+  }
+
+  // elementId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementId",
+        e));
+
+    a << i.elementId ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_signals_signal_reference_elementType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_signals_signal_reference_elementType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_signals_signal_reference_elementType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals_signal_positionRoad& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_signals_signal_positionRoad::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals_signal_positionRoad::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // roadId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roadId",
+        e));
+
+    a << i.roadId ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // zOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.zOffset ());
+  }
+
+  // hOffset
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hOffset",
+        e));
+
+    a << ::xml_schema::as_double(i.hOffset ());
+  }
+
+  // pitch
+  //
+  if (i.pitch ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "pitch",
+        e));
+
+    a << ::xml_schema::as_double(*i.pitch ());
+  }
+
+  // roll
+  //
+  if (i.roll ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roll",
+        e));
+
+    a << ::xml_schema::as_double(*i.roll ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals_signal_positionInertial& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_signals_signal_positionInertial::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals_signal_positionInertial::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // x
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "x",
+        e));
+
+    a << ::xml_schema::as_double(i.x ());
+  }
+
+  // y
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "y",
+        e));
+
+    a << ::xml_schema::as_double(i.y ());
+  }
+
+  // z
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "z",
+        e));
+
+    a << ::xml_schema::as_double(i.z ());
+  }
+
+  // hdg
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hdg",
+        e));
+
+    a << ::xml_schema::as_double(i.hdg ());
+  }
+
+  // pitch
+  //
+  if (i.pitch ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "pitch",
+        e));
+
+    a << ::xml_schema::as_double(*i.pitch ());
+  }
+
+  // roll
+  //
+  if (i.roll ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roll",
+        e));
+
+    a << ::xml_schema::as_double(*i.roll ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_signals_signalReference& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // validity
+  //
+  for (t_road_signals_signalReference::validity_const_iterator
+       b (i.validity ().begin ()), n (i.validity ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "validity",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_signals_signalReference::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_signals_signalReference::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // t
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "t",
+        e));
+
+    a << ::xml_schema::as_double(i.t ());
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // orientation
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "orientation",
+        e));
+
+    a << i.orientation ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_surface& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // CRG
+  //
+  for (t_road_surface::CRG_const_iterator
+       b (i.CRG ().begin ()), n (i.CRG ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "CRG",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_surface::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_surface::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_surface_CRG& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_surface_CRG::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_surface_CRG::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // file
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "file",
+        e));
+
+    a << i.file ();
+  }
+
+  // sStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sStart",
+        e));
+
+    a << i.sStart ();
+  }
+
+  // sEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sEnd",
+        e));
+
+    a << i.sEnd ();
+  }
+
+  // orientation
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "orientation",
+        e));
+
+    a << i.orientation ();
+  }
+
+  // mode
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "mode",
+        e));
+
+    a << i.mode ();
+  }
+
+  // purpose
+  //
+  if (i.purpose ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "purpose",
+        e));
+
+    a << *i.purpose ();
+  }
+
+  // sOffset
+  //
+  if (i.sOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sOffset",
+        e));
+
+    a << ::xml_schema::as_double(*i.sOffset ());
+  }
+
+  // tOffset
+  //
+  if (i.tOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "tOffset",
+        e));
+
+    a << ::xml_schema::as_double(*i.tOffset ());
+  }
+
+  // zOffset
+  //
+  if (i.zOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << ::xml_schema::as_double(*i.zOffset ());
+  }
+
+  // zScale
+  //
+  if (i.zScale ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zScale",
+        e));
+
+    a << ::xml_schema::as_double(*i.zScale ());
+  }
+
+  // hOffset
+  //
+  if (i.hOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "hOffset",
+        e));
+
+    a << ::xml_schema::as_double(*i.hOffset ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_surface_CRG_purpose& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_surface_CRG_purpose& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_surface_CRG_purpose& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_surface_CRG_mode& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_surface_CRG_mode& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_surface_CRG_mode& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_railroad& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // switch
+  //
+  for (t_road_railroad::switch_const_iterator
+       b (i.switch_ ().begin ()), n (i.switch_ ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "switch",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_road_railroad::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_railroad::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_railroad_switch& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // mainTrack
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "mainTrack",
+        e));
+
+    s << i.mainTrack ();
+  }
+
+  // sideTrack
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "sideTrack",
+        e));
+
+    s << i.sideTrack ();
+  }
+
+  // partner
+  //
+  if (i.partner ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "partner",
+        e));
+
+    s << *i.partner ();
+  }
+
+  // userData
+  //
+  for (t_road_railroad_switch::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_railroad_switch::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // position
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "position",
+        e));
+
+    a << i.position ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_road_railroad_switch_position& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_road_railroad_switch_position& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_road_railroad_switch_position& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_railroad_switch_mainTrack& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_railroad_switch_mainTrack::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_railroad_switch_mainTrack::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // dir
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dir",
+        e));
+
+    a << i.dir ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_railroad_switch_sideTrack& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_railroad_switch_sideTrack::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_railroad_switch_sideTrack::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // s
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "s",
+        e));
+
+    a << i.s ();
+  }
+
+  // dir
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "dir",
+        e));
+
+    a << i.dir ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_road_railroad_switch_partner& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_road_railroad_switch_partner::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_road_railroad_switch_partner::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_controller& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // control
+  //
+  for (t_controller::control_const_iterator
+       b (i.control ().begin ()), n (i.control ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "control",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_controller::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_controller::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // sequence
+  //
+  if (i.sequence ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sequence",
+        e));
+
+    a << *i.sequence ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_controller_control& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_controller_control::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_controller_control::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // signalId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "signalId",
+        e));
+
+    a << i.signalId ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // connection
+  //
+  for (t_junction::connection_const_iterator
+       b (i.connection ().begin ()), n (i.connection ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "connection",
+        e));
+
+    s << *b;
+  }
+
+  // priority
+  //
+  for (t_junction::priority_const_iterator
+       b (i.priority ().begin ()), n (i.priority ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "priority",
+        e));
+
+    s << *b;
+  }
+
+  // controller
+  //
+  for (t_junction::controller_const_iterator
+       b (i.controller ().begin ()), n (i.controller ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "controller",
+        e));
+
+    s << *b;
+  }
+
+  // surface
+  //
+  if (i.surface ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "surface",
+        e));
+
+    s << *i.surface ();
+  }
+
+  // userData
+  //
+  for (t_junction::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_junction_type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_junction_type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_junction_type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_connection& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // predecessor
+  //
+  if (i.predecessor ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "predecessor",
+        e));
+
+    s << *i.predecessor ();
+  }
+
+  // successor
+  //
+  if (i.successor ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "successor",
+        e));
+
+    s << *i.successor ();
+  }
+
+  // laneLink
+  //
+  for (t_junction_connection::laneLink_const_iterator
+       b (i.laneLink ().begin ()), n (i.laneLink ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "laneLink",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_junction_connection::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_connection::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // incomingRoad
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "incomingRoad",
+        e));
+
+    a << i.incomingRoad ();
+  }
+
+  // connectingRoad
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "connectingRoad",
+        e));
+
+    a << i.connectingRoad ();
+  }
+
+  // contactPoint
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "contactPoint",
+        e));
+
+    a << i.contactPoint ();
+  }
+
+  // connectionMaster
+  //
+  if (i.connectionMaster ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "connectionMaster",
+        e));
+
+    a << *i.connectionMaster ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_predecessorSuccessor& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_junction_predecessorSuccessor::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_predecessorSuccessor::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // elementType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementType",
+        e));
+
+    a << i.elementType ();
+  }
+
+  // elementId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementId",
+        e));
+
+    a << i.elementId ();
+  }
+
+  // elementS
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementS",
+        e));
+
+    a << i.elementS ();
+  }
+
+  // elementDir
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "elementDir",
+        e));
+
+    a << i.elementDir ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_connection_laneLink& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_junction_connection_laneLink::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_connection_laneLink::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // from
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "from",
+        e));
+
+    a << i.from ();
+  }
+
+  // to
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "to",
+        e));
+
+    a << i.to ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_priority& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_junction_priority::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_priority::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // high
+  //
+  if (i.high ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "high",
+        e));
+
+    a << *i.high ();
+  }
+
+  // low
+  //
+  if (i.low ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "low",
+        e));
+
+    a << *i.low ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_controller& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_junction_controller::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_controller::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+
+  // sequence
+  //
+  if (i.sequence ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sequence",
+        e));
+
+    a << *i.sequence ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_surface& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // CRG
+  //
+  for (t_junction_surface::CRG_const_iterator
+       b (i.CRG ().begin ()), n (i.CRG ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "CRG",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_junction_surface::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_surface::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junction_surface_CRG& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_junction_surface_CRG::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junction_surface_CRG::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // file
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "file",
+        e));
+
+    a << i.file ();
+  }
+
+  // mode
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "mode",
+        e));
+
+    a << i.mode ();
+  }
+
+  // purpose
+  //
+  if (i.purpose ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "purpose",
+        e));
+
+    a << *i.purpose ();
+  }
+
+  // zOffset
+  //
+  if (i.zOffset ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zOffset",
+        e));
+
+    a << ::xml_schema::as_double(*i.zOffset ());
+  }
+
+  // zScale
+  //
+  if (i.zScale ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zScale",
+        e));
+
+    a << ::xml_schema::as_double(*i.zScale ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junctionGroup& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // junctionReference
+  //
+  for (t_junctionGroup::junctionReference_const_iterator
+       b (i.junctionReference ().begin ()), n (i.junctionReference ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "junctionReference",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_junctionGroup::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junctionGroup::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_junctionGroup_type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_junctionGroup_type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_junctionGroup_type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_junctionGroup_junctionReference& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_junctionGroup_junctionReference::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_junctionGroup_junctionReference::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // junction
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "junction",
+        e));
+
+    a << i.junction ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_station& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // platform
+  //
+  for (t_station::platform_const_iterator
+       b (i.platform ().begin ()), n (i.platform ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "platform",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_station::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_station::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+
+  // type
+  //
+  if (i.type ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "type",
+        e));
+
+    a << *i.type ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_station_type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_station_type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_station_type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_station_platform& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // segment
+  //
+  for (t_station_platform::segment_const_iterator
+       b (i.segment ().begin ()), n (i.segment ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "segment",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (t_station_platform::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_station_platform::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // name
+  //
+  if (i.name ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << *i.name ();
+  }
+
+  // id
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_station_platform_segment& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // userData
+  //
+  for (t_station_platform_segment::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (t_station_platform_segment::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
+
+  // roadId
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "roadId",
+        e));
+
+    a << i.roadId ();
+  }
+
+  // sStart
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sStart",
+        e));
+
+    a << i.sStart ();
+  }
+
+  // sEnd
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sEnd",
+        e));
+
+    a << i.sEnd ();
+  }
+
+  // side
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "side",
+        e));
+
+    a << i.side ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_station_platform_segment_side& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_station_platform_segment_side& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_station_platform_segment_side& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_userData& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // code
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "code",
+        e));
+
+    a << i.code ();
+  }
+
+  // value
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "value",
+        e));
+
+    a << i.value ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_include& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // file
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "file",
+        e));
+
+    a << i.file ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_dataQuality& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // error
+  //
+  if (i.error ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "error",
+        e));
+
+    s << *i.error ();
+  }
+
+  // rawData
+  //
+  if (i.rawData ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "rawData",
+        e));
+
+    s << *i.rawData ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_dataQuality_Error& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // xyAbsolute
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "xyAbsolute",
+        e));
+
+    a << ::xml_schema::as_double(i.xyAbsolute ());
+  }
+
+  // zAbsolute
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zAbsolute",
+        e));
+
+    a << ::xml_schema::as_double(i.zAbsolute ());
+  }
+
+  // xyRelative
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "xyRelative",
+        e));
+
+    a << ::xml_schema::as_double(i.xyRelative ());
+  }
+
+  // zRelative
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "zRelative",
+        e));
+
+    a << ::xml_schema::as_double(i.zRelative ());
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const t_dataQuality_RawData& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // date
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "date",
+        e));
+
+    a << i.date ();
+  }
+
+  // source
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "source",
+        e));
+
+    a << i.source ();
+  }
+
+  // sourceComment
+  //
+  if (i.sourceComment ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "sourceComment",
+        e));
+
+    a << *i.sourceComment ();
+  }
+
+  // postProcessing
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "postProcessing",
+        e));
+
+    a << i.postProcessing ();
+  }
+
+  // postProcessingComment
+  //
+  if (i.postProcessingComment ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "postProcessingComment",
+        e));
+
+    a << *i.postProcessingComment ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_dataQuality_RawData_Source& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_dataQuality_RawData_Source& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_dataQuality_RawData_Source& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_dataQuality_RawData_PostProcessing& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_dataQuality_RawData_PostProcessing& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_dataQuality_RawData_PostProcessing& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_unitDistance& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_unitDistance& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_unitDistance& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_unitSpeed& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_unitSpeed& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_unitSpeed& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_unitMass& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_unitMass& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_unitMass& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_unitSlope& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_unitSlope& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_unitSlope& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_unit& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_unit& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_unit& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_roadType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_roadType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_roadType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_roadMarkType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_roadMarkType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_roadMarkType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_roadMarkWeight& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_roadMarkWeight& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_roadMarkWeight& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_roadMarkColor& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_roadMarkColor& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_roadMarkColor& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_laneType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_laneType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_laneType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_objectType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_objectType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_objectType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_tunnelType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_tunnelType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_tunnelType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_bridgeType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_bridgeType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_bridgeType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_accessRestrictionType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_accessRestrictionType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_accessRestrictionType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_countryCode& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_countryCode& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_countryCode& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_countryCode_deprecated& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_countryCode_deprecated& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_countryCode_deprecated& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_countryCode_iso3166alpha3& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_countryCode_iso3166alpha3& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_countryCode_iso3166alpha3& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_sideType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_sideType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_sideType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_outlineFillType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_outlineFillType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_outlineFillType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_borderType& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_borderType& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_borderType& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_contactPoint& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_contactPoint& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_contactPoint& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_elementDir& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_elementDir& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_elementDir& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_direction& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_direction& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_direction& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_roadMarkRule& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_roadMarkRule& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_roadMarkRule& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const e_orientation& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const e_orientation& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const e_orientation& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const OpenDRIVE& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // header
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "header",
+        e));
+
+    s << i.header ();
+  }
+
+  // road
+  //
+  for (OpenDRIVE::road_const_iterator
+       b (i.road ().begin ()), n (i.road ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "road",
+        e));
+
+    s << *b;
+  }
+
+  // controller
+  //
+  for (OpenDRIVE::controller_const_iterator
+       b (i.controller ().begin ()), n (i.controller ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "controller",
+        e));
+
+    s << *b;
+  }
+
+  // junction
+  //
+  for (OpenDRIVE::junction_const_iterator
+       b (i.junction ().begin ()), n (i.junction ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "junction",
+        e));
+
+    s << *b;
+  }
+
+  // junctionGroup
+  //
+  for (OpenDRIVE::junctionGroup_const_iterator
+       b (i.junctionGroup ().begin ()), n (i.junctionGroup ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "junctionGroup",
+        e));
+
+    s << *b;
+  }
+
+  // station
+  //
+  for (OpenDRIVE::station_const_iterator
+       b (i.station ().begin ()), n (i.station ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "station",
+        e));
+
+    s << *b;
+  }
+
+  // userData
+  //
+  for (OpenDRIVE::userData_const_iterator
+       b (i.userData ().begin ()), n (i.userData ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "userData",
+        e));
+
+    s << *b;
+  }
+
+  // include
+  //
+  for (OpenDRIVE::include_const_iterator
+       b (i.include ().begin ()), n (i.include ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "include",
+        e));
+
+    s << *b;
+  }
+
+  // dataQuality
+  //
+  if (i.dataQuality ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "dataQuality",
+        e));
+
+    s << *i.dataQuality ();
+  }
 }
 
 #include <xsd/cxx/post.hxx>
