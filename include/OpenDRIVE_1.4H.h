@@ -34,6 +34,10 @@
 #ifndef SCHEMA_OPEN_DRIVE_1_4H_H
 #define SCHEMA_OPEN_DRIVE_1_4H_H
 
+#ifndef XSD_CXX11
+#define XSD_CXX11
+#endif
+
 #ifndef XSD_USE_CHAR
 #define XSD_USE_CHAR
 #endif
@@ -209,7 +213,7 @@ namespace xml_schema
   {
     // Automatic pointer for DOMDocument.
     //
-    using ::xsd::cxx::xml::dom::auto_ptr;
+    using ::xsd::cxx::xml::dom::unique_ptr;
 
 #ifndef XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
 #define XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
@@ -340,9 +344,10 @@ class partner;
 class cornerRoad;
 class cornerLocal;
 
-#include <memory>    // ::std::auto_ptr
+#include <memory>    // ::std::unique_ptr
 #include <limits>    // std::numeric_limits
 #include <algorithm> // std::binary_search
+#include <utility>   // std::move
 
 #include <xsd/cxx/xml/char-utf8.hxx>
 
@@ -2093,7 +2098,7 @@ class userData: public ::xml_schema::type
   code (const code_optional& x);
 
   void
-  code (::std::auto_ptr< code_type > p);
+  code (::std::unique_ptr< code_type > p);
 
   // value
   //
@@ -2114,7 +2119,7 @@ class userData: public ::xml_schema::type
   value (const value_optional& x);
 
   void
-  value (::std::auto_ptr< value_type > p);
+  value (::std::unique_ptr< value_type > p);
 
   // Constructors.
   //
@@ -2172,7 +2177,7 @@ class include: public ::xml_schema::type
   file (const file_optional& x);
 
   void
-  file (::std::auto_ptr< file_type > p);
+  file (::std::unique_ptr< file_type > p);
 
   // Constructors.
   //
@@ -2389,7 +2394,7 @@ class parkingSpace: public ::xml_schema::type
   parkingSpace_access (const access_optional& x);
 
   void
-  parkingSpace_access (::std::auto_ptr< access_type > p);
+  parkingSpace_access (::std::unique_ptr< access_type > p);
 
   // restrictions
   //
@@ -2410,7 +2415,7 @@ class parkingSpace: public ::xml_schema::type
   restrictions (const restrictions_optional& x);
 
   void
-  restrictions (::std::auto_ptr< restrictions_type > p);
+  restrictions (::std::unique_ptr< restrictions_type > p);
 
   // Constructors.
   //
@@ -2471,7 +2476,7 @@ class lane: public ::xml_schema::type
   lane_link (const link_optional& x);
 
   void
-  lane_link (::std::auto_ptr< link_type > p);
+  lane_link (::std::unique_ptr< link_type > p);
 
   // width
   //
@@ -2697,7 +2702,7 @@ class lane: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // level
   //
@@ -2718,7 +2723,7 @@ class lane: public ::xml_schema::type
   level (const level_optional& x);
 
   void
-  level (::std::auto_ptr< level_type > p);
+  level (::std::unique_ptr< level_type > p);
 
   // Constructors.
   //
@@ -2789,7 +2794,7 @@ class centerLane: public ::xml_schema::type
   lane_link (const link_optional& x);
 
   void
-  lane_link (::std::auto_ptr< link_type > p);
+  lane_link (::std::unique_ptr< link_type > p);
 
   // roadMark
   //
@@ -2879,7 +2884,7 @@ class centerLane: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // level
   //
@@ -2900,7 +2905,7 @@ class centerLane: public ::xml_schema::type
   level (const level_optional& x);
 
   void
-  level (::std::auto_ptr< level_type > p);
+  level (::std::unique_ptr< level_type > p);
 
   // Constructors.
   //
@@ -2959,7 +2964,7 @@ class OpenDRIVE: public ::xml_schema::type
   header (const header_type& x);
 
   void
-  header (::std::auto_ptr< header_type > p);
+  header (::std::unique_ptr< header_type > p);
 
   // road
   //
@@ -3050,7 +3055,7 @@ class OpenDRIVE: public ::xml_schema::type
   //
   OpenDRIVE (const header_type&);
 
-  OpenDRIVE (::std::auto_ptr< header_type >);
+  OpenDRIVE (::std::unique_ptr< header_type >);
 
   OpenDRIVE (const ::xercesc::DOMElement& e,
              ::xml_schema::flags f = 0,
@@ -3196,7 +3201,7 @@ class marking: public ::xml_schema::type
   side (const side_optional& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // type
   //
@@ -3217,7 +3222,7 @@ class marking: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // width
   //
@@ -3256,7 +3261,7 @@ class marking: public ::xml_schema::type
   color (const color_optional& x);
 
   void
-  color (::std::auto_ptr< color_type > p);
+  color (::std::unique_ptr< color_type > p);
 
   // Constructors.
   //
@@ -3316,7 +3321,7 @@ class lane_link: public ::xml_schema::type
   predecessor (const predecessor_optional& x);
 
   void
-  predecessor (::std::auto_ptr< predecessor_type > p);
+  predecessor (::std::unique_ptr< predecessor_type > p);
 
   // successor
   //
@@ -3337,7 +3342,7 @@ class lane_link: public ::xml_schema::type
   successor (const successor_optional& x);
 
   void
-  successor (::std::auto_ptr< successor_type > p);
+  successor (::std::unique_ptr< successor_type > p);
 
   // userData
   //
@@ -3763,7 +3768,7 @@ class roadMark: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // userData
   //
@@ -3836,7 +3841,7 @@ class roadMark: public ::xml_schema::type
   type1 (const type1_optional& x);
 
   void
-  type1 (::std::auto_ptr< type1_type > p);
+  type1 (::std::unique_ptr< type1_type > p);
 
   // weight
   //
@@ -3857,7 +3862,7 @@ class roadMark: public ::xml_schema::type
   weight (const weight_optional& x);
 
   void
-  weight (::std::auto_ptr< weight_type > p);
+  weight (::std::unique_ptr< weight_type > p);
 
   // color
   //
@@ -3878,7 +3883,7 @@ class roadMark: public ::xml_schema::type
   color (const color_optional& x);
 
   void
-  color (::std::auto_ptr< color_type > p);
+  color (::std::unique_ptr< color_type > p);
 
   // material
   //
@@ -3899,7 +3904,7 @@ class roadMark: public ::xml_schema::type
   material (const material_optional& x);
 
   void
-  material (::std::auto_ptr< material_type > p);
+  material (::std::unique_ptr< material_type > p);
 
   // width
   //
@@ -3938,7 +3943,7 @@ class roadMark: public ::xml_schema::type
   laneChange (const laneChange_optional& x);
 
   void
-  laneChange (::std::auto_ptr< laneChange_type > p);
+  laneChange (::std::unique_ptr< laneChange_type > p);
 
   // height
   //
@@ -4075,7 +4080,7 @@ class material: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // friction
   //
@@ -4409,7 +4414,7 @@ class speed: public ::xml_schema::type
   unit (const unit_optional& x);
 
   void
-  unit (::std::auto_ptr< unit_type > p);
+  unit (::std::unique_ptr< unit_type > p);
 
   // Constructors.
   //
@@ -4522,7 +4527,7 @@ class access1: public ::xml_schema::type
   restriction (const restriction_optional& x);
 
   void
-  restriction (::std::auto_ptr< restriction_type > p);
+  restriction (::std::unique_ptr< restriction_type > p);
 
   // Constructors.
   //
@@ -4762,7 +4767,7 @@ class rule1: public ::xml_schema::type
   value (const value_optional& x);
 
   void
-  value (::std::auto_ptr< value_type > p);
+  value (::std::unique_ptr< value_type > p);
 
   // Constructors.
   //
@@ -4822,7 +4827,7 @@ class link1: public ::xml_schema::type
   predecessor (const predecessor_optional& x);
 
   void
-  predecessor (::std::auto_ptr< predecessor_type > p);
+  predecessor (::std::unique_ptr< predecessor_type > p);
 
   // successor
   //
@@ -4843,7 +4848,7 @@ class link1: public ::xml_schema::type
   successor (const successor_optional& x);
 
   void
-  successor (::std::auto_ptr< successor_type > p);
+  successor (::std::unique_ptr< successor_type > p);
 
   // userData
   //
@@ -4937,7 +4942,7 @@ class roadMark1: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // userData
   //
@@ -5010,7 +5015,7 @@ class roadMark1: public ::xml_schema::type
   type1 (const type1_optional& x);
 
   void
-  type1 (::std::auto_ptr< type1_type > p);
+  type1 (::std::unique_ptr< type1_type > p);
 
   // weight
   //
@@ -5031,7 +5036,7 @@ class roadMark1: public ::xml_schema::type
   weight (const weight_optional& x);
 
   void
-  weight (::std::auto_ptr< weight_type > p);
+  weight (::std::unique_ptr< weight_type > p);
 
   // color
   //
@@ -5052,7 +5057,7 @@ class roadMark1: public ::xml_schema::type
   color (const color_optional& x);
 
   void
-  color (::std::auto_ptr< color_type > p);
+  color (::std::unique_ptr< color_type > p);
 
   // material
   //
@@ -5073,7 +5078,7 @@ class roadMark1: public ::xml_schema::type
   material (const material_optional& x);
 
   void
-  material (::std::auto_ptr< material_type > p);
+  material (::std::unique_ptr< material_type > p);
 
   // width
   //
@@ -5112,7 +5117,7 @@ class roadMark1: public ::xml_schema::type
   laneChange (const laneChange_optional& x);
 
   void
-  laneChange (::std::auto_ptr< laneChange_type > p);
+  laneChange (::std::unique_ptr< laneChange_type > p);
 
   // height
   //
@@ -5197,7 +5202,7 @@ class header: public ::xml_schema::type
   geoReference (const geoReference_optional& x);
 
   void
-  geoReference (::std::auto_ptr< geoReference_type > p);
+  geoReference (::std::unique_ptr< geoReference_type > p);
 
   // userData
   //
@@ -5288,7 +5293,7 @@ class header: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // version
   //
@@ -5327,7 +5332,7 @@ class header: public ::xml_schema::type
   date (const date_optional& x);
 
   void
-  date (::std::auto_ptr< date_type > p);
+  date (::std::unique_ptr< date_type > p);
 
   // north
   //
@@ -5420,7 +5425,7 @@ class header: public ::xml_schema::type
   vendor (const vendor_optional& x);
 
   void
-  vendor (::std::auto_ptr< vendor_type > p);
+  vendor (::std::unique_ptr< vendor_type > p);
 
   // Constructors.
   //
@@ -5489,7 +5494,7 @@ class road: public ::xml_schema::type
   lane_link (const link_optional& x);
 
   void
-  lane_link (::std::auto_ptr< link_type > p);
+  lane_link (::std::unique_ptr< link_type > p);
 
   // type
   //
@@ -5523,7 +5528,7 @@ class road: public ::xml_schema::type
   planView (const planView_type& x);
 
   void
-  planView (::std::auto_ptr< planView_type > p);
+  planView (::std::unique_ptr< planView_type > p);
 
   // elevationProfile
   //
@@ -5544,7 +5549,7 @@ class road: public ::xml_schema::type
   elevationProfile (const elevationProfile_optional& x);
 
   void
-  elevationProfile (::std::auto_ptr< elevationProfile_type > p);
+  elevationProfile (::std::unique_ptr< elevationProfile_type > p);
 
   // lateralProfile
   //
@@ -5565,7 +5570,7 @@ class road: public ::xml_schema::type
   lateralProfile (const lateralProfile_optional& x);
 
   void
-  lateralProfile (::std::auto_ptr< lateralProfile_type > p);
+  lateralProfile (::std::unique_ptr< lateralProfile_type > p);
 
   // lanes
   //
@@ -5582,7 +5587,7 @@ class road: public ::xml_schema::type
   lanes (const lanes_type& x);
 
   void
-  lanes (::std::auto_ptr< lanes_type > p);
+  lanes (::std::unique_ptr< lanes_type > p);
 
   // objects
   //
@@ -5603,7 +5608,7 @@ class road: public ::xml_schema::type
   objects (const objects_optional& x);
 
   void
-  objects (::std::auto_ptr< objects_type > p);
+  objects (::std::unique_ptr< objects_type > p);
 
   // signals
   //
@@ -5624,7 +5629,7 @@ class road: public ::xml_schema::type
   signals (const signals_optional& x);
 
   void
-  signals (::std::auto_ptr< signals_type > p);
+  signals (::std::unique_ptr< signals_type > p);
 
   // surface
   //
@@ -5645,7 +5650,7 @@ class road: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // railroad
   //
@@ -5666,7 +5671,7 @@ class road: public ::xml_schema::type
   railroad (const railroad_optional& x);
 
   void
-  railroad (::std::auto_ptr< railroad_type > p);
+  railroad (::std::unique_ptr< railroad_type > p);
 
   // userData
   //
@@ -5721,7 +5726,7 @@ class road: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // length
   //
@@ -5760,7 +5765,7 @@ class road: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // junction
   //
@@ -5781,15 +5786,15 @@ class road: public ::xml_schema::type
   junction (const junction_optional& x);
 
   void
-  junction (::std::auto_ptr< junction_type > p);
+  junction (::std::unique_ptr< junction_type > p);
 
   // Constructors.
   //
   road (const planView_type&,
         const lanes_type&);
 
-  road (::std::auto_ptr< planView_type >,
-        ::std::auto_ptr< lanes_type >);
+  road (::std::unique_ptr< planView_type >,
+        ::std::unique_ptr< lanes_type >);
 
   road (const ::xercesc::DOMElement& e,
         ::xml_schema::flags f = 0,
@@ -5908,7 +5913,7 @@ class controller: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // name
   //
@@ -5929,7 +5934,7 @@ class controller: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // sequence
   //
@@ -6094,7 +6099,7 @@ class junction: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -6115,7 +6120,7 @@ class junction: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // Constructors.
   //
@@ -6229,7 +6234,7 @@ class junctionGroup: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -6250,7 +6255,7 @@ class junctionGroup: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -6271,7 +6276,7 @@ class junctionGroup: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -6384,7 +6389,7 @@ class station: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -6405,7 +6410,7 @@ class station: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -6426,7 +6431,7 @@ class station: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -6613,7 +6618,7 @@ class type: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // width
   //
@@ -6707,7 +6712,7 @@ class type1: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // width
   //
@@ -6784,7 +6789,7 @@ class link2: public ::xml_schema::type
   predecessor (const predecessor_optional& x);
 
   void
-  predecessor (::std::auto_ptr< predecessor_type > p);
+  predecessor (::std::unique_ptr< predecessor_type > p);
 
   // successor
   //
@@ -6805,7 +6810,7 @@ class link2: public ::xml_schema::type
   successor (const successor_optional& x);
 
   void
-  successor (::std::auto_ptr< successor_type > p);
+  successor (::std::unique_ptr< successor_type > p);
 
   // neighbor
   //
@@ -6917,7 +6922,7 @@ class type2: public ::xml_schema::type
   speed (const speed_optional& x);
 
   void
-  speed (::std::auto_ptr< speed_type > p);
+  speed (::std::unique_ptr< speed_type > p);
 
   // userData
   //
@@ -6990,7 +6995,7 @@ class type2: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -7851,7 +7856,7 @@ class control: public ::xml_schema::type
   signalId (const signalId_optional& x);
 
   void
-  signalId (::std::auto_ptr< signalId_type > p);
+  signalId (::std::unique_ptr< signalId_type > p);
 
   // type
   //
@@ -7872,7 +7877,7 @@ class control: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -7983,7 +7988,7 @@ class connection: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // incomingRoad
   //
@@ -8004,7 +8009,7 @@ class connection: public ::xml_schema::type
   incomingRoad (const incomingRoad_optional& x);
 
   void
-  incomingRoad (::std::auto_ptr< incomingRoad_type > p);
+  incomingRoad (::std::unique_ptr< incomingRoad_type > p);
 
   // connectingRoad
   //
@@ -8025,7 +8030,7 @@ class connection: public ::xml_schema::type
   connectingRoad (const connectingRoad_optional& x);
 
   void
-  connectingRoad (::std::auto_ptr< connectingRoad_type > p);
+  connectingRoad (::std::unique_ptr< connectingRoad_type > p);
 
   // contactPoint
   //
@@ -8046,7 +8051,7 @@ class connection: public ::xml_schema::type
   contactPoint (const contactPoint_optional& x);
 
   void
-  contactPoint (::std::auto_ptr< contactPoint_type > p);
+  contactPoint (::std::unique_ptr< contactPoint_type > p);
 
   // Constructors.
   //
@@ -8143,7 +8148,7 @@ class priority: public ::xml_schema::type
   high (const high_optional& x);
 
   void
-  high (::std::auto_ptr< high_type > p);
+  high (::std::unique_ptr< high_type > p);
 
   // low
   //
@@ -8164,7 +8169,7 @@ class priority: public ::xml_schema::type
   low (const low_optional& x);
 
   void
-  low (::std::auto_ptr< low_type > p);
+  low (::std::unique_ptr< low_type > p);
 
   // Constructors.
   //
@@ -8258,7 +8263,7 @@ class controller1: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -8279,7 +8284,7 @@ class controller1: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // sequence
   //
@@ -8358,7 +8363,7 @@ class junctionReference: public ::xml_schema::type
   junction (const junction_optional& x);
 
   void
-  junction (::std::auto_ptr< junction_type > p);
+  junction (::std::unique_ptr< junction_type > p);
 
   // Constructors.
   //
@@ -8432,7 +8437,7 @@ class platform: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -8453,7 +8458,7 @@ class platform: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // Constructors.
   //
@@ -8584,7 +8589,7 @@ class line: public ::xml_schema::type
   rule (const rule_optional& x);
 
   void
-  rule (::std::auto_ptr< rule_type > p);
+  rule (::std::unique_ptr< rule_type > p);
 
   // width
   //
@@ -8664,7 +8669,7 @@ class predecessor1: public ::xml_schema::type
   elementType (const elementType_optional& x);
 
   void
-  elementType (::std::auto_ptr< elementType_type > p);
+  elementType (::std::unique_ptr< elementType_type > p);
 
   // elementId
   //
@@ -8685,7 +8690,7 @@ class predecessor1: public ::xml_schema::type
   elementId (const elementId_optional& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // contactPoint
   //
@@ -8706,7 +8711,7 @@ class predecessor1: public ::xml_schema::type
   contactPoint (const contactPoint_optional& x);
 
   void
-  contactPoint (::std::auto_ptr< contactPoint_type > p);
+  contactPoint (::std::unique_ptr< contactPoint_type > p);
 
   // Constructors.
   //
@@ -8765,7 +8770,7 @@ class successor1: public ::xml_schema::type
   elementType (const elementType_optional& x);
 
   void
-  elementType (::std::auto_ptr< elementType_type > p);
+  elementType (::std::unique_ptr< elementType_type > p);
 
   // elementId
   //
@@ -8786,7 +8791,7 @@ class successor1: public ::xml_schema::type
   elementId (const elementId_optional& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // contactPoint
   //
@@ -8807,7 +8812,7 @@ class successor1: public ::xml_schema::type
   contactPoint (const contactPoint_optional& x);
 
   void
-  contactPoint (::std::auto_ptr< contactPoint_type > p);
+  contactPoint (::std::unique_ptr< contactPoint_type > p);
 
   // Constructors.
   //
@@ -8866,7 +8871,7 @@ class neighbor: public ::xml_schema::type
   side (const side_optional& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // elementId
   //
@@ -8887,7 +8892,7 @@ class neighbor: public ::xml_schema::type
   elementId (const elementId_optional& x);
 
   void
-  elementId (::std::auto_ptr< elementId_type > p);
+  elementId (::std::unique_ptr< elementId_type > p);
 
   // direction
   //
@@ -8908,7 +8913,7 @@ class neighbor: public ::xml_schema::type
   direction (const direction_optional& x);
 
   void
-  direction (::std::auto_ptr< direction_type > p);
+  direction (::std::unique_ptr< direction_type > p);
 
   // Constructors.
   //
@@ -8967,7 +8972,7 @@ class speed1: public ::xml_schema::type
   t_max (const max_optional& x);
 
   void
-  t_max (::std::auto_ptr< max_type > p);
+  t_max (::std::unique_ptr< max_type > p);
 
   // unit
   //
@@ -8988,7 +8993,7 @@ class speed1: public ::xml_schema::type
   unit (const unit_optional& x);
 
   void
-  unit (::std::auto_ptr< unit_type > p);
+  unit (::std::unique_ptr< unit_type > p);
 
   // Constructors.
   //
@@ -9046,7 +9051,7 @@ class geometry: public ::xml_schema::type
   line (const line_optional& x);
 
   void
-  line (::std::auto_ptr< line_type > p);
+  line (::std::unique_ptr< line_type > p);
 
   // spiral
   //
@@ -9067,7 +9072,7 @@ class geometry: public ::xml_schema::type
   spiral (const spiral_optional& x);
 
   void
-  spiral (::std::auto_ptr< spiral_type > p);
+  spiral (::std::unique_ptr< spiral_type > p);
 
   // arc
   //
@@ -9088,7 +9093,7 @@ class geometry: public ::xml_schema::type
   arc (const arc_optional& x);
 
   void
-  arc (::std::auto_ptr< arc_type > p);
+  arc (::std::unique_ptr< arc_type > p);
 
   // poly3
   //
@@ -9109,7 +9114,7 @@ class geometry: public ::xml_schema::type
   poly3 (const poly3_optional& x);
 
   void
-  poly3 (::std::auto_ptr< poly3_type > p);
+  poly3 (::std::unique_ptr< poly3_type > p);
 
   // paramPoly3
   //
@@ -9130,7 +9135,7 @@ class geometry: public ::xml_schema::type
   paramPoly3 (const paramPoly3_optional& x);
 
   void
-  paramPoly3 (::std::auto_ptr< paramPoly3_type > p);
+  paramPoly3 (::std::unique_ptr< paramPoly3_type > p);
 
   // userData
   //
@@ -9688,7 +9693,7 @@ class crossfall: public ::xml_schema::type
   side (const side_optional& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // s
   //
@@ -10193,7 +10198,7 @@ class laneSection: public ::xml_schema::type
   left (const left_optional& x);
 
   void
-  left (::std::auto_ptr< left_type > p);
+  left (::std::unique_ptr< left_type > p);
 
   // center
   //
@@ -10210,7 +10215,7 @@ class laneSection: public ::xml_schema::type
   center (const center_type& x);
 
   void
-  center (::std::auto_ptr< center_type > p);
+  center (::std::unique_ptr< center_type > p);
 
   // right
   //
@@ -10231,7 +10236,7 @@ class laneSection: public ::xml_schema::type
   right (const right_optional& x);
 
   void
-  right (::std::auto_ptr< right_type > p);
+  right (::std::unique_ptr< right_type > p);
 
   // userData
   //
@@ -10304,13 +10309,13 @@ class laneSection: public ::xml_schema::type
   singleSide (const singleSide_optional& x);
 
   void
-  singleSide (::std::auto_ptr< singleSide_type > p);
+  singleSide (::std::unique_ptr< singleSide_type > p);
 
   // Constructors.
   //
   laneSection (const center_type&);
 
-  laneSection (::std::auto_ptr< center_type >);
+  laneSection (::std::unique_ptr< center_type >);
 
   laneSection (const ::xercesc::DOMElement& e,
                ::xml_schema::flags f = 0,
@@ -10386,7 +10391,7 @@ class object: public ::xml_schema::type
   outline (const outline_optional& x);
 
   void
-  outline (::std::auto_ptr< outline_type > p);
+  outline (::std::unique_ptr< outline_type > p);
 
   // material
   //
@@ -10407,7 +10412,7 @@ class object: public ::xml_schema::type
   material (const material_optional& x);
 
   void
-  material (::std::auto_ptr< material_type > p);
+  material (::std::unique_ptr< material_type > p);
 
   // validity
   //
@@ -10445,7 +10450,7 @@ class object: public ::xml_schema::type
   parkingSpace (const parkingSpace_optional& x);
 
   void
-  parkingSpace (::std::auto_ptr< parkingSpace_type > p);
+  parkingSpace (::std::unique_ptr< parkingSpace_type > p);
 
   // userData
   //
@@ -10500,7 +10505,7 @@ class object: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // name
   //
@@ -10521,7 +10526,7 @@ class object: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -10542,7 +10547,7 @@ class object: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // s
   //
@@ -10635,7 +10640,7 @@ class object: public ::xml_schema::type
   orientation (const orientation_optional& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // length
   //
@@ -10926,7 +10931,7 @@ class objectReference: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // zOffset
   //
@@ -10983,7 +10988,7 @@ class objectReference: public ::xml_schema::type
   orientation (const orientation_optional& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // Constructors.
   //
@@ -11135,7 +11140,7 @@ class tunnel: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -11156,7 +11161,7 @@ class tunnel: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -11177,7 +11182,7 @@ class tunnel: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // lighting
   //
@@ -11366,7 +11371,7 @@ class bridge: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -11387,7 +11392,7 @@ class bridge: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -11408,7 +11413,7 @@ class bridge: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -11576,7 +11581,7 @@ class signal: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // name
   //
@@ -11597,7 +11602,7 @@ class signal: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // dynamic
   //
@@ -11618,7 +11623,7 @@ class signal: public ::xml_schema::type
   dynamic (const dynamic_optional& x);
 
   void
-  dynamic (::std::auto_ptr< dynamic_type > p);
+  dynamic (::std::unique_ptr< dynamic_type > p);
 
   // orientation
   //
@@ -11639,7 +11644,7 @@ class signal: public ::xml_schema::type
   orientation (const orientation_optional& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // zOffset
   //
@@ -11678,7 +11683,7 @@ class signal: public ::xml_schema::type
   country (const country_optional& x);
 
   void
-  country (::std::auto_ptr< country_type > p);
+  country (::std::unique_ptr< country_type > p);
 
   // type
   //
@@ -11699,7 +11704,7 @@ class signal: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // subtype
   //
@@ -11720,7 +11725,7 @@ class signal: public ::xml_schema::type
   subtype (const subtype_optional& x);
 
   void
-  subtype (::std::auto_ptr< subtype_type > p);
+  subtype (::std::unique_ptr< subtype_type > p);
 
   // value
   //
@@ -11759,7 +11764,7 @@ class signal: public ::xml_schema::type
   unit (const unit_optional& x);
 
   void
-  unit (::std::auto_ptr< unit_type > p);
+  unit (::std::unique_ptr< unit_type > p);
 
   // height
   //
@@ -11816,7 +11821,7 @@ class signal: public ::xml_schema::type
   text (const text_optional& x);
 
   void
-  text (::std::auto_ptr< text_type > p);
+  text (::std::unique_ptr< text_type > p);
 
   // hOffset
   //
@@ -12035,7 +12040,7 @@ class signalReference: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // orientation
   //
@@ -12056,7 +12061,7 @@ class signalReference: public ::xml_schema::type
   orientation (const orientation_optional& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // Constructors.
   //
@@ -12153,7 +12158,7 @@ class CRG: public ::xml_schema::type
   file (const file_optional& x);
 
   void
-  file (::std::auto_ptr< file_type > p);
+  file (::std::unique_ptr< file_type > p);
 
   // sStart
   //
@@ -12210,7 +12215,7 @@ class CRG: public ::xml_schema::type
   orientation (const orientation_optional& x);
 
   void
-  orientation (::std::auto_ptr< orientation_type > p);
+  orientation (::std::unique_ptr< orientation_type > p);
 
   // mode
   //
@@ -12231,7 +12236,7 @@ class CRG: public ::xml_schema::type
   mode (const mode_optional& x);
 
   void
-  mode (::std::auto_ptr< mode_type > p);
+  mode (::std::unique_ptr< mode_type > p);
 
   // purpose
   //
@@ -12252,7 +12257,7 @@ class CRG: public ::xml_schema::type
   purpose (const purpose_optional& x);
 
   void
-  purpose (::std::auto_ptr< purpose_type > p);
+  purpose (::std::unique_ptr< purpose_type > p);
 
   // sOffset
   //
@@ -12407,7 +12412,7 @@ class switch_: public ::xml_schema::type
   mainTrack (const mainTrack_type& x);
 
   void
-  mainTrack (::std::auto_ptr< mainTrack_type > p);
+  mainTrack (::std::unique_ptr< mainTrack_type > p);
 
   // sideTrack
   //
@@ -12424,7 +12429,7 @@ class switch_: public ::xml_schema::type
   sideTrack (const sideTrack_type& x);
 
   void
-  sideTrack (::std::auto_ptr< sideTrack_type > p);
+  sideTrack (::std::unique_ptr< sideTrack_type > p);
 
   // partner
   //
@@ -12445,7 +12450,7 @@ class switch_: public ::xml_schema::type
   partner (const partner_optional& x);
 
   void
-  partner (::std::auto_ptr< partner_type > p);
+  partner (::std::unique_ptr< partner_type > p);
 
   // userData
   //
@@ -12500,7 +12505,7 @@ class switch_: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -12521,7 +12526,7 @@ class switch_: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // position
   //
@@ -12542,15 +12547,15 @@ class switch_: public ::xml_schema::type
   position (const position_optional& x);
 
   void
-  position (::std::auto_ptr< position_type > p);
+  position (::std::unique_ptr< position_type > p);
 
   // Constructors.
   //
   switch_ (const mainTrack_type&,
            const sideTrack_type&);
 
-  switch_ (::std::auto_ptr< mainTrack_type >,
-           ::std::auto_ptr< sideTrack_type >);
+  switch_ (::std::unique_ptr< mainTrack_type >,
+           ::std::unique_ptr< sideTrack_type >);
 
   switch_ (const ::xercesc::DOMElement& e,
            ::xml_schema::flags f = 0,
@@ -12753,7 +12758,7 @@ class segment: public ::xml_schema::type
   roadId (const roadId_optional& x);
 
   void
-  roadId (::std::auto_ptr< roadId_type > p);
+  roadId (::std::unique_ptr< roadId_type > p);
 
   // sStart
   //
@@ -12810,7 +12815,7 @@ class segment: public ::xml_schema::type
   side (const side_optional& x);
 
   void
-  side (::std::auto_ptr< side_type > p);
+  side (::std::unique_ptr< side_type > p);
 
   // Constructors.
   //
@@ -13467,7 +13472,7 @@ class paramPoly3: public ::xml_schema::type
   pRange (const pRange_optional& x);
 
   void
-  pRange (::std::auto_ptr< pRange_type > p);
+  pRange (::std::unique_ptr< pRange_type > p);
 
   // Constructors.
   //
@@ -13623,7 +13628,7 @@ class center: public ::xml_schema::type
   lane (const lane_optional& x);
 
   void
-  lane (::std::auto_ptr< lane_type > p);
+  lane (::std::unique_ptr< lane_type > p);
 
   // userData
   //
@@ -14226,7 +14231,7 @@ class material1: public ::xml_schema::type
   surface (const surface_optional& x);
 
   void
-  surface (::std::auto_ptr< surface_type > p);
+  surface (::std::unique_ptr< surface_type > p);
 
   // friction
   //
@@ -14357,7 +14362,7 @@ class dependency: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // type
   //
@@ -14378,7 +14383,7 @@ class dependency: public ::xml_schema::type
   type (const type_optional& x);
 
   void
-  type (::std::auto_ptr< type_type > p);
+  type (::std::unique_ptr< type_type > p);
 
   // Constructors.
   //
@@ -14438,7 +14443,7 @@ class mainTrack: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // s
   //
@@ -14477,7 +14482,7 @@ class mainTrack: public ::xml_schema::type
   dir (const dir_optional& x);
 
   void
-  dir (::std::auto_ptr< dir_type > p);
+  dir (::std::unique_ptr< dir_type > p);
 
   // Constructors.
   //
@@ -14536,7 +14541,7 @@ class sideTrack: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // s
   //
@@ -14575,7 +14580,7 @@ class sideTrack: public ::xml_schema::type
   dir (const dir_optional& x);
 
   void
-  dir (::std::auto_ptr< dir_type > p);
+  dir (::std::unique_ptr< dir_type > p);
 
   // Constructors.
   //
@@ -14634,7 +14639,7 @@ class partner: public ::xml_schema::type
   name (const name_optional& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // id
   //
@@ -14655,7 +14660,7 @@ class partner: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // Constructors.
   //
@@ -14994,18 +14999,18 @@ class cornerLocal: public ::xml_schema::type
 // Parse a URI or a local file.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& uri,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& uri,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& uri,
             ::xercesc::DOMErrorHandler& eh,
             ::xml_schema::flags f = 0,
@@ -15014,37 +15019,37 @@ OpenDRIVE_ (const ::std::string& uri,
 // Parse std::istream.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xercesc::DOMErrorHandler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& id,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& id,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& id,
             ::xercesc::DOMErrorHandler& eh,
@@ -15054,18 +15059,18 @@ OpenDRIVE_ (::std::istream& is,
 // Parse xercesc::InputSource.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& is,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& is,
             ::xml_schema::error_handler& eh,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& is,
             ::xercesc::DOMErrorHandler& eh,
             ::xml_schema::flags f = 0,
@@ -15074,13 +15079,13 @@ OpenDRIVE_ (::xercesc::InputSource& is,
 // Parse xercesc::DOMDocument.
 //
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::xercesc::DOMDocument& d,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::OpenDRIVE >
-OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
+::std::unique_ptr< ::OpenDRIVE >
+OpenDRIVE_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
             ::xml_schema::flags f = 0,
             const ::xml_schema::properties& p = ::xml_schema::properties ());
 

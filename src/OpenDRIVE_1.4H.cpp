@@ -1396,9 +1396,9 @@ code (const code_optional& x)
 }
 
 void userData::
-code (::std::auto_ptr< code_type > x)
+code (::std::unique_ptr< code_type > x)
 {
-  this->code_.set (x);
+  this->code_.set (std::move (x));
 }
 
 const userData::value_optional& userData::
@@ -1426,9 +1426,9 @@ value (const value_optional& x)
 }
 
 void userData::
-value (::std::auto_ptr< value_type > x)
+value (::std::unique_ptr< value_type > x)
 {
-  this->value_.set (x);
+  this->value_.set (std::move (x));
 }
 
 
@@ -1460,9 +1460,9 @@ file (const file_optional& x)
 }
 
 void include::
-file (::std::auto_ptr< file_type > x)
+file (::std::unique_ptr< file_type > x)
 {
-  this->file_.set (x);
+  this->file_.set (std::move (x));
 }
 
 
@@ -1636,9 +1636,9 @@ parkingSpace_access (const access_optional& x)
 }
 
 void parkingSpace::
-parkingSpace_access (::std::auto_ptr< access_type > x)
+parkingSpace_access (::std::unique_ptr< access_type > x)
 {
-  this->parkingSpace_access_.set (x);
+  this->parkingSpace_access_.set (std::move (x));
 }
 
 const parkingSpace::restrictions_optional& parkingSpace::
@@ -1666,9 +1666,9 @@ restrictions (const restrictions_optional& x)
 }
 
 void parkingSpace::
-restrictions (::std::auto_ptr< restrictions_type > x)
+restrictions (::std::unique_ptr< restrictions_type > x)
 {
-  this->restrictions_.set (x);
+  this->restrictions_.set (std::move (x));
 }
 
 
@@ -1700,9 +1700,9 @@ lane_link (const link_optional& x)
 }
 
 void lane::
-lane_link (::std::auto_ptr< link_type > x)
+lane_link (::std::unique_ptr< link_type > x)
 {
-  this->lane_link_.set (x);
+  this->lane_link_.set (std::move (x));
 }
 
 const lane::width_sequence& lane::
@@ -1952,9 +1952,9 @@ type (const type_optional& x)
 }
 
 void lane::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const lane::level_optional& lane::
@@ -1982,9 +1982,9 @@ level (const level_optional& x)
 }
 
 void lane::
-level (::std::auto_ptr< level_type > x)
+level (::std::unique_ptr< level_type > x)
 {
-  this->level_.set (x);
+  this->level_.set (std::move (x));
 }
 
 
@@ -2016,9 +2016,9 @@ lane_link (const link_optional& x)
 }
 
 void centerLane::
-lane_link (::std::auto_ptr< link_type > x)
+lane_link (::std::unique_ptr< link_type > x)
 {
-  this->lane_link_.set (x);
+  this->lane_link_.set (std::move (x));
 }
 
 const centerLane::roadMark_sequence& centerLane::
@@ -2124,9 +2124,9 @@ type (const type_optional& x)
 }
 
 void centerLane::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const centerLane::level_optional& centerLane::
@@ -2154,9 +2154,9 @@ level (const level_optional& x)
 }
 
 void centerLane::
-level (::std::auto_ptr< level_type > x)
+level (::std::unique_ptr< level_type > x)
 {
-  this->level_.set (x);
+  this->level_.set (std::move (x));
 }
 
 
@@ -2182,9 +2182,9 @@ header (const header_type& x)
 }
 
 void OpenDRIVE::
-header (::std::auto_ptr< header_type > x)
+header (::std::unique_ptr< header_type > x)
 {
-  this->header_.set (x);
+  this->header_.set (std::move (x));
 }
 
 const OpenDRIVE::road_sequence& OpenDRIVE::
@@ -2355,9 +2355,9 @@ side (const side_optional& x)
 }
 
 void marking::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 const marking::type_optional& marking::
@@ -2385,9 +2385,9 @@ type (const type_optional& x)
 }
 
 void marking::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const marking::width_optional& marking::
@@ -2439,9 +2439,9 @@ color (const color_optional& x)
 }
 
 void marking::
-color (::std::auto_ptr< color_type > x)
+color (::std::unique_ptr< color_type > x)
 {
-  this->color_.set (x);
+  this->color_.set (std::move (x));
 }
 
 
@@ -2473,9 +2473,9 @@ predecessor (const predecessor_optional& x)
 }
 
 void lane_link::
-predecessor (::std::auto_ptr< predecessor_type > x)
+predecessor (::std::unique_ptr< predecessor_type > x)
 {
-  this->predecessor_.set (x);
+  this->predecessor_.set (std::move (x));
 }
 
 const lane_link::successor_optional& lane_link::
@@ -2503,9 +2503,9 @@ successor (const successor_optional& x)
 }
 
 void lane_link::
-successor (::std::auto_ptr< successor_type > x)
+successor (::std::unique_ptr< successor_type > x)
 {
-  this->successor_.set (x);
+  this->successor_.set (std::move (x));
 }
 
 const lane_link::userData_sequence& lane_link::
@@ -2893,9 +2893,9 @@ type (const type_optional& x)
 }
 
 void roadMark::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const roadMark::userData_sequence& roadMark::
@@ -2983,9 +2983,9 @@ type1 (const type1_optional& x)
 }
 
 void roadMark::
-type1 (::std::auto_ptr< type1_type > x)
+type1 (::std::unique_ptr< type1_type > x)
 {
-  this->type1_.set (x);
+  this->type1_.set (std::move (x));
 }
 
 const roadMark::weight_optional& roadMark::
@@ -3013,9 +3013,9 @@ weight (const weight_optional& x)
 }
 
 void roadMark::
-weight (::std::auto_ptr< weight_type > x)
+weight (::std::unique_ptr< weight_type > x)
 {
-  this->weight_.set (x);
+  this->weight_.set (std::move (x));
 }
 
 const roadMark::color_optional& roadMark::
@@ -3043,9 +3043,9 @@ color (const color_optional& x)
 }
 
 void roadMark::
-color (::std::auto_ptr< color_type > x)
+color (::std::unique_ptr< color_type > x)
 {
-  this->color_.set (x);
+  this->color_.set (std::move (x));
 }
 
 const roadMark::material_optional& roadMark::
@@ -3073,9 +3073,9 @@ material (const material_optional& x)
 }
 
 void roadMark::
-material (::std::auto_ptr< material_type > x)
+material (::std::unique_ptr< material_type > x)
 {
-  this->material_.set (x);
+  this->material_.set (std::move (x));
 }
 
 const roadMark::width_optional& roadMark::
@@ -3127,9 +3127,9 @@ laneChange (const laneChange_optional& x)
 }
 
 void roadMark::
-laneChange (::std::auto_ptr< laneChange_type > x)
+laneChange (::std::unique_ptr< laneChange_type > x)
 {
-  this->laneChange_.set (x);
+  this->laneChange_.set (std::move (x));
 }
 
 const roadMark::height_optional& roadMark::
@@ -3245,9 +3245,9 @@ surface (const surface_optional& x)
 }
 
 void material::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const material::friction_optional& material::
@@ -3571,9 +3571,9 @@ unit (const unit_optional& x)
 }
 
 void speed::
-unit (::std::auto_ptr< unit_type > x)
+unit (::std::unique_ptr< unit_type > x)
 {
-  this->unit_.set (x);
+  this->unit_.set (std::move (x));
 }
 
 
@@ -3665,9 +3665,9 @@ restriction (const restriction_optional& x)
 }
 
 void access1::
-restriction (::std::auto_ptr< restriction_type > x)
+restriction (::std::unique_ptr< restriction_type > x)
 {
-  this->restriction_.set (x);
+  this->restriction_.set (std::move (x));
 }
 
 
@@ -3871,9 +3871,9 @@ value (const value_optional& x)
 }
 
 void rule1::
-value (::std::auto_ptr< value_type > x)
+value (::std::unique_ptr< value_type > x)
 {
-  this->value_.set (x);
+  this->value_.set (std::move (x));
 }
 
 
@@ -3905,9 +3905,9 @@ predecessor (const predecessor_optional& x)
 }
 
 void link1::
-predecessor (::std::auto_ptr< predecessor_type > x)
+predecessor (::std::unique_ptr< predecessor_type > x)
 {
-  this->predecessor_.set (x);
+  this->predecessor_.set (std::move (x));
 }
 
 const link1::successor_optional& link1::
@@ -3935,9 +3935,9 @@ successor (const successor_optional& x)
 }
 
 void link1::
-successor (::std::auto_ptr< successor_type > x)
+successor (::std::unique_ptr< successor_type > x)
 {
-  this->successor_.set (x);
+  this->successor_.set (std::move (x));
 }
 
 const link1::userData_sequence& link1::
@@ -4005,9 +4005,9 @@ type (const type_optional& x)
 }
 
 void roadMark1::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const roadMark1::userData_sequence& roadMark1::
@@ -4095,9 +4095,9 @@ type1 (const type1_optional& x)
 }
 
 void roadMark1::
-type1 (::std::auto_ptr< type1_type > x)
+type1 (::std::unique_ptr< type1_type > x)
 {
-  this->type1_.set (x);
+  this->type1_.set (std::move (x));
 }
 
 const roadMark1::weight_optional& roadMark1::
@@ -4125,9 +4125,9 @@ weight (const weight_optional& x)
 }
 
 void roadMark1::
-weight (::std::auto_ptr< weight_type > x)
+weight (::std::unique_ptr< weight_type > x)
 {
-  this->weight_.set (x);
+  this->weight_.set (std::move (x));
 }
 
 const roadMark1::color_optional& roadMark1::
@@ -4155,9 +4155,9 @@ color (const color_optional& x)
 }
 
 void roadMark1::
-color (::std::auto_ptr< color_type > x)
+color (::std::unique_ptr< color_type > x)
 {
-  this->color_.set (x);
+  this->color_.set (std::move (x));
 }
 
 const roadMark1::material_optional& roadMark1::
@@ -4185,9 +4185,9 @@ material (const material_optional& x)
 }
 
 void roadMark1::
-material (::std::auto_ptr< material_type > x)
+material (::std::unique_ptr< material_type > x)
 {
-  this->material_.set (x);
+  this->material_.set (std::move (x));
 }
 
 const roadMark1::width_optional& roadMark1::
@@ -4239,9 +4239,9 @@ laneChange (const laneChange_optional& x)
 }
 
 void roadMark1::
-laneChange (::std::auto_ptr< laneChange_type > x)
+laneChange (::std::unique_ptr< laneChange_type > x)
 {
-  this->laneChange_.set (x);
+  this->laneChange_.set (std::move (x));
 }
 
 const roadMark1::height_optional& roadMark1::
@@ -4297,9 +4297,9 @@ geoReference (const geoReference_optional& x)
 }
 
 void header::
-geoReference (::std::auto_ptr< geoReference_type > x)
+geoReference (::std::unique_ptr< geoReference_type > x)
 {
-  this->geoReference_.set (x);
+  this->geoReference_.set (std::move (x));
 }
 
 const header::userData_sequence& header::
@@ -4411,9 +4411,9 @@ name (const name_optional& x)
 }
 
 void header::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const header::version_optional& header::
@@ -4465,9 +4465,9 @@ date (const date_optional& x)
 }
 
 void header::
-date (::std::auto_ptr< date_type > x)
+date (::std::unique_ptr< date_type > x)
 {
-  this->date_.set (x);
+  this->date_.set (std::move (x));
 }
 
 const header::north_optional& header::
@@ -4591,9 +4591,9 @@ vendor (const vendor_optional& x)
 }
 
 void header::
-vendor (::std::auto_ptr< vendor_type > x)
+vendor (::std::unique_ptr< vendor_type > x)
 {
-  this->vendor_.set (x);
+  this->vendor_.set (std::move (x));
 }
 
 
@@ -4625,9 +4625,9 @@ lane_link (const link_optional& x)
 }
 
 void road::
-lane_link (::std::auto_ptr< link_type > x)
+lane_link (::std::unique_ptr< link_type > x)
 {
-  this->lane_link_.set (x);
+  this->lane_link_.set (std::move (x));
 }
 
 const road::type_sequence& road::
@@ -4667,9 +4667,9 @@ planView (const planView_type& x)
 }
 
 void road::
-planView (::std::auto_ptr< planView_type > x)
+planView (::std::unique_ptr< planView_type > x)
 {
-  this->planView_.set (x);
+  this->planView_.set (std::move (x));
 }
 
 const road::elevationProfile_optional& road::
@@ -4697,9 +4697,9 @@ elevationProfile (const elevationProfile_optional& x)
 }
 
 void road::
-elevationProfile (::std::auto_ptr< elevationProfile_type > x)
+elevationProfile (::std::unique_ptr< elevationProfile_type > x)
 {
-  this->elevationProfile_.set (x);
+  this->elevationProfile_.set (std::move (x));
 }
 
 const road::lateralProfile_optional& road::
@@ -4727,9 +4727,9 @@ lateralProfile (const lateralProfile_optional& x)
 }
 
 void road::
-lateralProfile (::std::auto_ptr< lateralProfile_type > x)
+lateralProfile (::std::unique_ptr< lateralProfile_type > x)
 {
-  this->lateralProfile_.set (x);
+  this->lateralProfile_.set (std::move (x));
 }
 
 const road::lanes_type& road::
@@ -4751,9 +4751,9 @@ lanes (const lanes_type& x)
 }
 
 void road::
-lanes (::std::auto_ptr< lanes_type > x)
+lanes (::std::unique_ptr< lanes_type > x)
 {
-  this->lanes_.set (x);
+  this->lanes_.set (std::move (x));
 }
 
 const road::objects_optional& road::
@@ -4781,9 +4781,9 @@ objects (const objects_optional& x)
 }
 
 void road::
-objects (::std::auto_ptr< objects_type > x)
+objects (::std::unique_ptr< objects_type > x)
 {
-  this->objects_.set (x);
+  this->objects_.set (std::move (x));
 }
 
 const road::signals_optional& road::
@@ -4811,9 +4811,9 @@ signals (const signals_optional& x)
 }
 
 void road::
-signals (::std::auto_ptr< signals_type > x)
+signals (::std::unique_ptr< signals_type > x)
 {
-  this->signals_.set (x);
+  this->signals_.set (std::move (x));
 }
 
 const road::surface_optional& road::
@@ -4841,9 +4841,9 @@ surface (const surface_optional& x)
 }
 
 void road::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const road::railroad_optional& road::
@@ -4871,9 +4871,9 @@ railroad (const railroad_optional& x)
 }
 
 void road::
-railroad (::std::auto_ptr< railroad_type > x)
+railroad (::std::unique_ptr< railroad_type > x)
 {
-  this->railroad_.set (x);
+  this->railroad_.set (std::move (x));
 }
 
 const road::userData_sequence& road::
@@ -4937,9 +4937,9 @@ name (const name_optional& x)
 }
 
 void road::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const road::length_optional& road::
@@ -4991,9 +4991,9 @@ id (const id_optional& x)
 }
 
 void road::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const road::junction_optional& road::
@@ -5021,9 +5021,9 @@ junction (const junction_optional& x)
 }
 
 void road::
-junction (::std::auto_ptr< junction_type > x)
+junction (::std::unique_ptr< junction_type > x)
 {
-  this->junction_.set (x);
+  this->junction_.set (std::move (x));
 }
 
 
@@ -5109,9 +5109,9 @@ id (const id_optional& x)
 }
 
 void controller::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const controller::name_optional& controller::
@@ -5139,9 +5139,9 @@ name (const name_optional& x)
 }
 
 void controller::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const controller::sequence_optional& controller::
@@ -5287,9 +5287,9 @@ name (const name_optional& x)
 }
 
 void junction::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const junction::id_optional& junction::
@@ -5317,9 +5317,9 @@ id (const id_optional& x)
 }
 
 void junction::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 
@@ -5405,9 +5405,9 @@ name (const name_optional& x)
 }
 
 void junctionGroup::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const junctionGroup::id_optional& junctionGroup::
@@ -5435,9 +5435,9 @@ id (const id_optional& x)
 }
 
 void junctionGroup::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const junctionGroup::type_optional& junctionGroup::
@@ -5465,9 +5465,9 @@ type (const type_optional& x)
 }
 
 void junctionGroup::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -5553,9 +5553,9 @@ name (const name_optional& x)
 }
 
 void station::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const station::id_optional& station::
@@ -5583,9 +5583,9 @@ id (const id_optional& x)
 }
 
 void station::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const station::type_optional& station::
@@ -5613,9 +5613,9 @@ type (const type_optional& x)
 }
 
 void station::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -5721,9 +5721,9 @@ name (const name_optional& x)
 }
 
 void type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const type::width_optional& type::
@@ -5797,9 +5797,9 @@ name (const name_optional& x)
 }
 
 void type1::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const type1::width_optional& type1::
@@ -5855,9 +5855,9 @@ predecessor (const predecessor_optional& x)
 }
 
 void link2::
-predecessor (::std::auto_ptr< predecessor_type > x)
+predecessor (::std::unique_ptr< predecessor_type > x)
 {
-  this->predecessor_.set (x);
+  this->predecessor_.set (std::move (x));
 }
 
 const link2::successor_optional& link2::
@@ -5885,9 +5885,9 @@ successor (const successor_optional& x)
 }
 
 void link2::
-successor (::std::auto_ptr< successor_type > x)
+successor (::std::unique_ptr< successor_type > x)
 {
-  this->successor_.set (x);
+  this->successor_.set (std::move (x));
 }
 
 const link2::neighbor_sequence& link2::
@@ -5973,9 +5973,9 @@ speed (const speed_optional& x)
 }
 
 void type2::
-speed (::std::auto_ptr< speed_type > x)
+speed (::std::unique_ptr< speed_type > x)
 {
-  this->speed_.set (x);
+  this->speed_.set (std::move (x));
 }
 
 const type2::userData_sequence& type2::
@@ -6063,9 +6063,9 @@ type (const type_optional& x)
 }
 
 void type2::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -6651,9 +6651,9 @@ signalId (const signalId_optional& x)
 }
 
 void control::
-signalId (::std::auto_ptr< signalId_type > x)
+signalId (::std::unique_ptr< signalId_type > x)
 {
-  this->signalId_.set (x);
+  this->signalId_.set (std::move (x));
 }
 
 const control::type_optional& control::
@@ -6681,9 +6681,9 @@ type (const type_optional& x)
 }
 
 void control::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -6769,9 +6769,9 @@ id (const id_optional& x)
 }
 
 void connection::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const connection::incomingRoad_optional& connection::
@@ -6799,9 +6799,9 @@ incomingRoad (const incomingRoad_optional& x)
 }
 
 void connection::
-incomingRoad (::std::auto_ptr< incomingRoad_type > x)
+incomingRoad (::std::unique_ptr< incomingRoad_type > x)
 {
-  this->incomingRoad_.set (x);
+  this->incomingRoad_.set (std::move (x));
 }
 
 const connection::connectingRoad_optional& connection::
@@ -6829,9 +6829,9 @@ connectingRoad (const connectingRoad_optional& x)
 }
 
 void connection::
-connectingRoad (::std::auto_ptr< connectingRoad_type > x)
+connectingRoad (::std::unique_ptr< connectingRoad_type > x)
 {
-  this->connectingRoad_.set (x);
+  this->connectingRoad_.set (std::move (x));
 }
 
 const connection::contactPoint_optional& connection::
@@ -6859,9 +6859,9 @@ contactPoint (const contactPoint_optional& x)
 }
 
 void connection::
-contactPoint (::std::auto_ptr< contactPoint_type > x)
+contactPoint (::std::unique_ptr< contactPoint_type > x)
 {
-  this->contactPoint_.set (x);
+  this->contactPoint_.set (std::move (x));
 }
 
 
@@ -6929,9 +6929,9 @@ high (const high_optional& x)
 }
 
 void priority::
-high (::std::auto_ptr< high_type > x)
+high (::std::unique_ptr< high_type > x)
 {
-  this->high_.set (x);
+  this->high_.set (std::move (x));
 }
 
 const priority::low_optional& priority::
@@ -6959,9 +6959,9 @@ low (const low_optional& x)
 }
 
 void priority::
-low (::std::auto_ptr< low_type > x)
+low (::std::unique_ptr< low_type > x)
 {
-  this->low_.set (x);
+  this->low_.set (std::move (x));
 }
 
 
@@ -7029,9 +7029,9 @@ id (const id_optional& x)
 }
 
 void controller1::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const controller1::type_optional& controller1::
@@ -7059,9 +7059,9 @@ type (const type_optional& x)
 }
 
 void controller1::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const controller1::sequence_optional& controller1::
@@ -7117,9 +7117,9 @@ junction (const junction_optional& x)
 }
 
 void junctionReference::
-junction (::std::auto_ptr< junction_type > x)
+junction (::std::unique_ptr< junction_type > x)
 {
-  this->junction_.set (x);
+  this->junction_.set (std::move (x));
 }
 
 
@@ -7169,9 +7169,9 @@ name (const name_optional& x)
 }
 
 void platform::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const platform::id_optional& platform::
@@ -7199,9 +7199,9 @@ id (const id_optional& x)
 }
 
 void platform::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 
@@ -7329,9 +7329,9 @@ rule (const rule_optional& x)
 }
 
 void line::
-rule (::std::auto_ptr< rule_type > x)
+rule (::std::unique_ptr< rule_type > x)
 {
-  this->rule_.set (x);
+  this->rule_.set (std::move (x));
 }
 
 const line::width_optional& line::
@@ -7387,9 +7387,9 @@ elementType (const elementType_optional& x)
 }
 
 void predecessor1::
-elementType (::std::auto_ptr< elementType_type > x)
+elementType (::std::unique_ptr< elementType_type > x)
 {
-  this->elementType_.set (x);
+  this->elementType_.set (std::move (x));
 }
 
 const predecessor1::elementId_optional& predecessor1::
@@ -7417,9 +7417,9 @@ elementId (const elementId_optional& x)
 }
 
 void predecessor1::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const predecessor1::contactPoint_optional& predecessor1::
@@ -7447,9 +7447,9 @@ contactPoint (const contactPoint_optional& x)
 }
 
 void predecessor1::
-contactPoint (::std::auto_ptr< contactPoint_type > x)
+contactPoint (::std::unique_ptr< contactPoint_type > x)
 {
-  this->contactPoint_.set (x);
+  this->contactPoint_.set (std::move (x));
 }
 
 
@@ -7481,9 +7481,9 @@ elementType (const elementType_optional& x)
 }
 
 void successor1::
-elementType (::std::auto_ptr< elementType_type > x)
+elementType (::std::unique_ptr< elementType_type > x)
 {
-  this->elementType_.set (x);
+  this->elementType_.set (std::move (x));
 }
 
 const successor1::elementId_optional& successor1::
@@ -7511,9 +7511,9 @@ elementId (const elementId_optional& x)
 }
 
 void successor1::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const successor1::contactPoint_optional& successor1::
@@ -7541,9 +7541,9 @@ contactPoint (const contactPoint_optional& x)
 }
 
 void successor1::
-contactPoint (::std::auto_ptr< contactPoint_type > x)
+contactPoint (::std::unique_ptr< contactPoint_type > x)
 {
-  this->contactPoint_.set (x);
+  this->contactPoint_.set (std::move (x));
 }
 
 
@@ -7575,9 +7575,9 @@ side (const side_optional& x)
 }
 
 void neighbor::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 const neighbor::elementId_optional& neighbor::
@@ -7605,9 +7605,9 @@ elementId (const elementId_optional& x)
 }
 
 void neighbor::
-elementId (::std::auto_ptr< elementId_type > x)
+elementId (::std::unique_ptr< elementId_type > x)
 {
-  this->elementId_.set (x);
+  this->elementId_.set (std::move (x));
 }
 
 const neighbor::direction_optional& neighbor::
@@ -7635,9 +7635,9 @@ direction (const direction_optional& x)
 }
 
 void neighbor::
-direction (::std::auto_ptr< direction_type > x)
+direction (::std::unique_ptr< direction_type > x)
 {
-  this->direction_.set (x);
+  this->direction_.set (std::move (x));
 }
 
 
@@ -7669,9 +7669,9 @@ t_max (const max_optional& x)
 }
 
 void speed1::
-t_max (::std::auto_ptr< max_type > x)
+t_max (::std::unique_ptr< max_type > x)
 {
-  this->t_max_.set (x);
+  this->t_max_.set (std::move (x));
 }
 
 const speed1::unit_optional& speed1::
@@ -7699,9 +7699,9 @@ unit (const unit_optional& x)
 }
 
 void speed1::
-unit (::std::auto_ptr< unit_type > x)
+unit (::std::unique_ptr< unit_type > x)
 {
-  this->unit_.set (x);
+  this->unit_.set (std::move (x));
 }
 
 
@@ -7733,9 +7733,9 @@ line (const line_optional& x)
 }
 
 void geometry::
-line (::std::auto_ptr< line_type > x)
+line (::std::unique_ptr< line_type > x)
 {
-  this->line_.set (x);
+  this->line_.set (std::move (x));
 }
 
 const geometry::spiral_optional& geometry::
@@ -7763,9 +7763,9 @@ spiral (const spiral_optional& x)
 }
 
 void geometry::
-spiral (::std::auto_ptr< spiral_type > x)
+spiral (::std::unique_ptr< spiral_type > x)
 {
-  this->spiral_.set (x);
+  this->spiral_.set (std::move (x));
 }
 
 const geometry::arc_optional& geometry::
@@ -7793,9 +7793,9 @@ arc (const arc_optional& x)
 }
 
 void geometry::
-arc (::std::auto_ptr< arc_type > x)
+arc (::std::unique_ptr< arc_type > x)
 {
-  this->arc_.set (x);
+  this->arc_.set (std::move (x));
 }
 
 const geometry::poly3_optional& geometry::
@@ -7823,9 +7823,9 @@ poly3 (const poly3_optional& x)
 }
 
 void geometry::
-poly3 (::std::auto_ptr< poly3_type > x)
+poly3 (::std::unique_ptr< poly3_type > x)
 {
-  this->poly3_.set (x);
+  this->poly3_.set (std::move (x));
 }
 
 const geometry::paramPoly3_optional& geometry::
@@ -7853,9 +7853,9 @@ paramPoly3 (const paramPoly3_optional& x)
 }
 
 void geometry::
-paramPoly3 (::std::auto_ptr< paramPoly3_type > x)
+paramPoly3 (::std::unique_ptr< paramPoly3_type > x)
 {
-  this->paramPoly3_.set (x);
+  this->paramPoly3_.set (std::move (x));
 }
 
 const geometry::userData_sequence& geometry::
@@ -8399,9 +8399,9 @@ side (const side_optional& x)
 }
 
 void crossfall::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 const crossfall::s_optional& crossfall::
@@ -8897,9 +8897,9 @@ left (const left_optional& x)
 }
 
 void laneSection::
-left (::std::auto_ptr< left_type > x)
+left (::std::unique_ptr< left_type > x)
 {
-  this->left_.set (x);
+  this->left_.set (std::move (x));
 }
 
 const laneSection::center_type& laneSection::
@@ -8921,9 +8921,9 @@ center (const center_type& x)
 }
 
 void laneSection::
-center (::std::auto_ptr< center_type > x)
+center (::std::unique_ptr< center_type > x)
 {
-  this->center_.set (x);
+  this->center_.set (std::move (x));
 }
 
 const laneSection::right_optional& laneSection::
@@ -8951,9 +8951,9 @@ right (const right_optional& x)
 }
 
 void laneSection::
-right (::std::auto_ptr< right_type > x)
+right (::std::unique_ptr< right_type > x)
 {
-  this->right_.set (x);
+  this->right_.set (std::move (x));
 }
 
 const laneSection::userData_sequence& laneSection::
@@ -9041,9 +9041,9 @@ singleSide (const singleSide_optional& x)
 }
 
 void laneSection::
-singleSide (::std::auto_ptr< singleSide_type > x)
+singleSide (::std::unique_ptr< singleSide_type > x)
 {
-  this->singleSide_.set (x);
+  this->singleSide_.set (std::move (x));
 }
 
 
@@ -9093,9 +9093,9 @@ outline (const outline_optional& x)
 }
 
 void object::
-outline (::std::auto_ptr< outline_type > x)
+outline (::std::unique_ptr< outline_type > x)
 {
-  this->outline_.set (x);
+  this->outline_.set (std::move (x));
 }
 
 const object::material_optional& object::
@@ -9123,9 +9123,9 @@ material (const material_optional& x)
 }
 
 void object::
-material (::std::auto_ptr< material_type > x)
+material (::std::unique_ptr< material_type > x)
 {
-  this->material_.set (x);
+  this->material_.set (std::move (x));
 }
 
 const object::validity_sequence& object::
@@ -9171,9 +9171,9 @@ parkingSpace (const parkingSpace_optional& x)
 }
 
 void object::
-parkingSpace (::std::auto_ptr< parkingSpace_type > x)
+parkingSpace (::std::unique_ptr< parkingSpace_type > x)
 {
-  this->parkingSpace_.set (x);
+  this->parkingSpace_.set (std::move (x));
 }
 
 const object::userData_sequence& object::
@@ -9237,9 +9237,9 @@ type (const type_optional& x)
 }
 
 void object::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const object::name_optional& object::
@@ -9267,9 +9267,9 @@ name (const name_optional& x)
 }
 
 void object::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const object::id_optional& object::
@@ -9297,9 +9297,9 @@ id (const id_optional& x)
 }
 
 void object::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const object::s_optional& object::
@@ -9423,9 +9423,9 @@ orientation (const orientation_optional& x)
 }
 
 void object::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 const object::length_optional& object::
@@ -9727,9 +9727,9 @@ id (const id_optional& x)
 }
 
 void objectReference::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const objectReference::zOffset_optional& objectReference::
@@ -9805,9 +9805,9 @@ orientation (const orientation_optional& x)
 }
 
 void objectReference::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 
@@ -9941,9 +9941,9 @@ name (const name_optional& x)
 }
 
 void tunnel::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const tunnel::id_optional& tunnel::
@@ -9971,9 +9971,9 @@ id (const id_optional& x)
 }
 
 void tunnel::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const tunnel::type_optional& tunnel::
@@ -10001,9 +10001,9 @@ type (const type_optional& x)
 }
 
 void tunnel::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const tunnel::lighting_optional& tunnel::
@@ -10185,9 +10185,9 @@ name (const name_optional& x)
 }
 
 void bridge::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const bridge::id_optional& bridge::
@@ -10215,9 +10215,9 @@ id (const id_optional& x)
 }
 
 void bridge::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const bridge::type_optional& bridge::
@@ -10245,9 +10245,9 @@ type (const type_optional& x)
 }
 
 void bridge::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -10399,9 +10399,9 @@ id (const id_optional& x)
 }
 
 void signal::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const signal::name_optional& signal::
@@ -10429,9 +10429,9 @@ name (const name_optional& x)
 }
 
 void signal::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const signal::dynamic_optional& signal::
@@ -10459,9 +10459,9 @@ dynamic (const dynamic_optional& x)
 }
 
 void signal::
-dynamic (::std::auto_ptr< dynamic_type > x)
+dynamic (::std::unique_ptr< dynamic_type > x)
 {
-  this->dynamic_.set (x);
+  this->dynamic_.set (std::move (x));
 }
 
 const signal::orientation_optional& signal::
@@ -10489,9 +10489,9 @@ orientation (const orientation_optional& x)
 }
 
 void signal::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 const signal::zOffset_optional& signal::
@@ -10543,9 +10543,9 @@ country (const country_optional& x)
 }
 
 void signal::
-country (::std::auto_ptr< country_type > x)
+country (::std::unique_ptr< country_type > x)
 {
-  this->country_.set (x);
+  this->country_.set (std::move (x));
 }
 
 const signal::type_optional& signal::
@@ -10573,9 +10573,9 @@ type (const type_optional& x)
 }
 
 void signal::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 const signal::subtype_optional& signal::
@@ -10603,9 +10603,9 @@ subtype (const subtype_optional& x)
 }
 
 void signal::
-subtype (::std::auto_ptr< subtype_type > x)
+subtype (::std::unique_ptr< subtype_type > x)
 {
-  this->subtype_.set (x);
+  this->subtype_.set (std::move (x));
 }
 
 const signal::value_optional& signal::
@@ -10657,9 +10657,9 @@ unit (const unit_optional& x)
 }
 
 void signal::
-unit (::std::auto_ptr< unit_type > x)
+unit (::std::unique_ptr< unit_type > x)
 {
-  this->unit_.set (x);
+  this->unit_.set (std::move (x));
 }
 
 const signal::height_optional& signal::
@@ -10735,9 +10735,9 @@ text (const text_optional& x)
 }
 
 void signal::
-text (::std::auto_ptr< text_type > x)
+text (::std::unique_ptr< text_type > x)
 {
-  this->text_.set (x);
+  this->text_.set (std::move (x));
 }
 
 const signal::hOffset_optional& signal::
@@ -10943,9 +10943,9 @@ id (const id_optional& x)
 }
 
 void signalReference::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const signalReference::orientation_optional& signalReference::
@@ -10973,9 +10973,9 @@ orientation (const orientation_optional& x)
 }
 
 void signalReference::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 
@@ -11043,9 +11043,9 @@ file (const file_optional& x)
 }
 
 void CRG::
-file (::std::auto_ptr< file_type > x)
+file (::std::unique_ptr< file_type > x)
 {
-  this->file_.set (x);
+  this->file_.set (std::move (x));
 }
 
 const CRG::sStart_optional& CRG::
@@ -11121,9 +11121,9 @@ orientation (const orientation_optional& x)
 }
 
 void CRG::
-orientation (::std::auto_ptr< orientation_type > x)
+orientation (::std::unique_ptr< orientation_type > x)
 {
-  this->orientation_.set (x);
+  this->orientation_.set (std::move (x));
 }
 
 const CRG::mode_optional& CRG::
@@ -11151,9 +11151,9 @@ mode (const mode_optional& x)
 }
 
 void CRG::
-mode (::std::auto_ptr< mode_type > x)
+mode (::std::unique_ptr< mode_type > x)
 {
-  this->mode_.set (x);
+  this->mode_.set (std::move (x));
 }
 
 const CRG::purpose_optional& CRG::
@@ -11181,9 +11181,9 @@ purpose (const purpose_optional& x)
 }
 
 void CRG::
-purpose (::std::auto_ptr< purpose_type > x)
+purpose (::std::unique_ptr< purpose_type > x)
 {
-  this->purpose_.set (x);
+  this->purpose_.set (std::move (x));
 }
 
 const CRG::sOffset_optional& CRG::
@@ -11329,9 +11329,9 @@ mainTrack (const mainTrack_type& x)
 }
 
 void switch_::
-mainTrack (::std::auto_ptr< mainTrack_type > x)
+mainTrack (::std::unique_ptr< mainTrack_type > x)
 {
-  this->mainTrack_.set (x);
+  this->mainTrack_.set (std::move (x));
 }
 
 const switch_::sideTrack_type& switch_::
@@ -11353,9 +11353,9 @@ sideTrack (const sideTrack_type& x)
 }
 
 void switch_::
-sideTrack (::std::auto_ptr< sideTrack_type > x)
+sideTrack (::std::unique_ptr< sideTrack_type > x)
 {
-  this->sideTrack_.set (x);
+  this->sideTrack_.set (std::move (x));
 }
 
 const switch_::partner_optional& switch_::
@@ -11383,9 +11383,9 @@ partner (const partner_optional& x)
 }
 
 void switch_::
-partner (::std::auto_ptr< partner_type > x)
+partner (::std::unique_ptr< partner_type > x)
 {
-  this->partner_.set (x);
+  this->partner_.set (std::move (x));
 }
 
 const switch_::userData_sequence& switch_::
@@ -11449,9 +11449,9 @@ name (const name_optional& x)
 }
 
 void switch_::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const switch_::id_optional& switch_::
@@ -11479,9 +11479,9 @@ id (const id_optional& x)
 }
 
 void switch_::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const switch_::position_optional& switch_::
@@ -11509,9 +11509,9 @@ position (const position_optional& x)
 }
 
 void switch_::
-position (::std::auto_ptr< position_type > x)
+position (::std::unique_ptr< position_type > x)
 {
-  this->position_.set (x);
+  this->position_.set (std::move (x));
 }
 
 
@@ -11667,9 +11667,9 @@ roadId (const roadId_optional& x)
 }
 
 void segment::
-roadId (::std::auto_ptr< roadId_type > x)
+roadId (::std::unique_ptr< roadId_type > x)
 {
-  this->roadId_.set (x);
+  this->roadId_.set (std::move (x));
 }
 
 const segment::sStart_optional& segment::
@@ -11745,9 +11745,9 @@ side (const side_optional& x)
 }
 
 void segment::
-side (::std::auto_ptr< side_type > x)
+side (::std::unique_ptr< side_type > x)
 {
-  this->side_.set (x);
+  this->side_.set (std::move (x));
 }
 
 
@@ -12335,9 +12335,9 @@ pRange (const pRange_optional& x)
 }
 
 void paramPoly3::
-pRange (::std::auto_ptr< pRange_type > x)
+pRange (::std::unique_ptr< pRange_type > x)
 {
-  this->pRange_.set (x);
+  this->pRange_.set (std::move (x));
 }
 
 
@@ -12427,9 +12427,9 @@ lane (const lane_optional& x)
 }
 
 void center::
-lane (::std::auto_ptr< lane_type > x)
+lane (::std::unique_ptr< lane_type > x)
 {
-  this->lane_.set (x);
+  this->lane_.set (std::move (x));
 }
 
 const center::userData_sequence& center::
@@ -12971,9 +12971,9 @@ surface (const surface_optional& x)
 }
 
 void material1::
-surface (::std::auto_ptr< surface_type > x)
+surface (::std::unique_ptr< surface_type > x)
 {
-  this->surface_.set (x);
+  this->surface_.set (std::move (x));
 }
 
 const material1::friction_optional& material1::
@@ -13089,9 +13089,9 @@ id (const id_optional& x)
 }
 
 void dependency::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const dependency::type_optional& dependency::
@@ -13119,9 +13119,9 @@ type (const type_optional& x)
 }
 
 void dependency::
-type (::std::auto_ptr< type_type > x)
+type (::std::unique_ptr< type_type > x)
 {
-  this->type_.set (x);
+  this->type_.set (std::move (x));
 }
 
 
@@ -13153,9 +13153,9 @@ id (const id_optional& x)
 }
 
 void mainTrack::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const mainTrack::s_optional& mainTrack::
@@ -13207,9 +13207,9 @@ dir (const dir_optional& x)
 }
 
 void mainTrack::
-dir (::std::auto_ptr< dir_type > x)
+dir (::std::unique_ptr< dir_type > x)
 {
-  this->dir_.set (x);
+  this->dir_.set (std::move (x));
 }
 
 
@@ -13241,9 +13241,9 @@ id (const id_optional& x)
 }
 
 void sideTrack::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 const sideTrack::s_optional& sideTrack::
@@ -13295,9 +13295,9 @@ dir (const dir_optional& x)
 }
 
 void sideTrack::
-dir (::std::auto_ptr< dir_type > x)
+dir (::std::unique_ptr< dir_type > x)
 {
-  this->dir_.set (x);
+  this->dir_.set (std::move (x));
 }
 
 
@@ -13329,9 +13329,9 @@ name (const name_optional& x)
 }
 
 void partner::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const partner::id_optional& partner::
@@ -13359,9 +13359,9 @@ id (const id_optional& x)
 }
 
 void partner::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 
@@ -16057,10 +16057,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -16068,10 +16068,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -16184,10 +16184,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "marking" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< marking_type > r (
+      ::std::unique_ptr< marking_type > r (
         marking_traits::create (i, f, this));
 
-      this->marking_.push_back (r);
+      this->marking_.push_back (::std::move (r));
       continue;
     }
 
@@ -16195,10 +16195,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -16206,10 +16206,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -16353,12 +16353,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "link" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< link_type > r (
+      ::std::unique_ptr< link_type > r (
         link_traits::create (i, f, this));
 
       if (!this->lane_link_)
       {
-        this->lane_link_.set (r);
+        this->lane_link_.set (::std::move (r));
         continue;
       }
     }
@@ -16367,10 +16367,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "width" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< width_type > r (
+      ::std::unique_ptr< width_type > r (
         width_traits::create (i, f, this));
 
-      this->width_.push_back (r);
+      this->width_.push_back (::std::move (r));
       continue;
     }
 
@@ -16378,10 +16378,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "border" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< border_type > r (
+      ::std::unique_ptr< border_type > r (
         border_traits::create (i, f, this));
 
-      this->border_.push_back (r);
+      this->border_.push_back (::std::move (r));
       continue;
     }
 
@@ -16389,10 +16389,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "roadMark" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< roadMark_type > r (
+      ::std::unique_ptr< roadMark_type > r (
         roadMark_traits::create (i, f, this));
 
-      this->roadMark_.push_back (r);
+      this->roadMark_.push_back (::std::move (r));
       continue;
     }
 
@@ -16400,10 +16400,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "material" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< material_type > r (
+      ::std::unique_ptr< material_type > r (
         material_traits::create (i, f, this));
 
-      this->material_.push_back (r);
+      this->material_.push_back (::std::move (r));
       continue;
     }
 
@@ -16411,10 +16411,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "visibility" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< visibility_type > r (
+      ::std::unique_ptr< visibility_type > r (
         visibility_traits::create (i, f, this));
 
-      this->visibility_.push_back (r);
+      this->visibility_.push_back (::std::move (r));
       continue;
     }
 
@@ -16422,10 +16422,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "speed" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< speed_type > r (
+      ::std::unique_ptr< speed_type > r (
         speed_traits::create (i, f, this));
 
-      this->speed_.push_back (r);
+      this->speed_.push_back (::std::move (r));
       continue;
     }
 
@@ -16433,10 +16433,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "access" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< access_type > r (
+      ::std::unique_ptr< access_type > r (
         access_traits::create (i, f, this));
 
-      this->parkingSpace_access_.push_back (r);
+      this->parkingSpace_access_.push_back (::std::move (r));
       continue;
     }
 
@@ -16444,10 +16444,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "height" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< height_type > r (
+      ::std::unique_ptr< height_type > r (
         height_traits::create (i, f, this));
 
-      this->height_.push_back (r);
+      this->height_.push_back (::std::move (r));
       continue;
     }
 
@@ -16455,10 +16455,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "rule" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< rule_type > r (
+      ::std::unique_ptr< rule_type > r (
         rule_traits::create (i, f, this));
 
-      this->rule_.push_back (r);
+      this->rule_.push_back (::std::move (r));
       continue;
     }
 
@@ -16466,10 +16466,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -16477,10 +16477,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -16616,12 +16616,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "link" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< link_type > r (
+      ::std::unique_ptr< link_type > r (
         link_traits::create (i, f, this));
 
       if (!this->lane_link_)
       {
-        this->lane_link_.set (r);
+        this->lane_link_.set (::std::move (r));
         continue;
       }
     }
@@ -16630,10 +16630,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "roadMark" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< roadMark_type > r (
+      ::std::unique_ptr< roadMark_type > r (
         roadMark_traits::create (i, f, this));
 
-      this->roadMark_.push_back (r);
+      this->roadMark_.push_back (::std::move (r));
       continue;
     }
 
@@ -16641,10 +16641,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -16652,10 +16652,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -16734,9 +16734,9 @@ OpenDRIVE (const header_type& header)
 }
 
 OpenDRIVE::
-OpenDRIVE (::std::auto_ptr< header_type > header)
+OpenDRIVE (::std::unique_ptr< header_type > header)
 : ::xml_schema::type (),
-  header_ (header, this),
+  header_ (std::move (header), this),
   road_ (this),
   controller_ (this),
   junction_ (this),
@@ -16792,12 +16792,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "header" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< header_type > r (
+      ::std::unique_ptr< header_type > r (
         header_traits::create (i, f, this));
 
       if (!header_.present ())
       {
-        this->header_.set (r);
+        this->header_.set (::std::move (r));
         continue;
       }
     }
@@ -16806,10 +16806,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "road" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< road_type > r (
+      ::std::unique_ptr< road_type > r (
         road_traits::create (i, f, this));
 
-      this->road_.push_back (r);
+      this->road_.push_back (::std::move (r));
       continue;
     }
 
@@ -16817,10 +16817,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "controller" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< controller_type > r (
+      ::std::unique_ptr< controller_type > r (
         controller_traits::create (i, f, this));
 
-      this->controller_.push_back (r);
+      this->controller_.push_back (::std::move (r));
       continue;
     }
 
@@ -16828,10 +16828,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "junction" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< junction_type > r (
+      ::std::unique_ptr< junction_type > r (
         junction_traits::create (i, f, this));
 
-      this->junction_.push_back (r);
+      this->junction_.push_back (::std::move (r));
       continue;
     }
 
@@ -16839,10 +16839,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "junctionGroup" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< junctionGroup_type > r (
+      ::std::unique_ptr< junctionGroup_type > r (
         junctionGroup_traits::create (i, f, this));
 
-      this->junctionGroup_.push_back (r);
+      this->junctionGroup_.push_back (::std::move (r));
       continue;
     }
 
@@ -16850,10 +16850,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "station" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< station_type > r (
+      ::std::unique_ptr< station_type > r (
         station_traits::create (i, f, this));
 
-      this->station_.push_back (r);
+      this->station_.push_back (::std::move (r));
       continue;
     }
 
@@ -17182,12 +17182,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "predecessor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< predecessor_type > r (
+      ::std::unique_ptr< predecessor_type > r (
         predecessor_traits::create (i, f, this));
 
       if (!this->predecessor_)
       {
-        this->predecessor_.set (r);
+        this->predecessor_.set (::std::move (r));
         continue;
       }
     }
@@ -17196,12 +17196,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "successor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< successor_type > r (
+      ::std::unique_ptr< successor_type > r (
         successor_traits::create (i, f, this));
 
       if (!this->successor_)
       {
-        this->successor_.set (r);
+        this->successor_.set (::std::move (r));
         continue;
       }
     }
@@ -17210,10 +17210,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -17221,10 +17221,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -17324,10 +17324,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -17335,10 +17335,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -17478,10 +17478,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -17489,10 +17489,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -17644,12 +17644,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "type" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< type_type > r (
+      ::std::unique_ptr< type_type > r (
         type_traits::create (i, f, this));
 
       if (!this->type_)
       {
-        this->type_.set (r);
+        this->type_.set (::std::move (r));
         continue;
       }
     }
@@ -17658,10 +17658,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -17669,10 +17669,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -17831,10 +17831,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -17842,10 +17842,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -17978,10 +17978,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -17989,10 +17989,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -18126,10 +18126,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -18137,10 +18137,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -18257,10 +18257,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -18268,10 +18268,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -18384,10 +18384,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -18395,10 +18395,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -18515,10 +18515,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -18526,10 +18526,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -18639,12 +18639,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "predecessor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< predecessor_type > r (
+      ::std::unique_ptr< predecessor_type > r (
         predecessor_traits::create (i, f, this));
 
       if (!this->predecessor_)
       {
-        this->predecessor_.set (r);
+        this->predecessor_.set (::std::move (r));
         continue;
       }
     }
@@ -18653,12 +18653,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "successor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< successor_type > r (
+      ::std::unique_ptr< successor_type > r (
         successor_traits::create (i, f, this));
 
       if (!this->successor_)
       {
-        this->successor_.set (r);
+        this->successor_.set (::std::move (r));
         continue;
       }
     }
@@ -18667,10 +18667,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -18678,10 +18678,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -18793,12 +18793,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "type" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< type_type > r (
+      ::std::unique_ptr< type_type > r (
         type_traits::create (i, f, this));
 
       if (!this->type_)
       {
-        this->type_.set (r);
+        this->type_.set (::std::move (r));
         continue;
       }
     }
@@ -18807,10 +18807,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -18818,10 +18818,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -19001,12 +19001,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "geoReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< geoReference_type > r (
+      ::std::unique_ptr< geoReference_type > r (
         geoReference_traits::create (i, f, this));
 
       if (!this->geoReference_)
       {
-        this->geoReference_.set (r);
+        this->geoReference_.set (::std::move (r));
         continue;
       }
     }
@@ -19015,10 +19015,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -19026,10 +19026,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -19167,15 +19167,15 @@ road (const planView_type& planView,
 }
 
 road::
-road (::std::auto_ptr< planView_type > planView,
-      ::std::auto_ptr< lanes_type > lanes)
+road (::std::unique_ptr< planView_type > planView,
+      ::std::unique_ptr< lanes_type > lanes)
 : ::xml_schema::type (),
   lane_link_ (this),
   type_ (this),
-  planView_ (planView, this),
+  planView_ (std::move (planView), this),
   elevationProfile_ (this),
   lateralProfile_ (this),
-  lanes_ (lanes, this),
+  lanes_ (std::move (lanes), this),
   objects_ (this),
   signals_ (this),
   surface_ (this),
@@ -19256,12 +19256,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "link" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< link_type > r (
+      ::std::unique_ptr< link_type > r (
         link_traits::create (i, f, this));
 
       if (!this->lane_link_)
       {
-        this->lane_link_.set (r);
+        this->lane_link_.set (::std::move (r));
         continue;
       }
     }
@@ -19270,10 +19270,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "type" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< type_type > r (
+      ::std::unique_ptr< type_type > r (
         type_traits::create (i, f, this));
 
-      this->type_.push_back (r);
+      this->type_.push_back (::std::move (r));
       continue;
     }
 
@@ -19281,12 +19281,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "planView" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< planView_type > r (
+      ::std::unique_ptr< planView_type > r (
         planView_traits::create (i, f, this));
 
       if (!planView_.present ())
       {
-        this->planView_.set (r);
+        this->planView_.set (::std::move (r));
         continue;
       }
     }
@@ -19295,12 +19295,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "elevationProfile" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< elevationProfile_type > r (
+      ::std::unique_ptr< elevationProfile_type > r (
         elevationProfile_traits::create (i, f, this));
 
       if (!this->elevationProfile_)
       {
-        this->elevationProfile_.set (r);
+        this->elevationProfile_.set (::std::move (r));
         continue;
       }
     }
@@ -19309,12 +19309,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lateralProfile" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lateralProfile_type > r (
+      ::std::unique_ptr< lateralProfile_type > r (
         lateralProfile_traits::create (i, f, this));
 
       if (!this->lateralProfile_)
       {
-        this->lateralProfile_.set (r);
+        this->lateralProfile_.set (::std::move (r));
         continue;
       }
     }
@@ -19323,12 +19323,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lanes" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lanes_type > r (
+      ::std::unique_ptr< lanes_type > r (
         lanes_traits::create (i, f, this));
 
       if (!lanes_.present ())
       {
-        this->lanes_.set (r);
+        this->lanes_.set (::std::move (r));
         continue;
       }
     }
@@ -19337,12 +19337,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "objects" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< objects_type > r (
+      ::std::unique_ptr< objects_type > r (
         objects_traits::create (i, f, this));
 
       if (!this->objects_)
       {
-        this->objects_.set (r);
+        this->objects_.set (::std::move (r));
         continue;
       }
     }
@@ -19351,12 +19351,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "signals" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< signals_type > r (
+      ::std::unique_ptr< signals_type > r (
         signals_traits::create (i, f, this));
 
       if (!this->signals_)
       {
-        this->signals_.set (r);
+        this->signals_.set (::std::move (r));
         continue;
       }
     }
@@ -19365,12 +19365,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "surface" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< surface_type > r (
+      ::std::unique_ptr< surface_type > r (
         surface_traits::create (i, f, this));
 
       if (!this->surface_)
       {
-        this->surface_.set (r);
+        this->surface_.set (::std::move (r));
         continue;
       }
     }
@@ -19379,12 +19379,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "railroad" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< railroad_type > r (
+      ::std::unique_ptr< railroad_type > r (
         railroad_traits::create (i, f, this));
 
       if (!this->railroad_)
       {
-        this->railroad_.set (r);
+        this->railroad_.set (::std::move (r));
         continue;
       }
     }
@@ -19393,10 +19393,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -19404,10 +19404,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -19561,10 +19561,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "control" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< control_type > r (
+      ::std::unique_ptr< control_type > r (
         control_traits::create (i, f, this));
 
-      this->control_.push_back (r);
+      this->control_.push_back (::std::move (r));
       continue;
     }
 
@@ -19572,10 +19572,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -19583,10 +19583,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -19713,10 +19713,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "connection" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< connection_type > r (
+      ::std::unique_ptr< connection_type > r (
         connection_traits::create (i, f, this));
 
-      this->connection_.push_back (r);
+      this->connection_.push_back (::std::move (r));
       continue;
     }
 
@@ -19724,10 +19724,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "priority" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< priority_type > r (
+      ::std::unique_ptr< priority_type > r (
         priority_traits::create (i, f, this));
 
-      this->priority_.push_back (r);
+      this->priority_.push_back (::std::move (r));
       continue;
     }
 
@@ -19735,10 +19735,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "controller" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< controller_type > r (
+      ::std::unique_ptr< controller_type > r (
         controller_traits::create (i, f, this));
 
-      this->controller_.push_back (r);
+      this->controller_.push_back (::std::move (r));
       continue;
     }
 
@@ -19746,10 +19746,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -19757,10 +19757,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -19879,10 +19879,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "junctionReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< junctionReference_type > r (
+      ::std::unique_ptr< junctionReference_type > r (
         junctionReference_traits::create (i, f, this));
 
-      this->junctionReference_.push_back (r);
+      this->junctionReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -19890,10 +19890,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -19901,10 +19901,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20028,10 +20028,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "platform" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< platform_type > r (
+      ::std::unique_ptr< platform_type > r (
         platform_traits::create (i, f, this));
 
-      this->platform_.push_back (r);
+      this->platform_.push_back (::std::move (r));
       continue;
     }
 
@@ -20039,10 +20039,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20050,10 +20050,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20318,10 +20318,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "line" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< line_type > r (
+      ::std::unique_ptr< line_type > r (
         line_traits::create (i, f, this));
 
-      this->line_.push_back (r);
+      this->line_.push_back (::std::move (r));
       continue;
     }
 
@@ -20427,10 +20427,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "line" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< line_type > r (
+      ::std::unique_ptr< line_type > r (
         line_traits::create (i, f, this));
 
-      this->line_.push_back (r);
+      this->line_.push_back (::std::move (r));
       continue;
     }
 
@@ -20542,12 +20542,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "predecessor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< predecessor_type > r (
+      ::std::unique_ptr< predecessor_type > r (
         predecessor_traits::create (i, f, this));
 
       if (!this->predecessor_)
       {
-        this->predecessor_.set (r);
+        this->predecessor_.set (::std::move (r));
         continue;
       }
     }
@@ -20556,12 +20556,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "successor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< successor_type > r (
+      ::std::unique_ptr< successor_type > r (
         successor_traits::create (i, f, this));
 
       if (!this->successor_)
       {
-        this->successor_.set (r);
+        this->successor_.set (::std::move (r));
         continue;
       }
     }
@@ -20570,10 +20570,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "neighbor" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< neighbor_type > r (
+      ::std::unique_ptr< neighbor_type > r (
         neighbor_traits::create (i, f, this));
 
-      this->neighbor_.push_back (r);
+      this->neighbor_.push_back (::std::move (r));
       continue;
     }
 
@@ -20581,10 +20581,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20592,10 +20592,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20690,12 +20690,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "speed" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< speed_type > r (
+      ::std::unique_ptr< speed_type > r (
         speed_traits::create (i, f, this));
 
       if (!this->speed_)
       {
-        this->speed_.set (r);
+        this->speed_.set (::std::move (r));
         continue;
       }
     }
@@ -20704,10 +20704,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20715,10 +20715,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -20820,10 +20820,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "geometry" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< geometry_type > r (
+      ::std::unique_ptr< geometry_type > r (
         geometry_traits::create (i, f, this));
 
-      this->geometry_.push_back (r);
+      this->geometry_.push_back (::std::move (r));
       continue;
     }
 
@@ -20908,10 +20908,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "elevation" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< elevation_type > r (
+      ::std::unique_ptr< elevation_type > r (
         elevation_traits::create (i, f, this));
 
-      this->elevation_.push_back (r);
+      this->elevation_.push_back (::std::move (r));
       continue;
     }
 
@@ -20919,10 +20919,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -20930,10 +20930,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21026,10 +21026,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "superelevation" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< superelevation_type > r (
+      ::std::unique_ptr< superelevation_type > r (
         superelevation_traits::create (i, f, this));
 
-      this->superelevation_.push_back (r);
+      this->superelevation_.push_back (::std::move (r));
       continue;
     }
 
@@ -21037,10 +21037,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "crossfall" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< crossfall_type > r (
+      ::std::unique_ptr< crossfall_type > r (
         crossfall_traits::create (i, f, this));
 
-      this->crossfall_.push_back (r);
+      this->crossfall_.push_back (::std::move (r));
       continue;
     }
 
@@ -21048,10 +21048,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "shape" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< shape_type > r (
+      ::std::unique_ptr< shape_type > r (
         shape_traits::create (i, f, this));
 
-      this->shape_.push_back (r);
+      this->shape_.push_back (::std::move (r));
       continue;
     }
 
@@ -21059,10 +21059,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21070,10 +21070,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21159,10 +21159,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "laneOffset" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< laneOffset_type > r (
+      ::std::unique_ptr< laneOffset_type > r (
         laneOffset_traits::create (i, f, this));
 
-      this->laneOffset_.push_back (r);
+      this->laneOffset_.push_back (::std::move (r));
       continue;
     }
 
@@ -21170,10 +21170,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "laneSection" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< laneSection_type > r (
+      ::std::unique_ptr< laneSection_type > r (
         laneSection_traits::create (i, f, this));
 
-      this->laneSection_.push_back (r);
+      this->laneSection_.push_back (::std::move (r));
       continue;
     }
 
@@ -21268,10 +21268,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "object" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< object_type > r (
+      ::std::unique_ptr< object_type > r (
         object_traits::create (i, f, this));
 
-      this->object_.push_back (r);
+      this->object_.push_back (::std::move (r));
       continue;
     }
 
@@ -21279,10 +21279,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "objectReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< objectReference_type > r (
+      ::std::unique_ptr< objectReference_type > r (
         objectReference_traits::create (i, f, this));
 
-      this->objectReference_.push_back (r);
+      this->objectReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -21290,10 +21290,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "tunnel" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< tunnel_type > r (
+      ::std::unique_ptr< tunnel_type > r (
         tunnel_traits::create (i, f, this));
 
-      this->tunnel_.push_back (r);
+      this->tunnel_.push_back (::std::move (r));
       continue;
     }
 
@@ -21301,10 +21301,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "bridge" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< bridge_type > r (
+      ::std::unique_ptr< bridge_type > r (
         bridge_traits::create (i, f, this));
 
-      this->bridge_.push_back (r);
+      this->bridge_.push_back (::std::move (r));
       continue;
     }
 
@@ -21312,10 +21312,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21323,10 +21323,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21419,10 +21419,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "signal" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< signal_type > r (
+      ::std::unique_ptr< signal_type > r (
         signal_traits::create (i, f, this));
 
-      this->signal_.push_back (r);
+      this->signal_.push_back (::std::move (r));
       continue;
     }
 
@@ -21430,10 +21430,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "signalReference" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< signalReference_type > r (
+      ::std::unique_ptr< signalReference_type > r (
         signalReference_traits::create (i, f, this));
 
-      this->signalReference_.push_back (r);
+      this->signalReference_.push_back (::std::move (r));
       continue;
     }
 
@@ -21441,10 +21441,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21452,10 +21452,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21543,10 +21543,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "CRG" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< CRG_type > r (
+      ::std::unique_ptr< CRG_type > r (
         CRG_traits::create (i, f, this));
 
-      this->CRG_.push_back (r);
+      this->CRG_.push_back (::std::move (r));
       continue;
     }
 
@@ -21554,10 +21554,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21565,10 +21565,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21655,10 +21655,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "switch" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< switch_type > r (
+      ::std::unique_ptr< switch_type > r (
         switch_traits::create (i, f, this));
 
-      this->switch__.push_back (r);
+      this->switch__.push_back (::std::move (r));
       continue;
     }
 
@@ -21666,10 +21666,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21677,10 +21677,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21770,10 +21770,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21781,10 +21781,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -21903,10 +21903,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "laneLink" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< laneLink_type > r (
+      ::std::unique_ptr< laneLink_type > r (
         laneLink_traits::create (i, f, this));
 
-      this->laneLink_.push_back (r);
+      this->laneLink_.push_back (::std::move (r));
       continue;
     }
 
@@ -21914,10 +21914,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -21925,10 +21925,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22053,10 +22053,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22064,10 +22064,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22180,10 +22180,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -22191,10 +22191,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -22383,10 +22383,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "segment" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< segment_type > r (
+      ::std::unique_ptr< segment_type > r (
         segment_traits::create (i, f, this));
 
-      this->segment_.push_back (r);
+      this->segment_.push_back (::std::move (r));
       continue;
     }
 
@@ -23014,12 +23014,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "line" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< line_type > r (
+      ::std::unique_ptr< line_type > r (
         line_traits::create (i, f, this));
 
       if (!this->line_)
       {
-        this->line_.set (r);
+        this->line_.set (::std::move (r));
         continue;
       }
     }
@@ -23028,12 +23028,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "spiral" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< spiral_type > r (
+      ::std::unique_ptr< spiral_type > r (
         spiral_traits::create (i, f, this));
 
       if (!this->spiral_)
       {
-        this->spiral_.set (r);
+        this->spiral_.set (::std::move (r));
         continue;
       }
     }
@@ -23042,12 +23042,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "arc" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< arc_type > r (
+      ::std::unique_ptr< arc_type > r (
         arc_traits::create (i, f, this));
 
       if (!this->arc_)
       {
-        this->arc_.set (r);
+        this->arc_.set (::std::move (r));
         continue;
       }
     }
@@ -23056,12 +23056,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "poly3" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< poly3_type > r (
+      ::std::unique_ptr< poly3_type > r (
         poly3_traits::create (i, f, this));
 
       if (!this->poly3_)
       {
-        this->poly3_.set (r);
+        this->poly3_.set (::std::move (r));
         continue;
       }
     }
@@ -23070,12 +23070,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "paramPoly3" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< paramPoly3_type > r (
+      ::std::unique_ptr< paramPoly3_type > r (
         paramPoly3_traits::create (i, f, this));
 
       if (!this->paramPoly3_)
       {
-        this->paramPoly3_.set (r);
+        this->paramPoly3_.set (::std::move (r));
         continue;
       }
     }
@@ -23084,10 +23084,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23095,10 +23095,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23243,10 +23243,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23254,10 +23254,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23397,10 +23397,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23408,10 +23408,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23554,10 +23554,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23565,10 +23565,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23718,10 +23718,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23729,10 +23729,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23879,10 +23879,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -23890,10 +23890,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -23985,10 +23985,10 @@ laneSection (const center_type& center)
 }
 
 laneSection::
-laneSection (::std::auto_ptr< center_type > center)
+laneSection (::std::unique_ptr< center_type > center)
 : ::xml_schema::type (),
   left_ (this),
-  center_ (center, this),
+  center_ (std::move (center), this),
   right_ (this),
   userData_ (this),
   include_ (this),
@@ -24046,12 +24046,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "left" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< left_type > r (
+      ::std::unique_ptr< left_type > r (
         left_traits::create (i, f, this));
 
       if (!this->left_)
       {
-        this->left_.set (r);
+        this->left_.set (::std::move (r));
         continue;
       }
     }
@@ -24060,12 +24060,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "center" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< center_type > r (
+      ::std::unique_ptr< center_type > r (
         center_traits::create (i, f, this));
 
       if (!center_.present ())
       {
-        this->center_.set (r);
+        this->center_.set (::std::move (r));
         continue;
       }
     }
@@ -24074,12 +24074,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "right" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< right_type > r (
+      ::std::unique_ptr< right_type > r (
         right_traits::create (i, f, this));
 
       if (!this->right_)
       {
-        this->right_.set (r);
+        this->right_.set (::std::move (r));
         continue;
       }
     }
@@ -24088,10 +24088,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24099,10 +24099,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24276,10 +24276,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "repeat" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< repeat_type > r (
+      ::std::unique_ptr< repeat_type > r (
         repeat_traits::create (i, f, this));
 
-      this->repeat_.push_back (r);
+      this->repeat_.push_back (::std::move (r));
       continue;
     }
 
@@ -24287,12 +24287,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "outline" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< outline_type > r (
+      ::std::unique_ptr< outline_type > r (
         outline_traits::create (i, f, this));
 
       if (!this->outline_)
       {
-        this->outline_.set (r);
+        this->outline_.set (::std::move (r));
         continue;
       }
     }
@@ -24301,12 +24301,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "material" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< material_type > r (
+      ::std::unique_ptr< material_type > r (
         material_traits::create (i, f, this));
 
       if (!this->material_)
       {
-        this->material_.set (r);
+        this->material_.set (::std::move (r));
         continue;
       }
     }
@@ -24315,10 +24315,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -24326,12 +24326,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "parkingSpace" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< parkingSpace_type > r (
+      ::std::unique_ptr< parkingSpace_type > r (
         parkingSpace_traits::create (i, f, this));
 
       if (!this->parkingSpace_)
       {
-        this->parkingSpace_.set (r);
+        this->parkingSpace_.set (::std::move (r));
         continue;
       }
     }
@@ -24340,10 +24340,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24351,10 +24351,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24575,10 +24575,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -24586,10 +24586,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24597,10 +24597,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24757,10 +24757,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -24768,10 +24768,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24779,10 +24779,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -24940,10 +24940,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -24951,10 +24951,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -24962,10 +24962,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25151,10 +25151,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -25162,10 +25162,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "dependency" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< dependency_type > r (
+      ::std::unique_ptr< dependency_type > r (
         dependency_traits::create (i, f, this));
 
-      this->dependency_.push_back (r);
+      this->dependency_.push_back (::std::move (r));
       continue;
     }
 
@@ -25173,10 +25173,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25184,10 +25184,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25420,10 +25420,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "validity" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< validity_type > r (
+      ::std::unique_ptr< validity_type > r (
         validity_traits::create (i, f, this));
 
-      this->validity_.push_back (r);
+      this->validity_.push_back (::std::move (r));
       continue;
     }
 
@@ -25431,10 +25431,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25442,10 +25442,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25597,10 +25597,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25608,10 +25608,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -25747,11 +25747,11 @@ switch_ (const mainTrack_type& mainTrack,
 }
 
 switch_::
-switch_ (::std::auto_ptr< mainTrack_type > mainTrack,
-         ::std::auto_ptr< sideTrack_type > sideTrack)
+switch_ (::std::unique_ptr< mainTrack_type > mainTrack,
+         ::std::unique_ptr< sideTrack_type > sideTrack)
 : ::xml_schema::type (),
-  mainTrack_ (mainTrack, this),
-  sideTrack_ (sideTrack, this),
+  mainTrack_ (std::move (mainTrack), this),
+  sideTrack_ (std::move (sideTrack), this),
   partner_ (this),
   userData_ (this),
   include_ (this),
@@ -25812,12 +25812,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "mainTrack" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< mainTrack_type > r (
+      ::std::unique_ptr< mainTrack_type > r (
         mainTrack_traits::create (i, f, this));
 
       if (!mainTrack_.present ())
       {
-        this->mainTrack_.set (r);
+        this->mainTrack_.set (::std::move (r));
         continue;
       }
     }
@@ -25826,12 +25826,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "sideTrack" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< sideTrack_type > r (
+      ::std::unique_ptr< sideTrack_type > r (
         sideTrack_traits::create (i, f, this));
 
       if (!sideTrack_.present ())
       {
-        this->sideTrack_.set (r);
+        this->sideTrack_.set (::std::move (r));
         continue;
       }
     }
@@ -25840,12 +25840,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "partner" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< partner_type > r (
+      ::std::unique_ptr< partner_type > r (
         partner_traits::create (i, f, this));
 
       if (!this->partner_)
       {
-        this->partner_.set (r);
+        this->partner_.set (::std::move (r));
         continue;
       }
     }
@@ -25854,10 +25854,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -25865,10 +25865,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26002,10 +26002,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26013,10 +26013,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26132,10 +26132,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26143,10 +26143,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26264,10 +26264,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26275,10 +26275,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26367,10 +26367,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26378,10 +26378,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26488,10 +26488,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26499,10 +26499,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26611,10 +26611,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26622,10 +26622,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26770,10 +26770,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26781,10 +26781,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -26940,10 +26940,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lane" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lane_type > r (
+      ::std::unique_ptr< lane_type > r (
         lane_traits::create (i, f, this));
 
-      this->lane_.push_back (r);
+      this->lane_.push_back (::std::move (r));
       continue;
     }
 
@@ -26951,10 +26951,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -26962,10 +26962,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27052,12 +27052,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lane" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lane_type > r (
+      ::std::unique_ptr< lane_type > r (
         lane_traits::create (i, f, this));
 
       if (!this->lane_)
       {
-        this->lane_.set (r);
+        this->lane_.set (::std::move (r));
         continue;
       }
     }
@@ -27066,10 +27066,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27077,10 +27077,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27167,10 +27167,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "lane" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< lane_type > r (
+      ::std::unique_ptr< lane_type > r (
         lane_traits::create (i, f, this));
 
-      this->lane_.push_back (r);
+      this->lane_.push_back (::std::move (r));
       continue;
     }
 
@@ -27178,10 +27178,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27189,10 +27189,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27309,10 +27309,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27320,10 +27320,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27496,10 +27496,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "cornerRoad" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< cornerRoad_type > r (
+      ::std::unique_ptr< cornerRoad_type > r (
         cornerRoad_traits::create (i, f, this));
 
-      this->cornerRoad_.push_back (r);
+      this->cornerRoad_.push_back (::std::move (r));
       continue;
     }
 
@@ -27507,10 +27507,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "cornerLocal" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< cornerLocal_type > r (
+      ::std::unique_ptr< cornerLocal_type > r (
         cornerLocal_traits::create (i, f, this));
 
-      this->cornerLocal_.push_back (r);
+      this->cornerLocal_.push_back (::std::move (r));
       continue;
     }
 
@@ -27518,10 +27518,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27529,10 +27529,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27626,10 +27626,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27637,10 +27637,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -27757,10 +27757,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -27768,10 +27768,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28162,10 +28162,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28173,10 +28173,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28306,10 +28306,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "userData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< userData_type > r (
+      ::std::unique_ptr< userData_type > r (
         userData_traits::create (i, f, this));
 
-      this->userData_.push_back (r);
+      this->userData_.push_back (::std::move (r));
       continue;
     }
 
@@ -28317,10 +28317,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "include" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< include_type > r (
+      ::std::unique_ptr< include_type > r (
         include_traits::create (i, f, this));
 
-      this->include_.push_back (r);
+      this->include_.push_back (::std::move (r));
       continue;
     }
 
@@ -28392,7 +28392,7 @@ cornerLocal::
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& u,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
@@ -28403,18 +28403,18 @@ OpenDRIVE_ (const ::std::string& u,
 
   ::xsd::cxx::tree::error_handler< char > h;
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& u,
             ::xml_schema::error_handler& h,
             ::xml_schema::flags f,
@@ -28424,37 +28424,37 @@ OpenDRIVE_ (const ::std::string& u,
     (f & ::xml_schema::flags::dont_initialize) == 0,
     (f & ::xml_schema::flags::keep_dom) == 0);
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::std::string& u,
             ::xercesc::DOMErrorHandler& h,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
@@ -28467,7 +28467,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xml_schema::error_handler& h,
             ::xml_schema::flags f,
@@ -28481,7 +28481,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             ::xercesc::DOMErrorHandler& h,
             ::xml_schema::flags f,
@@ -28491,7 +28491,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& sid,
             ::xml_schema::flags f,
@@ -28505,7 +28505,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& sid,
             ::xml_schema::error_handler& h,
@@ -28520,7 +28520,7 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::std::istream& is,
             const ::std::string& sid,
             ::xercesc::DOMErrorHandler& h,
@@ -28531,73 +28531,73 @@ OpenDRIVE_ (::std::istream& is,
   return ::OpenDRIVE_ (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& i,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
   ::xsd::cxx::tree::error_handler< char > h;
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& i,
             ::xml_schema::error_handler& h,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (::xercesc::InputSource& i,
             ::xercesc::DOMErrorHandler& h,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::OpenDRIVE > (
+  return ::std::unique_ptr< ::OpenDRIVE > (
     ::OpenDRIVE_ (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::OpenDRIVE >
+::std::unique_ptr< ::OpenDRIVE >
 OpenDRIVE_ (const ::xercesc::DOMDocument& doc,
             ::xml_schema::flags f,
             const ::xml_schema::properties& p)
 {
   if (f & ::xml_schema::flags::keep_dom)
   {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
       static_cast< ::xercesc::DOMDocument* > (doc.cloneNode (true)));
 
-    return ::std::auto_ptr< ::OpenDRIVE > (
+    return ::std::unique_ptr< ::OpenDRIVE > (
       ::OpenDRIVE_ (
-        d, f | ::xml_schema::flags::own_dom, p));
+        std::move (d), f | ::xml_schema::flags::own_dom, p));
   }
 
   const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
@@ -28607,7 +28607,7 @@ OpenDRIVE_ (const ::xercesc::DOMDocument& doc,
   if (n.name () == "OpenDRIVE" &&
       n.namespace_ () == "")
   {
-    ::std::auto_ptr< ::OpenDRIVE > r (
+    ::std::unique_ptr< ::OpenDRIVE > r (
       ::xsd::cxx::tree::traits< ::OpenDRIVE, char >::create (
         e, f, 0));
     return r;
@@ -28620,12 +28620,12 @@ OpenDRIVE_ (const ::xercesc::DOMDocument& doc,
     "");
 }
 
-::std::auto_ptr< ::OpenDRIVE >
-OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
+::std::unique_ptr< ::OpenDRIVE >
+OpenDRIVE_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
             ::xml_schema::flags f,
             const ::xml_schema::properties&)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > c (
     ((f & ::xml_schema::flags::keep_dom) &&
      !(f & ::xml_schema::flags::own_dom))
     ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
@@ -28645,7 +28645,7 @@ OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
   if (n.name () == "OpenDRIVE" &&
       n.namespace_ () == "")
   {
-    ::std::auto_ptr< ::OpenDRIVE > r (
+    ::std::unique_ptr< ::OpenDRIVE > r (
       ::xsd::cxx::tree::traits< ::OpenDRIVE, char >::create (
         e, f, 0));
     return r;
