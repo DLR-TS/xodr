@@ -85,25 +85,25 @@ operator= (value v)
 }
 
 
-// max
+// t_max
 //
 
-max::
-max (const char* s)
+t_max::
+t_max (const char* s)
 : ::xml_schema::string (s)
 {
 }
 
-max::
-max (const ::std::string& s)
+t_max::
+t_max (const ::std::string& s)
 : ::xml_schema::string (s)
 {
 }
 
-max::
-max (const max& o,
-     ::xml_schema::flags f,
-     ::xml_schema::container* c)
+t_max::
+t_max (const t_max& o,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
 : ::xml_schema::string (o, f, c)
 {
 }
@@ -3523,27 +3523,27 @@ sOffset (const sOffset_optional& x)
 }
 
 const speed::max_optional& speed::
-max () const
+t_max () const
 {
-  return this->max_;
+  return this->t_max_;
 }
 
 speed::max_optional& speed::
-max ()
+t_max ()
 {
-  return this->max_;
+  return this->t_max_;
 }
 
 void speed::
-max (const max_type& x)
+t_max (const max_type& x)
 {
-  this->max_.set (x);
+  this->t_max_.set (x);
 }
 
 void speed::
-max (const max_optional& x)
+t_max (const max_optional& x)
 {
-  this->max_ = x;
+  this->t_max_ = x;
 }
 
 const speed::unit_optional& speed::
@@ -7645,33 +7645,33 @@ direction (::std::auto_ptr< direction_type > x)
 // 
 
 const speed1::max_optional& speed1::
-max () const
+t_max () const
 {
-  return this->max_;
+  return this->t_max_;
 }
 
 speed1::max_optional& speed1::
-max ()
+t_max ()
 {
-  return this->max_;
+  return this->t_max_;
 }
 
 void speed1::
-max (const max_type& x)
+t_max (const max_type& x)
 {
-  this->max_.set (x);
+  this->t_max_.set (x);
 }
 
 void speed1::
-max (const max_optional& x)
+t_max (const max_optional& x)
 {
-  this->max_ = x;
+  this->t_max_ = x;
 }
 
 void speed1::
-max (::std::auto_ptr< max_type > x)
+t_max (::std::auto_ptr< max_type > x)
 {
-  this->max_.set (x);
+  this->t_max_.set (x);
 }
 
 const speed1::unit_optional& speed1::
@@ -13709,39 +13709,39 @@ _xsd_elementType_indexes_[2] =
   ::elementType::road
 };
 
-// max
+// t_max
 //
 
-max::
-max (const ::xercesc::DOMElement& e,
-     ::xml_schema::flags f,
-     ::xml_schema::container* c)
+t_max::
+t_max (const ::xercesc::DOMElement& e,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
 : ::xml_schema::string (e, f, c)
 {
 }
 
-max::
-max (const ::xercesc::DOMAttr& a,
-     ::xml_schema::flags f,
-     ::xml_schema::container* c)
+t_max::
+t_max (const ::xercesc::DOMAttr& a,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
 : ::xml_schema::string (a, f, c)
 {
 }
 
-max::
-max (const ::std::string& s,
-     const ::xercesc::DOMElement* e,
-     ::xml_schema::flags f,
-     ::xml_schema::container* c)
+t_max::
+t_max (const ::std::string& s,
+       const ::xercesc::DOMElement* e,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
 : ::xml_schema::string (s, e, f, c)
 {
 }
 
-max* max::
+t_max* t_max::
 _clone (::xml_schema::flags f,
         ::xml_schema::container* c) const
 {
-  return new class max (*this, f, c);
+  return new class t_max (*this, f, c);
 }
 
 // contactPoint
@@ -18076,7 +18076,7 @@ speed ()
   userData_ (this),
   include_ (this),
   sOffset_ (this),
-  max_ (this),
+  t_max_ (this),
   unit_ (this)
 {
 }
@@ -18089,7 +18089,7 @@ speed (const speed& x,
   userData_ (x.userData_, f, this),
   include_ (x.include_, f, this),
   sOffset_ (x.sOffset_, f, this),
-  max_ (x.max_, f, this),
+  t_max_ (x.t_max_, f, this),
   unit_ (x.unit_, f, this)
 {
 }
@@ -18102,7 +18102,7 @@ speed (const ::xercesc::DOMElement& e,
   userData_ (this),
   include_ (this),
   sOffset_ (this),
-  max_ (this),
+  t_max_ (this),
   unit_ (this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
@@ -18161,7 +18161,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     if (n.name () == "max" && n.namespace_ ().empty ())
     {
-      this->max_.set (max_traits::create (i, f, this));
+      this->t_max_.set (max_traits::create (i, f, this));
       continue;
     }
 
@@ -18189,7 +18189,7 @@ operator= (const speed& x)
     this->userData_ = x.userData_;
     this->include_ = x.include_;
     this->sOffset_ = x.sOffset_;
-    this->max_ = x.max_;
+    this->t_max_ = x.t_max_;
     this->unit_ = x.unit_;
   }
 
@@ -22855,7 +22855,7 @@ neighbor::
 speed1::
 speed1 ()
 : ::xml_schema::type (),
-  max_ (this),
+  t_max_ (this),
   unit_ (this)
 {
 }
@@ -22865,7 +22865,7 @@ speed1 (const speed1& x,
         ::xml_schema::flags f,
         ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
-  max_ (x.max_, f, this),
+  t_max_ (x.t_max_, f, this),
   unit_ (x.unit_, f, this)
 {
 }
@@ -22875,7 +22875,7 @@ speed1 (const ::xercesc::DOMElement& e,
         ::xml_schema::flags f,
         ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-  max_ (this),
+  t_max_ (this),
   unit_ (this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
@@ -22897,7 +22897,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     if (n.name () == "max" && n.namespace_ ().empty ())
     {
-      this->max_.set (max_traits::create (i, f, this));
+      this->t_max_.set (max_traits::create (i, f, this));
       continue;
     }
 
@@ -22922,7 +22922,7 @@ operator= (const speed1& x)
   if (this != &x)
   {
     static_cast< ::xml_schema::type& > (*this) = x;
-    this->max_ = x.max_;
+    this->t_max_ = x.t_max_;
     this->unit_ = x.unit_;
   }
 

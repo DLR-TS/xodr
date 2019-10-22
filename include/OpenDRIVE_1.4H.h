@@ -31,8 +31,8 @@
 // in the accompanying FLOSSE file.
 //
 
-#ifndef OPEN_DRIVE_1_4H_H
-#define OPEN_DRIVE_1_4H_H
+#ifndef SCHEMA_OPEN_DRIVE_1_4H_H
+#define SCHEMA_OPEN_DRIVE_1_4H_H
 
 #ifndef XSD_USE_CHAR
 #define XSD_USE_CHAR
@@ -223,7 +223,7 @@ namespace xml_schema
 // Forward declarations.
 //
 class elementType;
-class max;
+class t_max;
 class contactPoint;
 class side;
 class direction;
@@ -409,32 +409,32 @@ class elementType: public ::xml_schema::string
   static const value _xsd_elementType_indexes_[2];
 };
 
-class max: public ::xml_schema::string
+class t_max: public ::xml_schema::string
 {
   public:
 
-  max (const char* v);
+  t_max (const char* v);
 
-  max (const ::std::string& v);
+  t_max (const ::std::string& v);
 
-  max (const ::xercesc::DOMElement& e,
-       ::xml_schema::flags f = 0,
-       ::xml_schema::container* c = 0);
+  t_max (const ::xercesc::DOMElement& e,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
 
-  max (const ::xercesc::DOMAttr& a,
-       ::xml_schema::flags f = 0,
-       ::xml_schema::container* c = 0);
+  t_max (const ::xercesc::DOMAttr& a,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
 
-  max (const ::std::string& s,
-       const ::xercesc::DOMElement* e,
-       ::xml_schema::flags f = 0,
-       ::xml_schema::container* c = 0);
+  t_max (const ::std::string& s,
+         const ::xercesc::DOMElement* e,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
 
-  max (const max& x,
-       ::xml_schema::flags f = 0,
-       ::xml_schema::container* c = 0);
+  t_max (const t_max& x,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
 
-  virtual max*
+  virtual t_max*
   _clone (::xml_schema::flags f = 0,
           ::xml_schema::container* c = 0) const;
 };
@@ -4379,16 +4379,16 @@ class speed: public ::xml_schema::type
   typedef ::xsd::cxx::tree::traits< max_type, char, ::xsd::cxx::tree::schema_type::double_ > max_traits;
 
   const max_optional&
-  max () const;
+  t_max () const;
 
   max_optional&
-  max ();
+  t_max ();
 
   void
-  max (const max_type& x);
+  t_max (const max_type& x);
 
   void
-  max (const max_optional& x);
+  t_max (const max_optional& x);
 
   // unit
   //
@@ -4444,7 +4444,7 @@ class speed: public ::xml_schema::type
   userData_sequence userData_;
   include_sequence include_;
   sOffset_optional sOffset_;
-  max_optional max_;
+  max_optional t_max_;
   unit_optional unit_;
 };
 
@@ -8950,24 +8950,24 @@ class speed1: public ::xml_schema::type
   public:
   // max
   //
-  typedef ::max max_type;
+  typedef ::t_max max_type;
   typedef ::xsd::cxx::tree::optional< max_type > max_optional;
   typedef ::xsd::cxx::tree::traits< max_type, char > max_traits;
 
   const max_optional&
-  max () const;
+  t_max () const;
 
   max_optional&
-  max ();
+  t_max ();
 
   void
-  max (const max_type& x);
+  t_max (const max_type& x);
 
   void
-  max (const max_optional& x);
+  t_max (const max_optional& x);
 
   void
-  max (::std::auto_ptr< max_type > p);
+  t_max (::std::auto_ptr< max_type > p);
 
   // unit
   //
@@ -9020,7 +9020,7 @@ class speed1: public ::xml_schema::type
          ::xml_schema::flags);
 
   protected:
-  max_optional max_;
+  max_optional t_max_;
   unit_optional unit_;
 };
 
@@ -15091,4 +15091,4 @@ OpenDRIVE_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
 //
 // End epilogue.
 
-#endif // OPEN_DRIVE_1_4H_H
+#endif // SCHEMA_OPEN_DRIVE_1_4H_H
