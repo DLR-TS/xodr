@@ -6399,21 +6399,21 @@ include (const include_sequence& s)
 // 
 
 const signals::signal_sequence& signals::
-signal () const
+t_signal () const
 {
-  return this->signal_;
+  return this->t_signal_;
 }
 
 signals::signal_sequence& signals::
-signal ()
+t_signal ()
 {
-  return this->signal_;
+  return this->t_signal_;
 }
 
 void signals::
-signal (const signal_sequence& s)
+t_signal (const signal_sequence& s)
 {
-  this->signal_ = s;
+  this->t_signal_ = s;
 }
 
 const signals::signalReference_sequence& signals::
@@ -10251,562 +10251,562 @@ type (::std::unique_ptr< type_type > x)
 }
 
 
-// signal
+// t_signal
 // 
 
-const signal::validity_sequence& signal::
+const t_signal::validity_sequence& t_signal::
 validity () const
 {
   return this->validity_;
 }
 
-signal::validity_sequence& signal::
+t_signal::validity_sequence& t_signal::
 validity ()
 {
   return this->validity_;
 }
 
-void signal::
+void t_signal::
 validity (const validity_sequence& s)
 {
   this->validity_ = s;
 }
 
-const signal::dependency_sequence& signal::
+const t_signal::dependency_sequence& t_signal::
 dependency () const
 {
   return this->dependency_;
 }
 
-signal::dependency_sequence& signal::
+t_signal::dependency_sequence& t_signal::
 dependency ()
 {
   return this->dependency_;
 }
 
-void signal::
+void t_signal::
 dependency (const dependency_sequence& s)
 {
   this->dependency_ = s;
 }
 
-const signal::userData_sequence& signal::
+const t_signal::userData_sequence& t_signal::
 userData () const
 {
   return this->userData_;
 }
 
-signal::userData_sequence& signal::
+t_signal::userData_sequence& t_signal::
 userData ()
 {
   return this->userData_;
 }
 
-void signal::
+void t_signal::
 userData (const userData_sequence& s)
 {
   this->userData_ = s;
 }
 
-const signal::include_sequence& signal::
+const t_signal::include_sequence& t_signal::
 include () const
 {
   return this->include_;
 }
 
-signal::include_sequence& signal::
+t_signal::include_sequence& t_signal::
 include ()
 {
   return this->include_;
 }
 
-void signal::
+void t_signal::
 include (const include_sequence& s)
 {
   this->include_ = s;
 }
 
-const signal::s_optional& signal::
+const t_signal::s_optional& t_signal::
 s () const
 {
   return this->s_;
 }
 
-signal::s_optional& signal::
+t_signal::s_optional& t_signal::
 s ()
 {
   return this->s_;
 }
 
-void signal::
+void t_signal::
 s (const s_type& x)
 {
   this->s_.set (x);
 }
 
-void signal::
+void t_signal::
 s (const s_optional& x)
 {
   this->s_ = x;
 }
 
-const signal::t_optional& signal::
+const t_signal::t_optional& t_signal::
 t () const
 {
   return this->t_;
 }
 
-signal::t_optional& signal::
+t_signal::t_optional& t_signal::
 t ()
 {
   return this->t_;
 }
 
-void signal::
+void t_signal::
 t (const t_type& x)
 {
   this->t_.set (x);
 }
 
-void signal::
+void t_signal::
 t (const t_optional& x)
 {
   this->t_ = x;
 }
 
-const signal::id_optional& signal::
+const t_signal::id_optional& t_signal::
 id () const
 {
   return this->id_;
 }
 
-signal::id_optional& signal::
+t_signal::id_optional& t_signal::
 id ()
 {
   return this->id_;
 }
 
-void signal::
+void t_signal::
 id (const id_type& x)
 {
   this->id_.set (x);
 }
 
-void signal::
+void t_signal::
 id (const id_optional& x)
 {
   this->id_ = x;
 }
 
-void signal::
+void t_signal::
 id (::std::unique_ptr< id_type > x)
 {
   this->id_.set (std::move (x));
 }
 
-const signal::name_optional& signal::
+const t_signal::name_optional& t_signal::
 name () const
 {
   return this->name_;
 }
 
-signal::name_optional& signal::
+t_signal::name_optional& t_signal::
 name ()
 {
   return this->name_;
 }
 
-void signal::
+void t_signal::
 name (const name_type& x)
 {
   this->name_.set (x);
 }
 
-void signal::
+void t_signal::
 name (const name_optional& x)
 {
   this->name_ = x;
 }
 
-void signal::
+void t_signal::
 name (::std::unique_ptr< name_type > x)
 {
   this->name_.set (std::move (x));
 }
 
-const signal::dynamic_optional& signal::
+const t_signal::dynamic_optional& t_signal::
 dynamic () const
 {
   return this->dynamic_;
 }
 
-signal::dynamic_optional& signal::
+t_signal::dynamic_optional& t_signal::
 dynamic ()
 {
   return this->dynamic_;
 }
 
-void signal::
+void t_signal::
 dynamic (const dynamic_type& x)
 {
   this->dynamic_.set (x);
 }
 
-void signal::
+void t_signal::
 dynamic (const dynamic_optional& x)
 {
   this->dynamic_ = x;
 }
 
-void signal::
+void t_signal::
 dynamic (::std::unique_ptr< dynamic_type > x)
 {
   this->dynamic_.set (std::move (x));
 }
 
-const signal::orientation_optional& signal::
+const t_signal::orientation_optional& t_signal::
 orientation () const
 {
   return this->orientation_;
 }
 
-signal::orientation_optional& signal::
+t_signal::orientation_optional& t_signal::
 orientation ()
 {
   return this->orientation_;
 }
 
-void signal::
+void t_signal::
 orientation (const orientation_type& x)
 {
   this->orientation_.set (x);
 }
 
-void signal::
+void t_signal::
 orientation (const orientation_optional& x)
 {
   this->orientation_ = x;
 }
 
-void signal::
+void t_signal::
 orientation (::std::unique_ptr< orientation_type > x)
 {
   this->orientation_.set (std::move (x));
 }
 
-const signal::zOffset_optional& signal::
+const t_signal::zOffset_optional& t_signal::
 zOffset () const
 {
   return this->zOffset_;
 }
 
-signal::zOffset_optional& signal::
+t_signal::zOffset_optional& t_signal::
 zOffset ()
 {
   return this->zOffset_;
 }
 
-void signal::
+void t_signal::
 zOffset (const zOffset_type& x)
 {
   this->zOffset_.set (x);
 }
 
-void signal::
+void t_signal::
 zOffset (const zOffset_optional& x)
 {
   this->zOffset_ = x;
 }
 
-const signal::country_optional& signal::
+const t_signal::country_optional& t_signal::
 country () const
 {
   return this->country_;
 }
 
-signal::country_optional& signal::
+t_signal::country_optional& t_signal::
 country ()
 {
   return this->country_;
 }
 
-void signal::
+void t_signal::
 country (const country_type& x)
 {
   this->country_.set (x);
 }
 
-void signal::
+void t_signal::
 country (const country_optional& x)
 {
   this->country_ = x;
 }
 
-void signal::
+void t_signal::
 country (::std::unique_ptr< country_type > x)
 {
   this->country_.set (std::move (x));
 }
 
-const signal::type_optional& signal::
+const t_signal::type_optional& t_signal::
 type () const
 {
   return this->type_;
 }
 
-signal::type_optional& signal::
+t_signal::type_optional& t_signal::
 type ()
 {
   return this->type_;
 }
 
-void signal::
+void t_signal::
 type (const type_type& x)
 {
   this->type_.set (x);
 }
 
-void signal::
+void t_signal::
 type (const type_optional& x)
 {
   this->type_ = x;
 }
 
-void signal::
+void t_signal::
 type (::std::unique_ptr< type_type > x)
 {
   this->type_.set (std::move (x));
 }
 
-const signal::subtype_optional& signal::
+const t_signal::subtype_optional& t_signal::
 subtype () const
 {
   return this->subtype_;
 }
 
-signal::subtype_optional& signal::
+t_signal::subtype_optional& t_signal::
 subtype ()
 {
   return this->subtype_;
 }
 
-void signal::
+void t_signal::
 subtype (const subtype_type& x)
 {
   this->subtype_.set (x);
 }
 
-void signal::
+void t_signal::
 subtype (const subtype_optional& x)
 {
   this->subtype_ = x;
 }
 
-void signal::
+void t_signal::
 subtype (::std::unique_ptr< subtype_type > x)
 {
   this->subtype_.set (std::move (x));
 }
 
-const signal::value_optional& signal::
+const t_signal::value_optional& t_signal::
 value () const
 {
   return this->value_;
 }
 
-signal::value_optional& signal::
+t_signal::value_optional& t_signal::
 value ()
 {
   return this->value_;
 }
 
-void signal::
+void t_signal::
 value (const value_type& x)
 {
   this->value_.set (x);
 }
 
-void signal::
+void t_signal::
 value (const value_optional& x)
 {
   this->value_ = x;
 }
 
-const signal::unit_optional& signal::
+const t_signal::unit_optional& t_signal::
 unit () const
 {
   return this->unit_;
 }
 
-signal::unit_optional& signal::
+t_signal::unit_optional& t_signal::
 unit ()
 {
   return this->unit_;
 }
 
-void signal::
+void t_signal::
 unit (const unit_type& x)
 {
   this->unit_.set (x);
 }
 
-void signal::
+void t_signal::
 unit (const unit_optional& x)
 {
   this->unit_ = x;
 }
 
-void signal::
+void t_signal::
 unit (::std::unique_ptr< unit_type > x)
 {
   this->unit_.set (std::move (x));
 }
 
-const signal::height_optional& signal::
+const t_signal::height_optional& t_signal::
 height () const
 {
   return this->height_;
 }
 
-signal::height_optional& signal::
+t_signal::height_optional& t_signal::
 height ()
 {
   return this->height_;
 }
 
-void signal::
+void t_signal::
 height (const height_type& x)
 {
   this->height_.set (x);
 }
 
-void signal::
+void t_signal::
 height (const height_optional& x)
 {
   this->height_ = x;
 }
 
-const signal::width_optional& signal::
+const t_signal::width_optional& t_signal::
 width () const
 {
   return this->width_;
 }
 
-signal::width_optional& signal::
+t_signal::width_optional& t_signal::
 width ()
 {
   return this->width_;
 }
 
-void signal::
+void t_signal::
 width (const width_type& x)
 {
   this->width_.set (x);
 }
 
-void signal::
+void t_signal::
 width (const width_optional& x)
 {
   this->width_ = x;
 }
 
-const signal::text_optional& signal::
+const t_signal::text_optional& t_signal::
 text () const
 {
   return this->text_;
 }
 
-signal::text_optional& signal::
+t_signal::text_optional& t_signal::
 text ()
 {
   return this->text_;
 }
 
-void signal::
+void t_signal::
 text (const text_type& x)
 {
   this->text_.set (x);
 }
 
-void signal::
+void t_signal::
 text (const text_optional& x)
 {
   this->text_ = x;
 }
 
-void signal::
+void t_signal::
 text (::std::unique_ptr< text_type > x)
 {
   this->text_.set (std::move (x));
 }
 
-const signal::hOffset_optional& signal::
+const t_signal::hOffset_optional& t_signal::
 hOffset () const
 {
   return this->hOffset_;
 }
 
-signal::hOffset_optional& signal::
+t_signal::hOffset_optional& t_signal::
 hOffset ()
 {
   return this->hOffset_;
 }
 
-void signal::
+void t_signal::
 hOffset (const hOffset_type& x)
 {
   this->hOffset_.set (x);
 }
 
-void signal::
+void t_signal::
 hOffset (const hOffset_optional& x)
 {
   this->hOffset_ = x;
 }
 
-const signal::pitch_optional& signal::
+const t_signal::pitch_optional& t_signal::
 pitch () const
 {
   return this->pitch_;
 }
 
-signal::pitch_optional& signal::
+t_signal::pitch_optional& t_signal::
 pitch ()
 {
   return this->pitch_;
 }
 
-void signal::
+void t_signal::
 pitch (const pitch_type& x)
 {
   this->pitch_.set (x);
 }
 
-void signal::
+void t_signal::
 pitch (const pitch_optional& x)
 {
   this->pitch_ = x;
 }
 
-const signal::roll_optional& signal::
+const t_signal::roll_optional& t_signal::
 roll () const
 {
   return this->roll_;
 }
 
-signal::roll_optional& signal::
+t_signal::roll_optional& t_signal::
 roll ()
 {
   return this->roll_;
 }
 
-void signal::
+void t_signal::
 roll (const roll_type& x)
 {
   this->roll_.set (x);
 }
 
-void signal::
+void t_signal::
 roll (const roll_optional& x)
 {
   this->roll_ = x;
@@ -21369,7 +21369,7 @@ objects::
 signals::
 signals ()
 : ::xml_schema::type (),
-  signal_ (this),
+  t_signal_ (this),
   signalReference_ (this),
   userData_ (this),
   include_ (this)
@@ -21381,7 +21381,7 @@ signals (const signals& x,
          ::xml_schema::flags f,
          ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
-  signal_ (x.signal_, f, this),
+  t_signal_ (x.t_signal_, f, this),
   signalReference_ (x.signalReference_, f, this),
   userData_ (x.userData_, f, this),
   include_ (x.include_, f, this)
@@ -21393,7 +21393,7 @@ signals (const ::xercesc::DOMElement& e,
          ::xml_schema::flags f,
          ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-  signal_ (this),
+  t_signal_ (this),
   signalReference_ (this),
   userData_ (this),
   include_ (this)
@@ -21422,7 +21422,7 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
       ::std::unique_ptr< signal_type > r (
         signal_traits::create (i, f, this));
 
-      this->signal_.push_back (::std::move (r));
+      this->t_signal_.push_back (::std::move (r));
       continue;
     }
 
@@ -21476,7 +21476,7 @@ operator= (const signals& x)
   if (this != &x)
   {
     static_cast< ::xml_schema::type& > (*this) = x;
-    this->signal_ = x.signal_;
+    this->t_signal_ = x.t_signal_;
     this->signalReference_ = x.signalReference_;
     this->userData_ = x.userData_;
     this->include_ = x.include_;
@@ -25041,11 +25041,11 @@ bridge::
 {
 }
 
-// signal
+// t_signal
 //
 
-signal::
-signal ()
+t_signal::
+t_signal ()
 : ::xml_schema::type (),
   validity_ (this),
   dependency_ (this),
@@ -25072,10 +25072,10 @@ signal ()
 {
 }
 
-signal::
-signal (const signal& x,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
+t_signal::
+t_signal (const t_signal& x,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
   validity_ (x.validity_, f, this),
   dependency_ (x.dependency_, f, this),
@@ -25102,10 +25102,10 @@ signal (const signal& x,
 {
 }
 
-signal::
-signal (const ::xercesc::DOMElement& e,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
+t_signal::
+t_signal (const ::xercesc::DOMElement& e,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
   validity_ (this),
   dependency_ (this),
@@ -25137,7 +25137,7 @@ signal (const ::xercesc::DOMElement& e,
   }
 }
 
-void signal::
+void t_signal::
 parse (::xsd::cxx::xml::dom::parser< char >& p,
        ::xml_schema::flags f)
 {
@@ -25310,15 +25310,15 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
   }
 }
 
-signal* signal::
+t_signal* t_signal::
 _clone (::xml_schema::flags f,
         ::xml_schema::container* c) const
 {
-  return new class signal (*this, f, c);
+  return new class t_signal (*this, f, c);
 }
 
-signal& signal::
-operator= (const signal& x)
+t_signal& t_signal::
+operator= (const t_signal& x)
 {
   if (this != &x)
   {
@@ -25350,8 +25350,8 @@ operator= (const signal& x)
   return *this;
 }
 
-signal::
-~signal ()
+t_signal::
+~t_signal ()
 {
 }
 
