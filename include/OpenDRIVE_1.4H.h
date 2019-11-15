@@ -320,7 +320,7 @@ class object;
 class objectReference;
 class tunnel;
 class bridge;
-class signal;
+class t_signal;
 class signalReference;
 class CRG;
 class switch_;
@@ -7520,20 +7520,20 @@ class signals: public ::xml_schema::type
   public:
   // signal
   //
-  typedef ::signal signal_type;
+  typedef ::t_signal signal_type;
   typedef ::xsd::cxx::tree::sequence< signal_type > signal_sequence;
   typedef signal_sequence::iterator signal_iterator;
   typedef signal_sequence::const_iterator signal_const_iterator;
   typedef ::xsd::cxx::tree::traits< signal_type, char > signal_traits;
 
   const signal_sequence&
-  signal () const;
+  t_signal () const;
 
   signal_sequence&
-  signal ();
+  t_signal ();
 
   void
-  signal (const signal_sequence& s);
+  t_signal (const signal_sequence& s);
 
   // signalReference
   //
@@ -7616,7 +7616,7 @@ class signals: public ::xml_schema::type
          ::xml_schema::flags);
 
   protected:
-  signal_sequence signal_;
+  signal_sequence t_signal_;
   signalReference_sequence signalReference_;
   userData_sequence userData_;
   include_sequence include_;
@@ -11455,7 +11455,7 @@ class bridge: public ::xml_schema::type
   type_optional type_;
 };
 
-class signal: public ::xml_schema::type
+class t_signal: public ::xml_schema::type
 {
   public:
   // validity
@@ -11879,25 +11879,25 @@ class signal: public ::xml_schema::type
 
   // Constructors.
   //
-  signal ();
+  t_signal ();
 
-  signal (const ::xercesc::DOMElement& e,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
+  t_signal (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
 
-  signal (const signal& x,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
+  t_signal (const t_signal& x,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
 
-  virtual signal*
+  virtual t_signal*
   _clone (::xml_schema::flags f = 0,
           ::xml_schema::container* c = 0) const;
 
-  signal&
-  operator= (const signal& x);
+  t_signal&
+  operator= (const t_signal& x);
 
   virtual 
-  ~signal ();
+  ~t_signal ();
 
   // Implementation.
   //
