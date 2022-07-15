@@ -38,7 +38,7 @@ If everything went fine, you will find the resulting library in the `lib/` folde
 For convenience the underlying OpenDRIVE schema is provided in `schema/` but can be obtained for free from [ASAM](https://www.asam.net/standards/detail/opendrive/) in recent and previous versions. The C++ class structure was generated with [CodeSynthesis XSD](http://codesynthesis.com/products/xsd/) and can be automatically re-generated using the XML data binding tool `xsd`. The code used in **xodr** was generated with `xsd` version 4.0.0 as follows:
 
 ```
-xsd cxx-tree --hxx-suffix .h --cxx-suffix .cpp --reserved-name access=parkingSpace_access --reserved-name link=lane_link schema/OpenDRIVE_1.4H.xsd
+xsd cxx-tree --hxx-suffix .h --cxx-suffix .cpp --reserved-name access=parkingSpace_access --reserved-name link=lane_link --reserved-name signal=t_signal --reserved-name max=t_max --std c++11 schema/OpenDRIVE_1.4H.xsd
 ```
 
 ## Licence
