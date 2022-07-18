@@ -1,5 +1,5 @@
-build
-.git
+**build
+**.git
 # Created by https://www.gitignore.io/api/c++
 
 ### C++ ###
@@ -36,4 +36,3 @@ build
 *.out
 *.app
 
-build
