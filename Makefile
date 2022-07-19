@@ -25,14 +25,11 @@ all: build_xodr
 
 build:
 	rm -rf ${ROOT_DIR}/build
-	set -x && docker build --network host --tag $(shell echo ${TAG} | tr A-Z a-z) --build-arg PROJECT=${PROJECT} .
-	mkdir -p "${ROOT_DIR}/tmp/${PROJECT}/build"
-	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build tmp/${PROJECT}/build
-	cp -r "${ROOT_DIR}/tmp/${PROJECT}/build/build" "${ROOT_DIR}"
-	rm -rf ${ROOT_DIR}/tmp
+	set -x && \
+    docker build --network host --tag $(shell echo ${TAG} | tr A-Z a-z) --build-arg PROJECT=${PROJECT} .
+	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build ${ROOT_DIR}
 
 clean: set_xodr_env
 	rm -rf "${ROOT_DIR}/build"
-	rm -rf "${ROOT_DIR}/tmp"
 	docker rm $$(docker ps -a -q --filter "ancestor=${TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${PROJECT}) 2> /dev/null || true
