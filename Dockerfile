@@ -26,6 +26,8 @@ RUN cmake .. -DCMAKE_INSTALL_PREFIX:PATH=install && \
     cmake --install . && \
     cpack -G DEB && find . -type f -name "*.deb" | xargs mv -t .
 
+RUN mv CMakeCache.txt CMakeCache.txt.build
+
 FROM alpine:3.14
 
 ARG PROJECT
