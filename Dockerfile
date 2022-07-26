@@ -7,7 +7,7 @@ ARG REQUIREMENTS_FILE="requirements.${PROJECT}.ubuntu20.04.system"
 
 
 RUN mkdir -p /tmp/${PROJECT}
-COPY files/${REQUIREMENTS_FILE} /tmp/${PROJECT}
+COPY files/${REQUIREMENTS_FILE} /tmp/${PROJECT}/
 
 WORKDIR /tmp/${PROJECT}
 
@@ -16,7 +16,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 
-COPY . .
+COPY . /tmp/${PROJECT}/
 
 RUN mkdir -p /tmp/${PROJECT}/build
 
