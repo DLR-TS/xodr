@@ -33,4 +33,5 @@ FROM alpine:3.14
 ARG PROJECT
 
 COPY --from=xodr_builder /tmp/${PROJECT}/build /tmp/${PROJECT}/build
+COPY --from=xodr_builder /tmp/${PROJECT}/include /tmp/${PROJECT}/include
 
